@@ -8,7 +8,7 @@
 #if canImport(UIKit) && os(iOS)
 import UIKit
 
-open class AppBaseTableViewController: UITableViewController{
+open class AppBaseTableViewController: UITableViewController,AppViewProtocol{
     override open func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 11.0, *){

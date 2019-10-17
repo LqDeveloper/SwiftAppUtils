@@ -64,6 +64,7 @@
 		51DEF0B0235835270024E550 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0AF235835270024E550 /* URLExtensions.swift */; };
 		51DEF0B2235837080024E550 /* URLRequestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B1235837080024E550 /* URLRequestExtensions.swift */; };
 		51DEF0B4235837C20024E550 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B3235837C20024E550 /* UserDefaultsExtensions.swift */; };
+		51DEF0B823583F550024E550 /* AppViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B723583F550024E550 /* AppViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		51DEF0AF235835270024E550 /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 		51DEF0B1235837080024E550 /* URLRequestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestExtensions.swift; sourceTree = "<group>"; };
 		51DEF0B3235837C20024E550 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
+		51DEF0B723583F550024E550 /* AppViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 		512D3B472356BD83001677CF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				51DEF0B623583F090024E550 /* Protocol */,
 				512D3B8B23571F5F001677CF /* UIExtensions */,
 				512D3B5E2356EF41001677CF /* Extension */,
 				512D3B532356DF87001677CF /* Tool */,
@@ -252,7 +255,6 @@
 		512D3B532356DF87001677CF /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				512D3B5A2356EEC2001677CF /* AppDefaultsProtocol.swift */,
 				512D3B5C2356EEEC001677CF /* AppFileManager.swift */,
 				512D3B582356EEBA001677CF /* AppDebugLog.swift */,
 				512D3B4C2356BDA1001677CF /* AppNetworkViewController.swift */,
@@ -313,6 +315,15 @@
 				51DEF0AD235834BA0024E550 /* UIWindowExtensions.swift */,
 			);
 			path = UIExtensions;
+			sourceTree = "<group>";
+		};
+		51DEF0B623583F090024E550 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				512D3B5A2356EEC2001677CF /* AppDefaultsProtocol.swift */,
+				51DEF0B723583F550024E550 /* AppViewProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +467,7 @@
 				512D3B622356F11A001677CF /* UIViewControllerExtensions.swift in Sources */,
 				51D79C4323580EC100C13E22 /* UITableViewExtensions.swift in Sources */,
 				512D3B802357045F001677CF /* DataExtensions.swift in Sources */,
+				51DEF0B823583F550024E550 /* AppViewProtocol.swift in Sources */,
 				512D3B6C2356F2F3001677CF /* AESExtensions.swift in Sources */,
 				51D79C3D23580DDE00C13E22 /* UISegmentedControlExtensions.swift in Sources */,
 				512D3B7C2356FF7E001677CF /* CGSizeExtensions.swift in Sources */,
