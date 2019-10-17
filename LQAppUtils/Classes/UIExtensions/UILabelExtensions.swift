@@ -10,12 +10,13 @@
 import UIKit
 
 public extension UILabel {
-    convenience init(text: String = "",textColor:UIColor?,font: UIFont?,textAlignment:NSTextAlignment = .left) {
-        self.init()
-        self.text = text
-        self.textColor = textColor
-        self.font = font
-        self.textAlignment = textAlignment
+    @IBInspectable var adjustsFont:Bool{
+        set{
+            adjustsFontSizeToFitWidth = newValue
+        }
+        get{
+            return adjustsFontSizeToFitWidth
+        }
     }
     
     /// 获取Label需要的高度
@@ -30,6 +31,13 @@ public extension UILabel {
         return label.frame.height
     }
     
+    convenience init(text: String = "",textColor:UIColor?,font: UIFont?,textAlignment:NSTextAlignment = .left) {
+        self.init()
+        self.text = text
+        self.textColor = textColor
+        self.font = font
+        self.textAlignment = textAlignment
+    }
 }
 
 #endif

@@ -65,6 +65,7 @@
 		51DEF0B2235837080024E550 /* URLRequestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B1235837080024E550 /* URLRequestExtensions.swift */; };
 		51DEF0B4235837C20024E550 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B3235837C20024E550 /* UserDefaultsExtensions.swift */; };
 		51DEF0B823583F550024E550 /* AppViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B723583F550024E550 /* AppViewProtocol.swift */; };
+		51DEF0BA2358596F0024E550 /* NSAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B92358596F0024E550 /* NSAttributedStringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		51DEF0B1235837080024E550 /* URLRequestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestExtensions.swift; sourceTree = "<group>"; };
 		51DEF0B3235837C20024E550 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		51DEF0B723583F550024E550 /* AppViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewProtocol.swift; sourceTree = "<group>"; };
+		51DEF0B92358596F0024E550 /* NSAttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 				51DEF0AF235835270024E550 /* URLExtensions.swift */,
 				51DEF0B1235837080024E550 /* URLRequestExtensions.swift */,
 				51DEF0B3235837C20024E550 /* UserDefaultsExtensions.swift */,
+				51DEF0B92358596F0024E550 /* NSAttributedStringExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				512D3B882357116A001677CF /* DoubleExtensions.swift in Sources */,
 				512D3B182356BD4B001677CF /* AppDelegate.swift in Sources */,
 				51D79C37235809CC00C13E22 /* UINavigationItemExtensions.swift in Sources */,
+				51DEF0BA2358596F0024E550 /* NSAttributedStringExtensions.swift in Sources */,
 				51D79C31235805BE00C13E22 /* UILabelExtensions.swift in Sources */,
 				512D3B7A2356FED4001677CF /* CGPointExtensions.swift in Sources */,
 				512D3B782356FD78001677CF /* CGFloatExtensions.swift in Sources */,

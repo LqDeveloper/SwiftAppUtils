@@ -141,6 +141,14 @@ public extension UIButton {
         }
     }
     
+    @IBInspectable var adjustsFont:Bool{
+        set{
+            titleLabel?.adjustsFontSizeToFitWidth = newValue
+        }
+        get{
+            return titleLabel?.adjustsFontSizeToFitWidth ?? false
+        }
+    }
 }
 
 public extension UIButton {
