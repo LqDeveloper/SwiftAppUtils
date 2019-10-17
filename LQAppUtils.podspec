@@ -12,6 +12,6 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
   spec.platform     = :ios, "9.0"
   spec.swift_version = '5.0'
-  spec.frameworks  = "Security","WebKit","LocalAuthentication","CommonCrypto"
+  spec.frameworks  = "Security","WebKit","LocalAuthentication"
 end
 
