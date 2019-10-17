@@ -21,13 +21,7 @@ open class AppNetworkViewController:AppBaseTableViewController{
     private var backTitle:String
     private var selectTitle:String
     
-    private var titleLabel = {()->UILabel in
-        let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 30))
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        return label
-    }()
-    
+
     public init(cellTitles:[String],title:String = "网络环境管理",titleColor:UIColor = .black,saveTitle:String = "保存",backTitle:String = "返回",selectTitle:String = "选中",save:@escaping ((Int)->Void),select:@escaping (Int)->Void) {
         self.cellTitles = cellTitles
         self.saveTitle = saveTitle
@@ -36,9 +30,8 @@ open class AppNetworkViewController:AppBaseTableViewController{
         saveBlock = save
         selectItemBlock = select
         super.init(style: .grouped)
-        navigationItem.titleView = titleLabel
-        titleLabel.text = title
-        titleLabel.textColor = titleColor
+        self.title = title
+        navigationController?.navigationBar.setTitleFont(UIFont.boldSystemFont(ofSize: 16), color: .black)
         tableView.rowHeight = 60
         tableView.estimatedRowHeight = 0
         tableView.estimatedSectionHeaderHeight = 0
