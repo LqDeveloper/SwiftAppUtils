@@ -27,7 +27,7 @@ import CommonCrypto
 
 
 
-extension String{
+public extension String{
     /// AES 加密 字符串本身是要加密的内容
     ///
     /// - Parameters:
@@ -47,18 +47,18 @@ extension String{
 }
 
 
-extension Array {
-    public init(reserveCapacity: Int) {
+public extension Array {
+    init(reserveCapacity: Int) {
         self = Array<Element>()
         self.reserveCapacity(reserveCapacity)
     }
 }
 
-extension Array where Element == UInt8 {
+public extension Array where Element == UInt8 {
     /// 将16进制字符串转换成数组
     ///
     /// - Parameter hex: 16进制字符串
-    public init(hex: String) {
+    init(hex: String) {
         self.init(reserveCapacity: hex.unicodeScalars.lazy.underestimatedCount)
         var buffer: UInt8?
         var skip = hex.hasPrefix("0x") ? 2 : 0
@@ -96,7 +96,7 @@ extension Array where Element == UInt8 {
         }
     }
     
-    public func toHexString() -> String {
+    func toHexString() -> String {
         return `lazy`.reduce("") {
             var s = String($1, radix: 16)
             if s.count == 1 {

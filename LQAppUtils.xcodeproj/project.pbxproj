@@ -22,7 +22,6 @@
 		512D3B522356BDA2001677CF /* AppBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B4D2356BDA2001677CF /* AppBaseTableViewController.swift */; };
 		512D3B552356DF8F001677CF /* AppDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B542356DF8F001677CF /* AppDeviceInfo.swift */; };
 		512D3B572356EEA4001677CF /* AppKeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B562356EEA4001677CF /* AppKeychainManager.swift */; };
-		512D3B592356EEBA001677CF /* AppDebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B582356EEBA001677CF /* AppDebugLog.swift */; };
 		512D3B5B2356EEC2001677CF /* AppDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B5A2356EEC2001677CF /* AppDefaultsProtocol.swift */; };
 		512D3B5D2356EEEC001677CF /* AppFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B5C2356EEEC001677CF /* AppFileManager.swift */; };
 		512D3B602356EF50001677CF /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B5F2356EF50001677CF /* UIColorExtensions.swift */; };
@@ -107,7 +106,6 @@
 		512D3B4D2356BDA2001677CF /* AppBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBaseTableViewController.swift; sourceTree = "<group>"; };
 		512D3B542356DF8F001677CF /* AppDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDeviceInfo.swift; sourceTree = "<group>"; };
 		512D3B562356EEA4001677CF /* AppKeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeychainManager.swift; sourceTree = "<group>"; };
-		512D3B582356EEBA001677CF /* AppDebugLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDebugLog.swift; sourceTree = "<group>"; };
 		512D3B5A2356EEC2001677CF /* AppDefaultsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDefaultsProtocol.swift; sourceTree = "<group>"; };
 		512D3B5C2356EEEC001677CF /* AppFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFileManager.swift; sourceTree = "<group>"; };
 		512D3B5F2356EF50001677CF /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				512D3B5C2356EEEC001677CF /* AppFileManager.swift */,
-				512D3B582356EEBA001677CF /* AppDebugLog.swift */,
 				512D3B4C2356BDA1001677CF /* AppNetworkViewController.swift */,
 				512D3B542356DF8F001677CF /* AppDeviceInfo.swift */,
 				512D3B562356EEA4001677CF /* AppKeychainManager.swift */,
@@ -502,7 +499,6 @@
 				51D79C47235811C700C13E22 /* UITextViewExtensions.swift in Sources */,
 				512D3B682356F16E001677CF /* StringExtensions.swift in Sources */,
 				512D3B4F2356BDA2001677CF /* AppBaseViewController.swift in Sources */,
-				512D3B592356EEBA001677CF /* AppDebugLog.swift in Sources */,
 				512D3B1A2356BD4B001677CF /* SceneDelegate.swift in Sources */,
 				512D3B8D23571F77001677CF /* UIAlertControllerExtensions.swift in Sources */,
 				512D3B8623571103001677CF /* DispatchQueueExtensions.swift in Sources */,

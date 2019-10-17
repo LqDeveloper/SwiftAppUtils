@@ -8,7 +8,10 @@
 #if canImport(UIKit) && os(iOS)
 import UIKit
 
-open class AppBaseTableViewController: UITableViewController,AppViewProtocol{
+open class AppBaseTableViewController: UITableViewController{
+    public var statusBarStyle:UIStatusBarStyle = .default
+    public var statusBarHidden:Bool = false
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 11.0, *){
@@ -18,8 +21,22 @@ open class AppBaseTableViewController: UITableViewController,AppViewProtocol{
         }
     }
     
-    override open var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
+    public func setupStatusBarStyle(_ statusBarStyle:UIStatusBarStyle){
+        self.statusBarStyle = statusBarStyle
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    public func setupStatusBarHidden(_ statusBarHidden:Bool){
+        self.statusBarHidden = statusBarHidden
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    open override var preferredStatusBarStyle: UIStatusBarStyle{
+        return statusBarStyle
+    }
+    
+    open override var prefersStatusBarHidden: Bool{
+        return statusBarHidden
     }
 }
 

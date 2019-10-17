@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: AppBaseViewController {
+class ViewController: AppBaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad() 
@@ -19,7 +19,6 @@ class ViewController: AppBaseViewController {
         print(AppDeviceInfo.appName ?? "")
         print(AppDeviceInfo.buildNumber ?? "")
         print(AppDeviceInfo.runEnvironment)
-        
         
     }
     @IBAction func clickShow(_ sender: Any) {

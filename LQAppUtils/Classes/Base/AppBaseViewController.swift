@@ -8,7 +8,7 @@
 #if canImport(UIKit) && os(iOS)
 import UIKit
 
-open class AppBaseViewController: UIViewController,AppViewProtocol{
+open class AppBaseViewController: UIViewController{
     public var statusBarStyle:UIStatusBarStyle = .default
     public var statusBarHidden:Bool = false
     

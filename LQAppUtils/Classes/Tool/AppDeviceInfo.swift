@@ -7,6 +7,15 @@
 //
 #if canImport(UIKit) && os(iOS)
 import UIKit
+
+public func debugLog<T>(_ message:T,file : String = #file, funcName : String = #function, lineNum : Int = #line){
+    if AppDeviceInfo.isDebug{
+        let fileName = (file as NSString).lastPathComponent
+        print("\(fileName):[\(funcName)](\(lineNum)) - \(message)")
+    }
+}
+
+
 public struct  AppDeviceInfo{}
 
 /// 应用运行环境
@@ -27,6 +36,10 @@ public enum AppRunEnvironment {
 }
 
 public extension AppDeviceInfo{
+    static var isDebug:Bool{
+        return runEnvironment == .debug
+    }
+    
     static var runEnvironment: AppRunEnvironment {
         #if DEBUG
         return .debug
@@ -182,8 +195,8 @@ public extension AppDeviceInfo{
     }
     
     /// 应用版本
-    static var appVersion:String?{
-        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+    static var appVersion:String{
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
     }
     
     /// 构建版本号
