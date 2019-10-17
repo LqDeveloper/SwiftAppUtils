@@ -51,7 +51,7 @@ open class AppBaseTabBarController: UITabBarController {
     }
     
     open override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
-        return selectedViewController?.preferredStatusBarUpdateAnimation ?? .fade
+        return selectedViewController?.preferredStatusBarUpdateAnimation ?? .none
     }
 }
 

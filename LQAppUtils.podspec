@@ -1,12 +1,12 @@
 Pod::Spec.new do |spec|
   spec.name         = 'LQAppUtils'
 
-  spec.version      = '1.2.5'
+  spec.version      = '1.2.6'
   spec.license = { type: 'MIT', file: 'LICENSE' }
   spec.author       = { "Quan Li" => "1083099465@qq.com" }
   spec.summary      = 'Extensions, base classes, tools commonly used in iOS development'
   spec.homepage     = 'https://github.com/lqIphone/LQAppUtils'
-  spec.source       = { :git => 'https://github.com/lqIphone/LQAppUtils.git', :tag => '1.2.5' }
+  spec.source       = { :git => 'https://github.com/lqIphone/LQAppUtils.git', :tag => '1.2.6' }
   spec.source_files  = "LQAppUtils/Classes/**/*.swift"
   #spec.resource     = ""
   spec.requires_arc = true

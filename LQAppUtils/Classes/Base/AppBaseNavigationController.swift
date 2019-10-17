@@ -33,7 +33,7 @@ open class AppBaseNavigationController: UINavigationController {
     }
     
     open override  var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
-        return topViewController?.preferredStatusBarUpdateAnimation ?? .fade
+        return topViewController?.preferredStatusBarUpdateAnimation ?? .none
     }
 }
 #endif

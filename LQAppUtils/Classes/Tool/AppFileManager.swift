@@ -221,6 +221,12 @@ public extension AppFileManager{
             return 0
         }
     }
+    
+    /// 计算大小
+    /// - Parameter size: 1025 bytes = 1KB, 1024 * 1024 = 1MB ....
+    static func calculateSize(size:Int64) -> String{
+        return ByteCountFormatter.string(fromByteCount: size, countStyle: .binary)
+    }
 }
 
 #endif

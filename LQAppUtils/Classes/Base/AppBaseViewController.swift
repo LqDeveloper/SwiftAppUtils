@@ -9,7 +9,6 @@
 import UIKit
 
 open class AppBaseViewController: UIViewController{
-    public var statusBarStyle:UIStatusBarStyle = .default
     public var statusBarHidden:Bool = false
     
     public var isHiddenNavigationBar:Bool{
@@ -27,18 +26,13 @@ open class AppBaseViewController: UIViewController{
         }
     }
     
-    public func setupStatusBarStyle(_ statusBarStyle:UIStatusBarStyle){
-        self.statusBarStyle = statusBarStyle
-        setNeedsStatusBarAppearanceUpdate()
-    }
-    
     public func setupStatusBarHidden(_ statusBarHidden:Bool){
         self.statusBarHidden = statusBarHidden
         setNeedsStatusBarAppearanceUpdate()
     }
     
     open override var preferredStatusBarStyle: UIStatusBarStyle{
-        return statusBarStyle
+        return .lightContent
     }
     
     open override var prefersStatusBarHidden: Bool{

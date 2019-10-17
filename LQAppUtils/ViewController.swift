@@ -22,12 +22,12 @@ class ViewController: AppBaseViewController{
         
     }
     @IBAction func clickShow(_ sender: Any) {
-        setupStatusBarStyle(.lightContent)
+//        setupStatusBarStyle(.lightContent)
         aes()
     }
     
     @IBAction func clickHiden(_ sender: Any) {
-        setupStatusBarStyle(.default)
+//        setupStatusBarStyle(.default)
     }
     
     func aes(){

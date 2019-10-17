@@ -245,8 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				512D3B4B2356BDA1001677CF /* AppBaseTabBarController.swift */,
-				512D3B4A2356BDA1001677CF /* AppBaseViewController.swift */,
 				512D3B492356BDA1001677CF /* AppBaseNavigationController.swift */,
+				512D3B4A2356BDA1001677CF /* AppBaseViewController.swift */,
 				512D3B4D2356BDA2001677CF /* AppBaseTableViewController.swift */,
 			);
 			path = Base;
