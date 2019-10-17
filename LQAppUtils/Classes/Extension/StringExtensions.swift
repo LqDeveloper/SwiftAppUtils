@@ -182,14 +182,6 @@ public extension String {
         return URL(string: self)?.isFileURL ?? false
     }
     
-    
-    /// 判断是否是数字
-    var isNumeric: Bool {
-        let scanner = Scanner(string: self)
-        scanner.locale = NSLocale.current
-        return scanner.scanDecimal(nil) && scanner.isAtEnd
-    }
-    
     /// 检查字符串是否仅包含数字
     ///
     ///     "123".isDigits -> true
