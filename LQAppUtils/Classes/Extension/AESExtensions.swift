@@ -15,12 +15,12 @@ import CommonCrypto
  let key256   = "12345678901234561234567890123456"   // 32 bytes for AES256
  let iv       = "abcdefghijklmnop"                   // 16 bytes for AES128
  
- guard let enData = password.aesEncrypt(key: key256, iv: nil) else{
+ guard let enData = password.aesEncrypt(key: key128, iv: iv) else{
  return
  }
  let enStr = enData.toHexString()
  print(enStr)
- let deStr = Data.init(hex: enStr).aesDecrypt(key: key256, iv: nil)
+ let deStr = Data.init(hex: enStr).aesDecrypt(key: key128, iv: iv)
  print(deStr!)
  
  */
@@ -225,8 +225,8 @@ public extension Data{
         let ivBytes = ivData?.bytes
         var bytesDecrypted: size_t = 0
         
-        let status = cryptData.withUnsafeMutableBytes { cryptBytes in
-            CCCrypt(operation, algorithm, options, keyBytes, keyLength, ivBytes, dateBytes, dataLength, cryptBytes, cryptLength, &bytesDecrypted)
+        let status = cryptData.withUnsafeMutableBytes { (rawBufferPoint) -> CCCryptorStatus in
+            return CCCrypt(operation, algorithm, options, keyBytes, keyLength, ivBytes, dateBytes, dataLength, rawBufferPoint.baseAddress, cryptLength, &bytesDecrypted)
         }
         
         guard Int32(status) == Int32(kCCSuccess) else {
