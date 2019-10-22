@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "9.0"
   spec.swift_version = '5.0'
   spec.default_subspec = 'Core'
-  s.cocoapods_version = '>= 1.4.0' 
+  spec.cocoapods_version = '>= 1.4.0' 
 
   spec.subspec  'Core' do |sub|
     sub.source_files  = "LQAppUtils/Core/**/*.swift"
