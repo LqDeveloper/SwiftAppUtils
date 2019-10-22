@@ -17,8 +17,8 @@ public enum RouterType {
 
 
 public struct AppRouter{
-    public let currentVC:MVVMViewController
-    public init(viewController:MVVMViewController){
+    public let currentVC:UIViewController
+    public init(viewController:UIViewController){
         currentVC = viewController
     }
     
