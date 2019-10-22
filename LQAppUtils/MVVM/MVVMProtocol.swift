@@ -5,7 +5,7 @@
 //  Created by Quan Li on 2019/9/29.
 //  Copyright © 2019 Quan Li. All rights reserved.
 //
-
+#if canImport(Foundation)
 import Foundation
 
 public protocol MVVMVCProtocol{
@@ -26,3 +26,4 @@ public protocol MVVMLazyViewModelProtocol {
     var input: Input { get }
     var output: Output { get }
 }
+#endif

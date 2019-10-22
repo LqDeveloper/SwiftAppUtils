@@ -5,7 +5,7 @@
 //  Created by Quan Li on 2019/10/22.
 //  Copyright © 2019 Quan Li. All rights reserved.
 //
-
+#if canImport(Foundation)
 import UIKit
 
 open class MVVMViewController: AppBaseViewController,MVVMVCProtocol,AppViewProtocol {
@@ -19,3 +19,5 @@ open class MVVMViewController: AppBaseViewController,MVVMVCProtocol,AppViewProto
     
     public func bindViewModel() {}
 }
+
+#endif
