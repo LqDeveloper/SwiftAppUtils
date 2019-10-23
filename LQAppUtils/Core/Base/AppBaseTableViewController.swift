@@ -11,8 +11,18 @@ import UIKit
 open class AppBaseTableViewController: UITableViewController{
     public var statusBarHidden:Bool = false
     
+    public var isHiddenNavigationBar:Bool{
+        set{
+            navigationController?.setNavigationBarHidden(newValue, animated: true)
+        }
+        get{
+            return navigationController?.navigationBar.isHidden ?? false
+        }
+    }
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         if #available(iOS 11.0, *){
             self.tableView.contentInsetAdjustmentBehavior = .never
         }else{
