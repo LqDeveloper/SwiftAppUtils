@@ -10,6 +10,7 @@ import Foundation
 
 public protocol MVVMVCProtocol{
     func app_bindViewModel()
+    func app_bindEvent()
 }
 
 public protocol MVVMViewModelProtocol {

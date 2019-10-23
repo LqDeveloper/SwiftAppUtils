@@ -16,6 +16,6 @@ open class MVVMTableViewController: AppBaseTableViewController,MVVMVCProtocol,Ap
         router = AppRouter.init(viewController: self)
     }
     
-    public func app_bindViewModel() {}
-    
+    open func app_bindViewModel() {}
+    open func app_bindEvent() {}
 }

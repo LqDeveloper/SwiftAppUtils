@@ -8,10 +8,10 @@
 #if canImport(UIKit)
 import UIKit
 
-public enum RouterType {
-    case push
-    case hideBarPush
-    case present
+public enum AppRouterType {
+    case push(vc:UIViewController)
+    case hidesBottomBarPush(vc:UIViewController)
+    case present(vc:UIViewController)
     case back
 }
 
@@ -22,15 +22,15 @@ public struct AppRouter{
         currentVC = viewController
     }
     
-    public func switchToViewController(type:RouterType,vc:UIViewController){
+    public func switchToViewController(type:AppRouterType){
         switch type {
-        case .push:
+        case .push(let vc):
             currentVC.navigationController?.pushViewController(vc)
-        case .hideBarPush:
+        case .hidesBottomBarPush(let vc):
             currentVC.hidesBottomBarWhenPushed = true
             currentVC.navigationController?.pushViewController(vc)
             currentVC.hidesBottomBarWhenPushed = false
-        case .present:
+        case .present(let vc):
             currentVC.present(vc, animated: true, completion: nil)
         case .back:
             if currentVC.presentationController != nil {
