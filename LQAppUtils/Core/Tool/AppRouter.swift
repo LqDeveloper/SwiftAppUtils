@@ -9,9 +9,9 @@
 import UIKit
 
 public enum AppRouterType {
-    case push(vc:UIViewController)
-    case hidesBottomBarPush(vc:UIViewController)
-    case present(vc:UIViewController)
+    case push(_ vc:UIViewController)
+    case hidesBottomBarPush(_ vc:UIViewController)
+    case present(_ vc:UIViewController)
     case back
 }
 

@@ -8,7 +8,7 @@
 #if canImport(UIKit) && os(iOS)
 import UIKit
 
-open class AppBaseTableViewController: UITableViewController,AppViewProtocol{
+open class AppBaseTableViewController: UITableViewController{
     public var statusBarHidden:Bool = false
     
     override open func viewDidLoad() {
@@ -33,13 +33,5 @@ open class AppBaseTableViewController: UITableViewController,AppViewProtocol{
     open override var prefersStatusBarHidden: Bool{
         return statusBarHidden
     }
-    
-    open func app_setupNavigation(){}
-    open func app_adaptDevice(){}
-    open func app_addViews(){}
-    open func app_makeLayout(){}
-    open func app_requestData(){}
-    open func app_registerNotifications(){}
-    open func app_removeNotifications(){}
 }
 #endif

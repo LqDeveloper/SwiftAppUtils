@@ -7,13 +7,13 @@
 //
 #if canImport(Foundation)
 import Foundation
-public protocol AppViewProtocol{
-    func app_setupNavigation()
-    func app_adaptDevice()
-    func app_addViews()
-    func app_makeLayout()
-    func app_requestData()
-    func app_registerNotifications()
-    func app_removeNotifications()
+@objc public  protocol AppViewProtocol{
+    @objc func app_addViews()
+    @objc func app_makeLayout()
+    @objc optional func app_setupNavigation()
+    @objc optional func app_adaptDevice()
+    @objc optional func app_requestData()
+    @objc optional func app_registerNotifications()
+    @objc optional func app_removeNotifications()
 }
 #endif
