@@ -77,6 +77,7 @@
 		512D3B8D23571F77001677CF /* UIAlertControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B8C23571F77001677CF /* UIAlertControllerExtensions.swift */; };
 		512D3B91235723CF001677CF /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B90235723CF001677CF /* UIButtonExtensions.swift */; };
 		512D3B9323572710001677CF /* UIEdgeInsetsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B9223572710001677CF /* UIEdgeInsetsExtensions.swift */; };
+		512EEAD5235FEC6200E5E743 /* MVVMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512EEAD4235FEC6200E5E743 /* MVVMTableViewController.swift */; };
 		51D79C2B2358000F00C13E22 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D79C2A2358000F00C13E22 /* UICollectionViewExtensions.swift */; };
 		51D79C2D2358025400C13E22 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D79C2C2358025400C13E22 /* UIImageExtensions.swift */; };
 		51D79C2F235804E300C13E22 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D79C2E235804E300C13E22 /* UIImageViewExtensions.swift */; };
@@ -194,6 +195,7 @@
 		512D3B8C23571F77001677CF /* UIAlertControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtensions.swift; sourceTree = "<group>"; };
 		512D3B90235723CF001677CF /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		512D3B9223572710001677CF /* UIEdgeInsetsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtensions.swift; sourceTree = "<group>"; };
+		512EEAD4235FEC6200E5E743 /* MVVMTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMTableViewController.swift; sourceTree = "<group>"; };
 		51D79C2A2358000F00C13E22 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		51D79C2C2358025400C13E22 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		51D79C2E235804E300C13E22 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				5103DBDB235ED9C700E62F78 /* MVVMProtocol.swift */,
 				5103DBD9235ED57C00E62F78 /* MVVMViewController.swift */,
+				512EEAD4235FEC6200E5E743 /* MVVMTableViewController.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				51D79C3F23580E0B00C13E22 /* UIStackViewExtensions.swift in Sources */,
 				5103DBC3235ECB0700E62F78 /* LQUIUtils+UISwipeGestureRecognizer.swift in Sources */,
 				512D3B7E235700F6001677CF /* CharacterExtensions.swift in Sources */,
+				512EEAD5235FEC6200E5E743 /* MVVMTableViewController.swift in Sources */,
 				512D3B552356DF8F001677CF /* AppDeviceInfo.swift in Sources */,
 				5103DBCD235ECB0700E62F78 /* LQUIUtilsNameSpace.swift in Sources */,
 				51D79C47235811C700C13E22 /* UITextViewExtensions.swift in Sources */,
