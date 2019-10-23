@@ -12,14 +12,7 @@ public protocol MVVMVCProtocol{
     func bindViewModel()
 }
 
-//第一种方法--不用Subject
-public protocol MVVMViewModelProtocol{
-    associatedtype Input
-    associatedtype OutPut
-}
-
-//第二种方法--用Subject
-public protocol MVVMLazyViewModelProtocol {
+public protocol MVVMViewModelProtocol {
     associatedtype Input
     associatedtype Output
     

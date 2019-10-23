@@ -14,7 +14,6 @@ open class MVVMViewController: AppBaseViewController,MVVMVCProtocol,AppViewProto
     open override func viewDidLoad() {
         super.viewDidLoad()
         router = AppRouter.init(viewController: self)
-        bindViewModel()
     }
     
     public func bindViewModel() {}
