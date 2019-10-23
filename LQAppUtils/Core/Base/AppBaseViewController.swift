@@ -40,7 +40,7 @@ open class AppBaseViewController: UIViewController{
     }
 }
 
-extension UIViewController{
+public extension UIViewController{
     @IBInspectable var normalImage:UIImage?{
         get{
             return tabBarItem.image
