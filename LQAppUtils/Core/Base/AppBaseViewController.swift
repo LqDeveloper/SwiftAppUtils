@@ -8,7 +8,7 @@
 #if canImport(UIKit) && os(iOS)
 import UIKit
 
-open class AppBaseViewController: UIViewController{
+open class AppBaseViewController: UIViewController,AppViewProtocol{
     public var statusBarHidden:Bool = false
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +30,15 @@ open class AppBaseViewController: UIViewController{
     open override var prefersStatusBarHidden: Bool{
         return statusBarHidden
     }
+    
+    open func app_setupNavigation(){}
+    open func app_adaptDevice(){}
+    open func app_addViews(){}
+    open func app_makeLayout(){}
+    open func app_requestData(){}
+    open func app_registerNotifications(){}
+    open func app_removeNotifications(){}
 }
-
-
 
 /// 当前Navigation是隐藏的，跳转到下个ViewController 显示 Navigation ，只需要在隐藏VC中添加navigationController?.delegate = self
 extension AppBaseViewController:UINavigationControllerDelegate{

@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class MVVMTableViewController: AppBaseTableViewController,MVVMVCProtocol,AppViewProtocol {
+open class MVVMTableViewController: AppBaseTableViewController,MVVMVCProtocol{
     public var router: AppRouter?
     
     open override func viewDidLoad() {

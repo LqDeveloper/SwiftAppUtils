@@ -8,7 +8,7 @@
 #if canImport(Foundation)
 import UIKit
 
-open class MVVMViewController: AppBaseViewController,MVVMVCProtocol,AppViewProtocol {
+open class MVVMViewController: AppBaseViewController,MVVMVCProtocol{
     public var router: AppRouter?
     
     open override func viewDidLoad() {
