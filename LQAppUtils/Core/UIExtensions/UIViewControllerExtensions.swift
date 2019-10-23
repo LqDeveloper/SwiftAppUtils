@@ -144,7 +144,7 @@ public extension UIViewController{
         }
     }
     
-    @IBInspectable var naviBarHiden:Bool{
+    @IBInspectable var navigationBarHiden:Bool{
         get{
             return navigationController?.navigationBar.isHidden ?? false
         }
