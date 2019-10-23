@@ -115,4 +115,43 @@ public extension UIViewController{
         present(popoverContent, animated: animated, completion: completion)
     }
 }
+
+public extension UIViewController{
+    @IBInspectable var normalImage:UIImage?{
+        get{
+            return tabBarItem.image
+        }
+        set{
+            tabBarItem.image = newValue?.withRenderingMode(.alwaysOriginal)
+        }
+    }
+    
+    @IBInspectable var selectImage:UIImage?{
+        get{
+            return tabBarItem.selectedImage
+        }
+        set{
+            tabBarItem.selectedImage = newValue?.withRenderingMode(.alwaysOriginal)
+        }
+    }
+    
+    @IBInspectable var tabTitle:String?{
+        get{
+            return tabBarItem.title
+        }
+        set{
+            tabBarItem.title = newValue
+        }
+    }
+    
+    @IBInspectable var naviBarHiden:Bool{
+        get{
+            return navigationController?.navigationBar.isHidden ?? false
+        }
+        set{
+            navigationController?.setNavigationBarHidden(newValue, animated: true)
+        }
+    }
+}
+
 #endif

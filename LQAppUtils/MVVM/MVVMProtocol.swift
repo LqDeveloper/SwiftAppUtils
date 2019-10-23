@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol MVVMVCProtocol{
-    func bindViewModel()
+    func app_bindViewModel()
 }
 
 public protocol MVVMViewModelProtocol {

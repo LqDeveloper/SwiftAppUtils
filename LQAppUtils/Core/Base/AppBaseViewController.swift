@@ -10,15 +10,6 @@ import UIKit
 
 open class AppBaseViewController: UIViewController{
     public var statusBarHidden:Bool = false
-    
-    public var isHiddenNavigationBar:Bool{
-        set{
-            navigationController?.setNavigationBarHidden(newValue, animated: true)
-        }
-        get{
-            return navigationController?.navigationBar.isHidden ?? false
-        }
-    }
     override open func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -41,43 +32,6 @@ open class AppBaseViewController: UIViewController{
     }
 }
 
-public extension UIViewController{
-    @IBInspectable var normalImage:UIImage?{
-        get{
-            return tabBarItem.image
-        }
-        set{
-            tabBarItem.image = newValue?.withRenderingMode(.alwaysOriginal)
-        }
-    }
-    
-    @IBInspectable var selectImage:UIImage?{
-        get{
-            return tabBarItem.selectedImage
-        }
-        set{
-            tabBarItem.selectedImage = newValue?.withRenderingMode(.alwaysOriginal)
-        }
-    }
-    
-    @IBInspectable var tabTitle:String?{
-        get{
-            return tabBarItem.title
-        }
-        set{
-            tabBarItem.title = newValue
-        }
-    }
-    
-    @IBInspectable var naviBarHiden:Bool{
-        get{
-            return navigationController?.navigationBar.isHidden ?? false
-        }
-        set{
-            navigationController?.setNavigationBarHidden(newValue, animated: true)
-        }
-    }
-}
 
 
 /// 当前Navigation是隐藏的，跳转到下个ViewController 显示 Navigation ，只需要在隐藏VC中添加navigationController?.delegate = self

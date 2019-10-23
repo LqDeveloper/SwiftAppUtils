@@ -16,7 +16,7 @@ open class MVVMViewController: AppBaseViewController,MVVMVCProtocol,AppViewProto
         router = AppRouter.init(viewController: self)
     }
     
-    public func bindViewModel() {}
+    public func app_bindViewModel() {}
 }
 
 #endif
