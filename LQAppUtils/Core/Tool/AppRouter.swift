@@ -33,12 +33,16 @@ public struct AppRouter{
         case .present(let vc):
             currentVC.present(vc, animated: true, completion: nil)
         case .back:
-            if currentVC.presentationController != nil {
+            if currentVC.presentingViewController != nil {
                 currentVC.dismiss(animated: true, completion: nil)
             } else {
                 _ = currentVC.navigationController?.popViewController(animated: true)
             }
         }
+    }
+    
+    public func backToVC(){
+        switchToViewController(type: .back)
     }
 }
 

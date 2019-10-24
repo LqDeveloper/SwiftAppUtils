@@ -9,7 +9,7 @@
 import UIKit
 
 open class AppBaseTableViewController: UITableViewController{
-    public var statusBarHidden:Bool = false
+    private var statusBarHidden:Bool = false
     
     override open func viewDidLoad() {
         super.viewDidLoad()

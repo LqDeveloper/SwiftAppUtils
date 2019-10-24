@@ -9,7 +9,7 @@
 import UIKit
 
 open class AppBaseViewController: UIViewController{
-    public var statusBarHidden:Bool = false
+    private var statusBarHidden:Bool = false
     override open func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
