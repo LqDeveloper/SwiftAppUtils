@@ -13,6 +13,7 @@ import UIKit
 public extension UITextField {
     enum TextType {
         case emailAddress
+        case phoneNumber
         case password
         case generic
     }
@@ -28,6 +29,10 @@ public extension UITextField {
         }
         set {
             switch newValue {
+            case .phoneNumber:
+                keyboardType = .phonePad
+                isSecureTextEntry = false
+                placeholder = "Phone Number"
             case .emailAddress:
                 keyboardType = .emailAddress
                 autocorrectionType = .no
@@ -105,32 +110,44 @@ public extension UITextField {
     }
     
     
-    func addPaddingLeft(_ padding: CGFloat) {
+    func addPaddingLeft(_ padding: CGFloat,viewModel:UITextField.ViewMode = .always) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: frame.height))
         leftView = paddingView
-        leftViewMode = .always
+        leftViewMode = viewModel
     }
     
-    func addPaddingLeftIcon(_ image: UIImage, padding: CGFloat) {
+    func addPaddingLeftIcon(_ image: UIImage, padding: CGFloat,viewModel:UITextField.ViewMode = .always) {
         let imageView = UIImageView(image: image)
         imageView.contentMode = .center
         leftView = imageView
         leftView?.frame.size = CGSize(width: image.size.width + padding, height: image.size.height)
-        leftViewMode = .always
+        leftViewMode = viewModel
     }
     
-    func addPaddingRight(_ padding: CGFloat) {
+    func addLeftView(_ view: UIView, padding: CGFloat = 0,viewModel:UITextField.ViewMode = .always) {
+        leftView = view
+        leftView?.frame.size = CGSize(width: view.size.width + padding, height: view.size.height)
+        leftViewMode = viewModel
+    }
+    
+    func addPaddingRight(_ padding: CGFloat,viewModel:UITextField.ViewMode = .always) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: frame.height))
         rightView = paddingView
-        rightViewMode = .always
+        rightViewMode = viewModel
     }
     
-    func addPaddingRightIcon(_ image: UIImage, padding: CGFloat) {
+    func addPaddingRightIcon(_ image: UIImage, padding: CGFloat,viewModel:UITextField.ViewMode = .always) {
         let imageView = UIImageView(image: image)
         imageView.contentMode = .center
         rightView = imageView
         rightView?.frame.size = CGSize(width: image.size.width + padding, height: image.size.height)
-        rightViewMode = .always
+        rightViewMode = viewModel
+    }
+    
+    func addRightView(_ view: UIView, padding: CGFloat = 0,viewModel:UITextField.ViewMode = .always) {
+        rightView = view
+        rightView?.frame.size = CGSize(width: view.size.width + padding, height: view.size.height)
+        rightViewMode = viewModel
     }
 }
 

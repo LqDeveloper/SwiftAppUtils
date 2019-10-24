@@ -12,7 +12,6 @@ class ViewController: AppBaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad() 
-        
     }
     @IBAction func clickShow(_ sender: Any) {
 //        setupStatusBarStyle(.lightContent)

@@ -185,14 +185,20 @@ public extension UIButton {
         titleLabel?.textAlignment = textAlignment
     }
     
-    convenience init(title: String = "",normalImage:UIImage? ,selectImage:UIImage? = nil) {
+    convenience init(title: String,normalImage:UIImage? ,selectImage:UIImage? = nil) {
         self.init()
         setTitle(title, for: .normal)
         setImage(normalImage, for: .normal)
         setImage(selectImage, for: .selected)
     }
     
-    var font:UIFont{
+    convenience init(normalImage:UIImage? ,selectImage:UIImage? = nil) {
+        self.init()
+        setImage(normalImage, for: .normal)
+        setImage(selectImage, for: .selected)
+    }
+    
+    var titleFont:UIFont{
         set{
             titleLabel?.font = newValue
         }
