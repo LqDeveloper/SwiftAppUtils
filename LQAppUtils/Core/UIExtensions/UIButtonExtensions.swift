@@ -191,6 +191,15 @@ public extension UIButton {
         setImage(normalImage, for: .normal)
         setImage(selectImage, for: .selected)
     }
+    
+    var font:UIFont{
+        set{
+            titleLabel?.font = newValue
+        }
+        get{
+            return titleLabel?.font ?? UIFont.systemFont(ofSize: UIFont.buttonFontSize)
+        }
+    }
 }
 
 #endif
