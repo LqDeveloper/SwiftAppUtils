@@ -116,7 +116,10 @@ public extension UITextField {
         leftViewMode = viewModel
     }
     
-    func addPaddingLeftIcon(_ image: UIImage, padding: CGFloat,viewModel:UITextField.ViewMode = .always) {
+    func addLeftIcon(_ iconImage: UIImage?, padding: CGFloat = 0,viewModel:UITextField.ViewMode = .always) {
+        guard let image = iconImage  else {
+            return
+        }
         let imageView = UIImageView(image: image)
         imageView.contentMode = .center
         leftView = imageView
@@ -136,7 +139,10 @@ public extension UITextField {
         rightViewMode = viewModel
     }
     
-    func addPaddingRightIcon(_ image: UIImage, padding: CGFloat,viewModel:UITextField.ViewMode = .always) {
+    func addRightIcon(_ iconImage: UIImage?, padding: CGFloat  = 0,viewModel:UITextField.ViewMode = .always) {
+        guard let image = iconImage  else {
+            return
+        }
         let imageView = UIImageView(image: image)
         imageView.contentMode = .center
         rightView = imageView
