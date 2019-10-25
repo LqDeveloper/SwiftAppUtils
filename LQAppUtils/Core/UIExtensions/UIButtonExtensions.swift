@@ -152,6 +152,33 @@ public extension UIButton {
 }
 
 public extension UIButton {
+    convenience init(title: String?,font: UIFont?,normalColor:UIColor?,textAlignment:NSTextAlignment = .left,selectColor:UIColor? = nil ,normalImage:UIImage? = nil,selectImage:UIImage? = nil) {
+        self.init()
+        setTitle(title, for: .normal)
+        titleLabel?.font = font
+        titleLabel?.textAlignment = textAlignment
+        setTitleColor(normalColor, for: .normal)
+        setTitleColor(selectColor, for: .selected)
+        setImage(normalImage, for: .normal)
+        setImage(selectImage, for: .selected)
+    }
+    
+    convenience init(normalImage:UIImage? ,selectImage:UIImage? = nil) {
+        self.init()
+        setImage(normalImage, for: .normal)
+        setImage(selectImage, for: .selected)
+    }
+    
+    var titleFont:UIFont{
+        set{
+            titleLabel?.font = newValue
+        }
+        get{
+            return titleLabel?.font ?? UIFont.systemFont(ofSize: UIFont.buttonFontSize)
+        }
+    }
+    
+    
     
     private var states: [UIControl.State] {
         return [.normal, .selected, .highlighted, .disabled]
@@ -176,36 +203,37 @@ public extension UIButton {
         contentEdgeInsets = UIEdgeInsets(top: 0, left: insetAmount, bottom: 0, right: insetAmount)
     }
     
-    convenience init(title: String = "",normalColor:UIColor? ,selectColor:UIColor? = nil,font: UIFont?,textAlignment:NSTextAlignment = .left) {
-        self.init()
-        setTitle(title, for: .normal)
-        setTitleColor(normalColor, for: .normal)
-        setTitleColor(selectColor, for: .selected)
-        titleLabel?.font = font
-        titleLabel?.textAlignment = textAlignment
+    func setIconInLeftWithSpacing(space:CGFloat){
+        titleEdgeInsets = UIEdgeInsets.init(top: 0, left: space/2, bottom: 0, right: -space/2)
+        imageEdgeInsets = UIEdgeInsets.init(top: 0, left: -space/2, bottom: 0, right: space/2)
     }
     
-    convenience init(title: String,normalImage:UIImage? ,selectImage:UIImage? = nil) {
-        self.init()
-        setTitle(title, for: .normal)
-        setImage(normalImage, for: .normal)
-        setImage(selectImage, for: .selected)
+    func setIconInRightWithSpacing(space:CGFloat){
+        let imageWidth = imageView?.bounds.size.width ?? 0
+        let titleWidth = titleLabel?.bounds.size.width ?? 0
+        imageEdgeInsets = UIEdgeInsets.init(top: 0, left: (titleWidth + space/2), bottom: 0, right: -(titleWidth + space/2))
+        titleEdgeInsets = UIEdgeInsets.init(top: 0, left:  -(imageWidth + space/2), bottom: 0, right: (imageWidth + space/2))
     }
     
-    convenience init(normalImage:UIImage? ,selectImage:UIImage? = nil) {
-        self.init()
-        setImage(normalImage, for: .normal)
-        setImage(selectImage, for: .selected)
+    func setIconInTopWithSpacing(space:CGFloat){
+        let imageWidth = imageView?.bounds.size.width ?? 0
+        let imageHeight = imageView?.bounds.size.height ?? 0
+        let titleWidth = titleLabel?.bounds.size.width ?? 0
+        let titleHeight = titleLabel?.bounds.size.height ?? 0
+        imageEdgeInsets = UIEdgeInsets.init(top:-(imageHeight/2 + space/2), left: titleWidth/2, bottom: (imageHeight/2 + space/2), right: -(titleWidth/2))
+        titleEdgeInsets = UIEdgeInsets.init(top: (titleHeight/2 + space/2), left:  -(imageWidth/2), bottom: -(titleHeight/2 + space/2), right: imageWidth/2)
     }
     
-    var titleFont:UIFont{
-        set{
-            titleLabel?.font = newValue
-        }
-        get{
-            return titleLabel?.font ?? UIFont.systemFont(ofSize: UIFont.buttonFontSize)
-        }
+    
+    func setIconInBottomWithSpacing(space:CGFloat){
+        let imageWidth = imageView?.bounds.size.width ?? 0
+        let imageHeight = imageView?.bounds.size.height ?? 0
+        let titleWidth = titleLabel?.bounds.size.width ?? 0
+        let titleHeight = titleLabel?.bounds.size.height ?? 0
+        imageEdgeInsets = UIEdgeInsets.init(top:(imageHeight/2 + space/2), left: titleWidth/2, bottom: -(imageHeight/2 + space/2), right: -(titleWidth/2))
+        titleEdgeInsets = UIEdgeInsets.init(top: -(titleHeight/2 + space/2), left:  -(imageWidth/2), bottom: (titleHeight/2 + space/2), right: imageWidth/2)
     }
+    
 }
 
 #endif

@@ -11,17 +11,10 @@ import UIKit
 class ViewController: AppBaseViewController{
     
     override func viewDidLoad() {
-        super.viewDidLoad() 
-    }
-    @IBAction func clickShow(_ sender: Any) {
-//        setupStatusBarStyle(.lightContent)
-        aes()
-    }
+        super.viewDidLoad()
     
-    @IBAction func clickHiden(_ sender: Any) {
-//        setupStatusBarStyle(.default)
     }
-    
+ 
     func aes(){
         let password = "UserPassword1!"
         let key128   = "1234567890123456"                   // 16 bytes for AES128
