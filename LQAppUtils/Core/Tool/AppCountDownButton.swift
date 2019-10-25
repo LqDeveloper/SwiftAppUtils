@@ -42,7 +42,7 @@ open class AppCountDownButton: UIButton {
     }
     
     public func configBtn(){
-         addTarget(self, action: #selector(clickButton), for: .touchUpInside)
+        addTarget(self, action: #selector(clickButton), for: .touchUpInside)
     }
     
     @objc func clickButton(){
@@ -54,9 +54,7 @@ open class AppCountDownButton: UIButton {
         guard countTimer == nil else {
             return
         }
-        countTimer = Timer.init(timeInterval: 1, repeats: true, block: {[weak self] (_) in
-            self?.timerRun()
-        })
+        countTimer = Timer.init(timeInterval: 1.0, target: self, selector: #selector(timerRun), userInfo: nil, repeats: true)
         guard let count = countTimer else {
             return
         }
@@ -64,7 +62,7 @@ open class AppCountDownButton: UIButton {
         RunLoop.current.add(count, forMode: .default)
     }
     
-    func timerRun(){
+    @objc func timerRun(){
         if remainCount == 1{
             stopCountDown()
             delegate?.countDownComplete(btn: self)

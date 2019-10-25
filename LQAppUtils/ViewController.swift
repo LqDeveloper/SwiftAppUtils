@@ -37,6 +37,11 @@ class ViewController: AppBaseViewController{
         let deStr = Data.init(hex: enStr).aesDecrypt(key: key128, iv: iv)
         print(deStr!)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        countButton.stopCountDown()
+    }
 }
 
 extension ViewController:AppCountDownDelegate{
