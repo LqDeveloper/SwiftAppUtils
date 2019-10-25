@@ -76,6 +76,7 @@
 		512D3B8D23571F77001677CF /* UIAlertControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B8C23571F77001677CF /* UIAlertControllerExtensions.swift */; };
 		512D3B91235723CF001677CF /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B90235723CF001677CF /* UIButtonExtensions.swift */; };
 		512D3B9323572710001677CF /* UIEdgeInsetsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B9223572710001677CF /* UIEdgeInsetsExtensions.swift */; };
+		515D73562362C65F00B83605 /* AppCountDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515D73552362C65F00B83605 /* AppCountDownButton.swift */; };
 		51A048A82362BE7E006F29A9 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51A048A72362BE7D006F29A9 /* image.jpg */; };
 		51D79C2B2358000F00C13E22 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D79C2A2358000F00C13E22 /* UICollectionViewExtensions.swift */; };
 		51D79C2D2358025400C13E22 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D79C2C2358025400C13E22 /* UIImageExtensions.swift */; };
@@ -194,6 +195,7 @@
 		512D3B8C23571F77001677CF /* UIAlertControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtensions.swift; sourceTree = "<group>"; };
 		512D3B90235723CF001677CF /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		512D3B9223572710001677CF /* UIEdgeInsetsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtensions.swift; sourceTree = "<group>"; };
+		515D73552362C65F00B83605 /* AppCountDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCountDownButton.swift; sourceTree = "<group>"; };
 		51A048A72362BE7D006F29A9 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		51D79C2A2358000F00C13E22 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		51D79C2C2358025400C13E22 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				512D3B4C2356BDA1001677CF /* AppNetworkViewController.swift */,
 				512D3B542356DF8F001677CF /* AppDeviceInfo.swift */,
 				512D3B562356EEA4001677CF /* AppKeychainManager.swift */,
+				515D73552362C65F00B83605 /* AppCountDownButton.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515D73562362C65F00B83605 /* AppCountDownButton.swift in Sources */,
 				5103DBB6235ECB0700E62F78 /* LQUIUtils+UIImageView.swift in Sources */,
 				5103DBC0235ECB0700E62F78 /* LQUIUtils+UIWebView.swift in Sources */,
 				51DEF0AE235834BA0024E550 /* UIWindowExtensions.swift in Sources */,
