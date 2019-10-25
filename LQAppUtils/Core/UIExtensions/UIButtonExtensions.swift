@@ -159,14 +159,20 @@ public extension UIButton {
         titleLabel?.textAlignment = textAlignment
         setTitleColor(normalColor, for: .normal)
         setTitleColor(selectColor, for: .selected)
-        setImage(normalImage, for: .normal)
-        setImage(selectImage, for: .selected)
+        guard let normal = normalImage, let select = selectImage else{
+            return
+        }
+        setImage(normal, for: .normal)
+        setImage(select, for: .selected)
     }
     
     convenience init(normalImage:UIImage? ,selectImage:UIImage? = nil) {
         self.init()
-        setImage(normalImage, for: .normal)
-        setImage(selectImage, for: .selected)
+        guard let normal = normalImage, let select = selectImage else{
+            return
+        }
+        setImage(normal, for: .normal)
+        setImage(select, for: .selected)
     }
     
     var titleFont:UIFont{
