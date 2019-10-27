@@ -18,11 +18,22 @@ class ViewController: AppBaseViewController{
         return count
     }()
     
+    @IBOutlet weak var textField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(countButton)
+        
     }
- 
+    @IBAction func clickButton(_ sender: Any) {
+        if textField.hasValidName{
+            print("验证通过")
+        }else{
+            print("验证不通过")
+        }
+    }
+    
+    
     func aes(){
         let password = "UserPassword1!"
         let key128   = "1234567890123456"                   // 16 bytes for AES128

@@ -65,7 +65,6 @@ public extension UITextField {
         return text?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
-    
     /// 检查邮箱是否合法
     var hasValidEmail: Bool {
         return text!.range(of: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
