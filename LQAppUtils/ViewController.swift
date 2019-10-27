@@ -26,11 +26,7 @@ class ViewController: AppBaseViewController{
         
     }
     @IBAction func clickButton(_ sender: Any) {
-        if textField.hasValidName{
-            print("验证通过")
-        }else{
-            print("验证不通过")
-        }
+        
     }
     
     
