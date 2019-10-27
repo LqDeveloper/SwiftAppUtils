@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec  'Core' do |sub|
     sub.source_files  = "LQAppUtils/Core/**/*.swift"
-    sub.frameworks  = "Foundation","UIKit","Security","WebKit","LocalAuthentication"
+    sub.frameworks  = "Foundation","UIKit"
   end
 
   spec.subspec 'MVVM' do |sub|
