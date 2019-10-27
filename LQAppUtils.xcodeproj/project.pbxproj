@@ -99,7 +99,6 @@
 		51DEF0B823583F550024E550 /* AppViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B723583F550024E550 /* AppViewProtocol.swift */; };
 		51DEF0BA2358596F0024E550 /* NSAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B92358596F0024E550 /* NSAttributedStringExtensions.swift */; };
 		51FD3971236145A7005BA224 /* LQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD3970236145A7005BA224 /* LQViewController.swift */; };
-		5A1160352365AC6C00A346D4 /* AppAuthTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1160342365AC6C00A346D4 /* AppAuthTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,7 +217,6 @@
 		51DEF0B723583F550024E550 /* AppViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewProtocol.swift; sourceTree = "<group>"; };
 		51DEF0B92358596F0024E550 /* NSAttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtensions.swift; sourceTree = "<group>"; };
 		51FD3970236145A7005BA224 /* LQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LQViewController.swift; sourceTree = "<group>"; };
-		5A1160342365AC6C00A346D4 /* AppAuthTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAuthTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,7 +377,6 @@
 				512D3B542356DF8F001677CF /* AppDeviceInfo.swift */,
 				512D3B562356EEA4001677CF /* AppKeychainManager.swift */,
 				515D73552362C65F00B83605 /* AppCountDownButton.swift */,
-				5A1160342365AC6C00A346D4 /* AppAuthTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -647,7 +644,6 @@
 				512D3B682356F16E001677CF /* StringExtensions.swift in Sources */,
 				512D3B4F2356BDA2001677CF /* AppBaseViewController.swift in Sources */,
 				512D3B1A2356BD4B001677CF /* SceneDelegate.swift in Sources */,
-				5A1160352365AC6C00A346D4 /* AppAuthTool.swift in Sources */,
 				512D3B8D23571F77001677CF /* UIAlertControllerExtensions.swift in Sources */,
 				512D3B8623571103001677CF /* DispatchQueueExtensions.swift in Sources */,
 				5103DBC8235ECB0700E62F78 /* LQUIUtils+WKWebViewConfiguration.swift in Sources */,
