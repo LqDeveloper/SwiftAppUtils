@@ -13,6 +13,10 @@ public extension UIViewController{
         return AppDeviceInfo.navigationHeight
     }
     
+    var tabBarHeight:CGFloat{
+        AppDeviceInfo.tabBarHeight
+    }
+    
     @IBInspectable var popGestureEnable:Bool{
         set{
             navigationController?.interactivePopGestureRecognizer?.isEnabled = newValue
@@ -21,11 +25,6 @@ public extension UIViewController{
             return navigationController?.interactivePopGestureRecognizer?.isEnabled ?? false
         }
     }
-    
-    var tabBarHeight:CGFloat{
-        AppDeviceInfo.tabBarHeight
-    }
-    
     
     var isVisible: Bool {
         return isViewLoaded && view.window != nil

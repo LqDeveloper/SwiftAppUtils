@@ -66,6 +66,13 @@ public extension UIImageView {
         return imgView
     }
     
+    convenience init(imageName:String?){
+        self.init()
+        guard let name = imageName else {
+            return
+        }
+        image = UIImage.init(named: name)
+    }
 }
 
 #endif

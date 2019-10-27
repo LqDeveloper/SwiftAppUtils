@@ -7,43 +7,6 @@
 //
 #if canImport(UIKit) && !os(watchOS)
 import UIKit
-public extension UIView{
-    var currentViewController:UIViewController? {
-        var rootVC:UIViewController? = nil
-        if #available(iOS 13.0 , *){
-            if !UIApplication.shared.supportsMultipleScenes {
-                return nil
-            }
-            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,let window = windowScene.windows.first else{
-                return  nil
-            }
-            rootVC = window.rootViewController
-            
-        }else{
-            rootVC = UIApplication.shared.keyWindow?.rootViewController
-        }
-        
-        
-        return getCurrentVC(rootVC: rootVC)
-    }
-    
-    private func getCurrentVC(rootVC:UIViewController?)->UIViewController?{
-        guard let root = rootVC else {
-            return nil
-        }
-        if let presentVC = root.presentedViewController{
-            return presentVC
-        }else if root.isKind(of: UITabBarController.self){
-            let tabBar = rootVC as! UITabBarController
-            return getCurrentVC(rootVC: tabBar.selectedViewController)
-        }else if root.isKind(of: UINavigationController.self){
-            let nav = rootVC as! UINavigationController
-            return getCurrentVC(rootVC: nav.topViewController)
-        }else{
-            return root
-        }
-    }
-}
 public extension UIView {
     
     /// 摇动视图的方向

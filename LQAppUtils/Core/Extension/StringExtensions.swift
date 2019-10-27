@@ -146,11 +146,46 @@ public extension String {
     }
     
     
-    /// 判断邮箱是否合法
-    var isValidEmail: Bool {
-        // http://emailregex.com/
-        let regex = "^(?:[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[\\p{L}0-9](?:[a-z0-9-]*[\\p{L}0-9])?\\.)+[\\p{L}0-9](?:[\\p{L}0-9-]*[\\p{L}0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[\\p{L}0-9-]*[\\p{L}0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])$"
-        return range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+    /// 检查邮箱是否合法
+    var hasValidEmail: Bool {
+        return self.range(of: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+                          options: String.CompareOptions.regularExpression,
+                          range: nil, locale: nil) != nil
+    }
+    
+    /// 检查手机号是否合法
+    var hasValidPhoneNumber:Bool{
+        let predicateStr = "^((1[34578][0-9]{9})|((0\\d{2}-\\d{8})|(0\\d{3}-\\d{7,8})|(0\\d{10,11}))$"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: self)
+    }
+    
+    /// 检查邮政编码是否合法
+    var hasValidPostalCode:Bool{
+        let predicateStr = "^[0-8]\\d{5}(?!\\d)$"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: self)
+    }
+    
+    /// 检查IP是否合法
+    var hasValidIPAddress:Bool{
+        let predicateStr = "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: self)
+    }
+    
+    /// 是否全是中文字符
+    var isChinese:Bool{
+        let predicateStr = "(^[\u{4e00}-\u{9fa5}]$)"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: self)
+    }
+    
+    /// 检查身份证号是否合法
+    var hasValidID:Bool{
+        let predicateStr = "(^[0-9]{15}$)|([0-9]{17}([0-9]|[xX])$)"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: self)
     }
     
     

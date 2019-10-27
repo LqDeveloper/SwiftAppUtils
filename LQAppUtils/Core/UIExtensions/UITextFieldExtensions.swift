@@ -73,6 +73,41 @@ public extension UITextField {
                            range: nil, locale: nil) != nil
     }
     
+    /// 检查手机号是否合法
+    var hasValidPhoneNumber:Bool{
+        let predicateStr = "^((1[34578][0-9]{9})|((0\\d{2}-\\d{8})|(0\\d{3}-\\d{7,8})|(0\\d{10,11}))$"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: text)
+    }
+    
+    /// 检查邮政编码是否合法
+    var hasValidPostalCode:Bool{
+        let predicateStr = "^[0-8]\\d{5}(?!\\d)$"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: text)
+    }
+    
+    /// 检查IP是否合法
+    var hasValidIPAddress:Bool{
+        let predicateStr = "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: text)
+    }
+    
+    /// 是否全是中文字符
+    var isChinese:Bool{
+        let predicateStr = "(^[\u{4e00}-\u{9fa5}]$)"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: text)
+    }
+    
+    /// 检查身份证号是否合法
+    var hasValidID:Bool{
+        let predicateStr = "(^[0-9]{15}$)|([0-9]{17}([0-9]|[xX])$)"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: text)
+    }
+    
     @IBInspectable var leftViewTintColor: UIColor? {
         get {
             guard let iconView = leftView as? UIImageView else { return nil }
