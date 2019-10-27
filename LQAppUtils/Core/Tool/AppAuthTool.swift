@@ -5,7 +5,7 @@
 //  Created by Quan Li on 2019/9/24.
 //  Copyright © 2019 Quan Li. All rights reserved.
 //
-
+#if canImport(UIKit) && canImport(LocalAuthentication)
 import UIKit
 import LocalAuthentication
 
@@ -52,9 +52,7 @@ public enum AuthType:Int{
     case faceID
 }
 
-open class AppAuthTool{
-    public static let shared = AppAuthTool()
-    
+open class AppAuthTool{    
     public let authContext = LAContext()
     
     open var canEvaluatePolicy:Bool{
@@ -111,3 +109,5 @@ open class AppAuthTool{
         }
     }
 }
+
+#endif
