@@ -6,6 +6,7 @@
 //  Copyright © 2019 williamoneilchina. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public protocol AppCountDownDelegate:NSObjectProtocol{
@@ -82,3 +83,5 @@ open class AppCountDownButton: UIButton {
         countTimer = nil
     }
 }
+
+#endif

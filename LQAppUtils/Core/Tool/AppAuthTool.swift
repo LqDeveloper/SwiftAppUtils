@@ -1,10 +1,11 @@
-//
+
 //  AppAuthTool.swift
-//  LQAppUtils
+//  AppUtils
 //
 //  Created by Quan Li on 2019/9/24.
-//  Copyright © 2019 Quan Li. All rights reserved.
+//  Copyright © 2019 williamoneilchina. All rights reserved.
 //
+
 #if canImport(UIKit) && canImport(LocalAuthentication)
 import UIKit
 import LocalAuthentication
@@ -52,7 +53,7 @@ public enum AuthType:Int{
     case faceID
 }
 
-open class AppAuthTool{    
+open class AppAuthTool{
     public let authContext = LAContext()
     
     open var canEvaluatePolicy:Bool{
