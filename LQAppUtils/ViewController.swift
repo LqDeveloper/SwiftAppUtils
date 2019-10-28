@@ -18,12 +18,14 @@ class ViewController: AppBaseViewController{
         return count
     }()
     
+    var observer = AppKeyboardObserver.init()
+    
     @IBOutlet weak var textField: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        observer.delegate = self
     }
     @IBAction func clickButton(_ sender: Any) {
         
@@ -49,6 +51,10 @@ class ViewController: AppBaseViewController{
         super.viewWillDisappear(animated)
         countButton.stopCountDown()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
 
 extension ViewController:AppCountDownDelegate{
@@ -64,4 +70,17 @@ extension ViewController:AppCountDownDelegate{
     func countDownComplete(btn: AppCountDownButton) {
         btn.setTitle("倒计时", for: .normal)
     }
+}
+
+
+extension ViewController:AppKeyboardDelegate{
+    func keyboardWillShow(keyboardHeight: CGFloat, animationTime: TimeInterval) {
+        print(keyboardHeight,animationTime)
+    }
+    
+    func keyboardWillHide(animationTime: TimeInterval) {
+        print(animationTime)
+    }
+    
+    
 }
