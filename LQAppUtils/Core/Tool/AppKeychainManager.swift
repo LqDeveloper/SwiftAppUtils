@@ -39,7 +39,6 @@ open class AppKeychainManager{
                         kSecAttrAccount:acc,
                         kSecValueData:pwdData,
                         kSecAttrAccessible:kSecAttrAccessibleWhenUnlockedThisDeviceOnly] as [CFString : Any]
-        
         return SecItemAdd(saveItem as CFDictionary, nil)
     }
     
@@ -52,7 +51,8 @@ open class AppKeychainManager{
                             kSecAttrService:ser,
                             kSecAttrAccount:acc,
                             kSecMatchLimit:kSecMatchLimitOne,
-                            kSecReturnData:true
+                            kSecReturnData:true,
+                            kSecAttrAccessible:kSecAttrAccessibleWhenUnlockedThisDeviceOnly
             ] as [CFString : Any]
         
         var dataRef:CFTypeRef? = nil
@@ -72,7 +72,8 @@ open class AppKeychainManager{
         }
         let deleteItem = [kSecClass:kSecClassGenericPassword,
                           kSecAttrService:ser,
-                          kSecAttrAccount:acc] as [CFString : Any]
+                          kSecAttrAccount:acc
+            ,kSecAttrAccessible:kSecAttrAccessibleWhenUnlockedThisDeviceOnly] as [CFString : Any]
         return SecItemDelete(deleteItem as CFDictionary)
     }
 }

@@ -31,7 +31,7 @@ public extension UILabel {
         return label.frame.height
     }
     
-    convenience init(text: String ,textColor:UIColor?,font: UIFont?,textAlignment:NSTextAlignment = .left) {
+    convenience init(text: String = "",textColor:UIColor?,font: UIFont?,textAlignment:NSTextAlignment = .left) {
         self.init()
         self.text = text
         self.textColor = textColor

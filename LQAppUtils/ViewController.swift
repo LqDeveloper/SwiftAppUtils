@@ -25,7 +25,10 @@ class ViewController: AppBaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let status = AppKeychainManager.save(service: "demo.williamoneil.com", account: "13818713453", password: "123456").checkStatus
+        print(status.rawValue)
         observer.delegate = self
+        textField.textType = .password
     }
     @IBAction func clickButton(_ sender: Any) {
         
