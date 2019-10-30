@@ -20,6 +20,12 @@ open class AppKeyboardObserver{
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    public init(delegate:AppKeyboardDelegate) {
+        self.delegate = delegate
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     @objc func keyboardWillShow(noti:Notification){
         let userInfo = noti.userInfo as? [String:Any]
         
