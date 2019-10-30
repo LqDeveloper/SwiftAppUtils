@@ -30,18 +30,6 @@ public extension UIViewController{
         return isViewLoaded && view.window != nil
     }
     
-    func addNotificationObserver(name: Notification.Name, selector: Selector) {
-        NotificationCenter.default.addObserver(self, selector: selector, name: name, object: nil)
-    }
-    
-    func removeNotificationObserver(name: Notification.Name) {
-        NotificationCenter.default.removeObserver(self, name: name, object: nil)
-    }
-    
-    func removeAllNotificationsObserver() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     ///使用UIAlertController显示警报
     ///
     /// - Parameters:
@@ -134,6 +122,34 @@ public extension UIViewController{
         }
     }
     
+    @IBInspectable var normalFont:UIFont?{
+        get{
+            guard let font = tabBarItem.titleTextAttributes(for: .normal)?[.font] as? UIFont else {
+                return nil
+            }
+            return font
+        }
+        set{
+            var titleTextAttri = tabBarItem.titleTextAttributes(for: .normal) ?? [:]
+            titleTextAttri[.font] = newValue
+            tabBarItem.setTitleTextAttributes(titleTextAttri, for: .normal)
+        }
+    }
+    
+    @IBInspectable var selectFont:UIFont?{
+        get{
+            guard let font = tabBarItem.titleTextAttributes(for: .selected)?[.font] as? UIFont else {
+                return nil
+            }
+            return font
+        }
+        set{
+            var titleTextAttri = tabBarItem.titleTextAttributes(for: .selected) ?? [:]
+            titleTextAttri[.font] = newValue
+            tabBarItem.setTitleTextAttributes(titleTextAttri, for: .selected)
+        }
+    }
+    
     @IBInspectable var tabTitle:String?{
         get{
             return tabBarItem.title
@@ -152,5 +168,4 @@ public extension UIViewController{
         }
     }
 }
-
 #endif

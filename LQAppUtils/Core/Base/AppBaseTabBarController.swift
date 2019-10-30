@@ -13,22 +13,26 @@ open class AppBaseTabBarController: UITabBarController {
         super.viewDidLoad()
     }
     
-    open func setTabBarItemColor(_ itemColor:UIColor?,state:UIControl.State){
-        guard let color = itemColor else{
-            return
+    open func setTabBarItemColor(_ itemColor:UIColor,state:UIControl.State){
+        if #available(iOS 13.0, *){
+            let appearance = UITabBarAppearance.init(barAppearance:tabBar.standardAppearance)
+            if state == .normal{
+                var normal = appearance.stackedLayoutAppearance.normal.titleTextAttributes
+                normal[.foregroundColor] = itemColor
+                appearance.stackedLayoutAppearance.normal.titleTextAttributes = normal
+            }else{
+                var selected = appearance.stackedLayoutAppearance.selected.titleTextAttributes
+                selected[.foregroundColor] = itemColor
+                appearance.stackedLayoutAppearance.selected.titleTextAttributes = selected
+            }
+            tabBar.standardAppearance = appearance
+        }else{
+            let tabBarAppearance = UITabBarItem.appearance()
+            var attribute =  tabBarAppearance.titleTextAttributes(for: state) ?? [:]
+            attribute[.foregroundColor] = itemColor
+            tabBarAppearance.setTitleTextAttributes(attribute, for: state)
         }
-        let tabBar = UITabBarItem.appearance()
-        tabBar.setTitleTextAttributes([.foregroundColor:color], for: state)
     }
-    
-    open func setTabBarItemFont(_ itemFont:UIFont?,state:UIControl.State){
-        guard let font = itemFont else{
-            return
-        }
-        let tabBar = UITabBarItem.appearance()
-        tabBar.setTitleTextAttributes([.font:font], for: state)
-    }
-    
     
     open override var shouldAutorotate: Bool{
         return selectedViewController?.shouldAutorotate ?? false
