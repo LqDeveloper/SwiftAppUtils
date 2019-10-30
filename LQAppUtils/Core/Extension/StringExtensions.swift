@@ -192,7 +192,7 @@ public extension String {
     
     /// 是否全是中文字符
     var isChinese:Bool{
-        let predicateStr = "(^[\u{4e00}-\u{9fa5}]$)"
+        let predicateStr = "(^[\u{4e00}-\u{9fa5}]+$)"
         let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
         return predicate.evaluate(with: self)
     }

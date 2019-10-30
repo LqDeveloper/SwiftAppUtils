@@ -29,6 +29,8 @@ class ViewController: AppBaseViewController{
         print(status.rawValue)
         observer.delegate = self
         textField.textType = .password
+        
+        debugPrint("全是中文dasd".isChinese)
     }
     @IBAction func clickButton(_ sender: Any) {
         
