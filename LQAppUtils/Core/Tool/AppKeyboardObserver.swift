@@ -14,7 +14,7 @@ public protocol AppKeyboardDelegate:NSObjectProtocol{
 }
 
 open class AppKeyboardObserver{
-    weak var delegate:AppKeyboardDelegate?
+    public weak var delegate:AppKeyboardDelegate?
     public init() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
