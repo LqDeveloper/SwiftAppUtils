@@ -31,6 +31,7 @@ class ViewController: AppBaseViewController{
         textField.textType = .password
         
         debugPrint("全是中文dasd".isChinese)
+        print(AppDeviceInfo.statusBarHeight)
     }
     @IBAction func clickButton(_ sender: Any) {
         

@@ -129,7 +129,7 @@ public extension AppDeviceInfo{
     /// 状态栏高度
     static var statusBarHeight:CGFloat{
         if #available(iOS 13.0, *) {
-            if !UIApplication.shared.supportsMultipleScenes {
+            if UIApplication.shared.supportsMultipleScenes {
                 return 0
             }
             guard  let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
