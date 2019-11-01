@@ -15,12 +15,14 @@ public extension UINavigationItem {
         leftBarButtonItem = UIBarButtonItem.init(image: image, style: style, target: target, action: action)
         leftBarButtonItem?.width = width
         leftBarButtonItem?.imageInsets = imageInsets
+        leftBarButtonItem?.tintColor = tintColor
     }
     
     func setupRightBarButtonItem(width:CGFloat,image:UIImage?,target:Any?,action:Selector?,imageInsets:UIEdgeInsets = .zero,style:UIBarButtonItem.Style = .plain,tintColor:UIColor = .white){
         rightBarButtonItem = UIBarButtonItem.init(image: image, style: style, target: target, action: action)
         rightBarButtonItem?.width = width
         rightBarButtonItem?.imageInsets = imageInsets
+        rightBarButtonItem?.tintColor = tintColor
     }
     
     

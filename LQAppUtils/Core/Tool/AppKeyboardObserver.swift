@@ -47,7 +47,6 @@ open class AppKeyboardObserver{
     }
     
     deinit {
-        print("AppKeyboardObserver 销毁了")
         NotificationCenter.default.removeObserver(self)
     }
 }
