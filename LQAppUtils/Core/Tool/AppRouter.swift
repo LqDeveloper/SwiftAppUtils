@@ -15,7 +15,7 @@ public enum PushType{
 }
 
 public enum AppRouterType {
-    case push(_ vc:UIViewController,_ pubType:PushType = .notHideBar)
+    case push(_ vc:UIViewController,_ pushType:PushType = .notHideBar)
     case present(_ vc:UIViewController)
     case back
 }
@@ -29,8 +29,8 @@ public struct AppRouter{
     
     public func switchToViewController(type:AppRouterType){
         switch type {
-        case .push(let vc,let hideBar):
-            switch hideBar {
+        case .push(let vc,let pushType):
+            switch pushType {
             case .notHideBar:
                 currentVC.navigationController?.pushViewController(vc)
             case .hideWhenPush:
