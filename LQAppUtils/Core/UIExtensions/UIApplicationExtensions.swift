@@ -12,7 +12,11 @@ public extension UIApplication{
     static func open(_ urlStr: String?, options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:], completionHandler completion: ((Bool) -> Void)? = nil){
         guard let webUrl = URL(string: (urlStr ?? "")) else { return }
         if UIApplication.shared.canOpenURL(webUrl) {
-            UIApplication.shared.open(webUrl, options: options, completionHandler: completion)
+            if  #available(iOS 10.0, *) {
+                UIApplication.shared.open(webUrl, options: options, completionHandler: completion)
+            }else{
+                UIApplication.shared.openURL(webUrl)
+            }
         }
     }
 }
