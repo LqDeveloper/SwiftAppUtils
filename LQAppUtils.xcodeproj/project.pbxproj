@@ -78,6 +78,7 @@
 		512D3B9323572710001677CF /* UIEdgeInsetsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B9223572710001677CF /* UIEdgeInsetsExtensions.swift */; };
 		5157A8DF23667E40001CB260 /* AppKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5157A8DE23667E40001CB260 /* AppKeyboardObserver.swift */; };
 		515D73562362C65F00B83605 /* AppCountDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515D73552362C65F00B83605 /* AppCountDownButton.swift */; };
+		51C80C0C2370292800EA898E /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C80C0B2370292800EA898E /* UIApplicationExtensions.swift */; };
 		51D79C2B2358000F00C13E22 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D79C2A2358000F00C13E22 /* UICollectionViewExtensions.swift */; };
 		51D79C2D2358025400C13E22 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D79C2C2358025400C13E22 /* UIImageExtensions.swift */; };
 		51D79C2F235804E300C13E22 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D79C2E235804E300C13E22 /* UIImageViewExtensions.swift */; };
@@ -197,6 +198,7 @@
 		512D3B9223572710001677CF /* UIEdgeInsetsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtensions.swift; sourceTree = "<group>"; };
 		5157A8DE23667E40001CB260 /* AppKeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeyboardObserver.swift; sourceTree = "<group>"; };
 		515D73552362C65F00B83605 /* AppCountDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCountDownButton.swift; sourceTree = "<group>"; };
+		51C80C0B2370292800EA898E /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
 		51D79C2A2358000F00C13E22 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		51D79C2C2358025400C13E22 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		51D79C2E235804E300C13E22 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 				51D79C442358107D00C13E22 /* UITextFieldExtensions.swift */,
 				51D79C46235811C700C13E22 /* UITextViewExtensions.swift */,
 				51DEF0AD235834BA0024E550 /* UIWindowExtensions.swift */,
+				51C80C0B2370292800EA898E /* UIApplicationExtensions.swift */,
 			);
 			path = UIExtensions;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				5103DBB9235ECB0700E62F78 /* LQUIUtils+UIView.swift in Sources */,
 				5103DBBC235ECB0700E62F78 /* LQUIUtils+UISwitch.swift in Sources */,
 				5103DBDC235ED9C700E62F78 /* MVVMProtocol.swift in Sources */,
+				51C80C0C2370292800EA898E /* UIApplicationExtensions.swift in Sources */,
 				51DEF0B2235837080024E550 /* URLRequestExtensions.swift in Sources */,
 				512D3B91235723CF001677CF /* UIButtonExtensions.swift in Sources */,
 				512D3B742356F613001677CF /* ArrayExtensions.swift in Sources */,
