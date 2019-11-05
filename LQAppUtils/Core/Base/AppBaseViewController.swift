@@ -30,5 +30,13 @@ open class AppBaseViewController: UIViewController{
     open override var prefersStatusBarHidden: Bool{
         return statusBarHidden
     }
+    
+    open func setupBackBarItem(width:CGFloat,image:UIImage?,title:String?,tintColor:UIColor = .white,style:UIBarButtonItem.Style = .plain){
+        navigationController?.navigationBar.backIndicatorImage = image
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = image
+        let backItem = UIBarButtonItem.init(title:title , style: style, target: nil, action: nil)
+        backItem.tintColor = tintColor
+        navigationItem.backBarButtonItem = backItem
+    }
 }
 #endif

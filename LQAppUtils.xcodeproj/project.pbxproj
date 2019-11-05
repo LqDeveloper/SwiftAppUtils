@@ -103,6 +103,7 @@
 		51F6043B23710EAB0030C8D3 /* AppBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6043A23710EAB0030C8D3 /* AppBaseWebViewController.swift */; };
 		51F6043D2371120C0030C8D3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6043C2371120C0030C8D3 /* WebViewController.swift */; };
 		51FD3971236145A7005BA224 /* LQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD3970236145A7005BA224 /* LQViewController.swift */; };
+		5AE618362371A8CF00A2D973 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE618352371A8CF00A2D973 /* DemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,6 +226,7 @@
 		51F6043A23710EAB0030C8D3 /* AppBaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseWebViewController.swift; sourceTree = "<group>"; };
 		51F6043C2371120C0030C8D3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		51FD3970236145A7005BA224 /* LQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LQViewController.swift; sourceTree = "<group>"; };
+		5AE618352371A8CF00A2D973 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +334,7 @@
 				512D3B202356BD4D001677CF /* Assets.xcassets */,
 				512D3B222356BD4D001677CF /* LaunchScreen.storyboard */,
 				512D3B252356BD4D001677CF /* Info.plist */,
+				5AE618352371A8CF00A2D973 /* DemoViewController.swift */,
 			);
 			path = LQAppUtils;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				51DEF0BA2358596F0024E550 /* NSAttributedStringExtensions.swift in Sources */,
 				51D79C31235805BE00C13E22 /* UILabelExtensions.swift in Sources */,
 				512D3B7A2356FED4001677CF /* CGPointExtensions.swift in Sources */,
+				5AE618362371A8CF00A2D973 /* DemoViewController.swift in Sources */,
 				5103DBC9235ECB0700E62F78 /* LQUIUtils+UICollectionView.swift in Sources */,
 				512D3B782356FD78001677CF /* CGFloatExtensions.swift in Sources */,
 				512D3B522356BDA2001677CF /* AppBaseTableViewController.swift in Sources */,

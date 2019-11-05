@@ -25,6 +25,8 @@ class ViewController: AppBaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = .green
         let status = AppKeychainManager.save(service: "demo.williamoneil.com", account: "13818713453", password: "123456").checkStatus
         print(status.rawValue)
         observer.delegate = self

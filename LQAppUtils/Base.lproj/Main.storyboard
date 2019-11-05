@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M9M-P4-YAb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pi7-Dj-clY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="2886.9565217391305" y="-33.482142857142854"/>
         </scene>
-        <!--View Controller-->
+        <!--Demo View Controller-->
         <scene sceneID="6Fz-cq-bY1">
             <objects>
-                <viewController id="PJ2-F0-Hpc" sceneMemberID="viewController">
+                <viewController id="PJ2-F0-Hpc" customClass="DemoViewController" customModule="LQAppUtilsDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jbh-Jj-OHo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
