@@ -26,17 +26,18 @@ public extension UINavigationItem {
     }
     
     
-    func setupLeftBarButtonItem(width:CGFloat,title:String?,titleColor:UIColor,font:UIFont,target:Any?,action:Selector?,style:UIBarButtonItem.Style = .plain){
+    func setupLeftBarButtonItem(width:CGFloat,title:String?,titleColor:UIColor,font:UIFont,target:Any?,action:Selector?,tintColor:UIColor = .white,style:UIBarButtonItem.Style = .plain){
         leftBarButtonItem = UIBarButtonItem.init(title: title, style: style, target: target, action: action)
         leftBarButtonItem?.width = width
         leftBarButtonItem?.setTitleTextAttributes([.foregroundColor:titleColor,.font:font], for: .normal)
-        
+        leftBarButtonItem?.tintColor = tintColor
     }
     
-    func setupRightBarButtonItem(width:CGFloat,title:String?,titleColor:UIColor,font:UIFont,target:Any?,action:Selector?,style:UIBarButtonItem.Style = .plain){
+    func setupRightBarButtonItem(width:CGFloat,title:String?,titleColor:UIColor,font:UIFont,target:Any?,action:Selector?,tintColor:UIColor = .white,style:UIBarButtonItem.Style = .plain){
         rightBarButtonItem = UIBarButtonItem.init(title: title, style: style, target: target, action: action)
         rightBarButtonItem?.width = width
-        leftBarButtonItem?.setTitleTextAttributes([.foregroundColor:titleColor,.font:font], for: .normal)
+        rightBarButtonItem?.setTitleTextAttributes([.foregroundColor:titleColor,.font:font], for: .normal)
+        rightBarButtonItem?.tintColor = tintColor
     }
 }
 
