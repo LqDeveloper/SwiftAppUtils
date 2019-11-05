@@ -100,6 +100,8 @@
 		51DEF0B4235837C20024E550 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B3235837C20024E550 /* UserDefaultsExtensions.swift */; };
 		51DEF0B823583F550024E550 /* AppViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B723583F550024E550 /* AppViewProtocol.swift */; };
 		51DEF0BA2358596F0024E550 /* NSAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B92358596F0024E550 /* NSAttributedStringExtensions.swift */; };
+		51F6043B23710EAB0030C8D3 /* AppBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6043A23710EAB0030C8D3 /* AppBaseWebViewController.swift */; };
+		51F6043D2371120C0030C8D3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6043C2371120C0030C8D3 /* WebViewController.swift */; };
 		51FD3971236145A7005BA224 /* LQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD3970236145A7005BA224 /* LQViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -220,6 +222,8 @@
 		51DEF0B3235837C20024E550 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		51DEF0B723583F550024E550 /* AppViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewProtocol.swift; sourceTree = "<group>"; };
 		51DEF0B92358596F0024E550 /* NSAttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtensions.swift; sourceTree = "<group>"; };
+		51F6043A23710EAB0030C8D3 /* AppBaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseWebViewController.swift; sourceTree = "<group>"; };
+		51F6043C2371120C0030C8D3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		51FD3970236145A7005BA224 /* LQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LQViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -322,6 +326,7 @@
 				512D3B172356BD4B001677CF /* AppDelegate.swift */,
 				512D3B192356BD4B001677CF /* SceneDelegate.swift */,
 				512D3B1B2356BD4B001677CF /* ViewController.swift */,
+				51F6043C2371120C0030C8D3 /* WebViewController.swift */,
 				512D3B1D2356BD4B001677CF /* Main.storyboard */,
 				51FD3970236145A7005BA224 /* LQViewController.swift */,
 				512D3B202356BD4D001677CF /* Assets.xcassets */,
@@ -368,6 +373,7 @@
 				512D3B492356BDA1001677CF /* AppBaseNavigationController.swift */,
 				512D3B4A2356BDA1001677CF /* AppBaseViewController.swift */,
 				512D3B4D2356BDA2001677CF /* AppBaseTableViewController.swift */,
+				51F6043A23710EAB0030C8D3 /* AppBaseWebViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -592,11 +598,13 @@
 				51D79C4123580E3800C13E22 /* UIStoryboardExtensions.swift in Sources */,
 				51D79C2D2358025400C13E22 /* UIImageExtensions.swift in Sources */,
 				5103DBC2235ECB0700E62F78 /* LQUIUtils+UITabBar.swift in Sources */,
+				51F6043D2371120C0030C8D3 /* WebViewController.swift in Sources */,
 				5103DBC7235ECB0700E62F78 /* LQUIUtils+UIRotationGestureRecognizer.swift in Sources */,
 				5103DBBD235ECB0700E62F78 /* LQUIUtils+UITabBarItem.swift in Sources */,
 				512D3B8A235711D6001677CF /* FloatExtensions.swift in Sources */,
 				512D3B622356F11A001677CF /* UIViewControllerExtensions.swift in Sources */,
 				51D79C4323580EC100C13E22 /* UITableViewExtensions.swift in Sources */,
+				51F6043B23710EAB0030C8D3 /* AppBaseWebViewController.swift in Sources */,
 				5103DBC5235ECB0700E62F78 /* LQUIUtils+WKWebView.swift in Sources */,
 				512D3B802357045F001677CF /* DataExtensions.swift in Sources */,
 				51DEF0B823583F550024E550 /* AppViewProtocol.swift in Sources */,
