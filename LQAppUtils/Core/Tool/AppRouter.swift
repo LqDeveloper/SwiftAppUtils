@@ -17,7 +17,7 @@ public enum PushType{
 public enum AppRouterType {
     case push(_ vc:UIViewController,_ pushType:PushType = .notHideBar)
     case present(_ vc:UIViewController)
-    case back
+    case back(_ toRoot:Bool)
 }
 
 
@@ -43,17 +43,21 @@ public struct AppRouter{
             }
         case .present(let vc):
             currentVC.present(vc, animated: true, completion: nil)
-        case .back:
+        case .back(let toRoot):
             if currentVC.presentingViewController != nil {
                 currentVC.dismiss(animated: true, completion: nil)
             } else {
-                _ = currentVC.navigationController?.popViewController(animated: true)
+                if toRoot{
+                    _ = currentVC.navigationController?.popToRootViewController(animated: true)
+                }else{
+                    _ = currentVC.navigationController?.popViewController(animated: true)
+                }
             }
         }
     }
     
-    public func backToVC(){
-        switchToViewController(type: .back)
+    public func backToVC(_ toRoot:Bool = false){
+        switchToViewController(type: .back(toRoot))
     }
 }
 

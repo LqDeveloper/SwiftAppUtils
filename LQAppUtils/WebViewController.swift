@@ -12,7 +12,7 @@ class WebViewController: AppBaseWebViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadUrl(urlStr: "https://www.baidu.com")
+        loadUrl("https://www.baidu.com")
     }
     
 }

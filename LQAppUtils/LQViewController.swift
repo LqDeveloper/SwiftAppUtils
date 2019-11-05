@@ -17,7 +17,7 @@ class LQViewController: UIViewController {
     }
     
     @IBAction func clickBack(_ sender: Any) {
-        router.switchToViewController(type: .back)
+        router.backToVC()
     }
     
     /*

@@ -11,6 +11,10 @@ import UIKit
 open class AppBaseTableViewController: UITableViewController{
     private var statusBarHidden:Bool = false
     
+    public var isBeginScroll = false
+    /// tableView在显示时会调用scrollViewDidScroll方法导致状态不准，这个标记表示拖拽之后才是有效的
+    public var isInitState = false
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -21,7 +25,7 @@ open class AppBaseTableViewController: UITableViewController{
         }
     }
     
-    public func setupStatusBarHidden(_ statusBarHidden:Bool){
+    open func setupStatusBarHidden(_ statusBarHidden:Bool){
         self.statusBarHidden = statusBarHidden
         setNeedsStatusBarAppearanceUpdate()
     }
@@ -33,5 +37,50 @@ open class AppBaseTableViewController: UITableViewController{
     open override var prefersStatusBarHidden: Bool{
         return statusBarHidden
     }
+    
+    
+    /// 子类调用需要重写
+    open func tableViewBeginScroll(){}
+    open func tableViewEndScroll(){}
+    
+    override open func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard isInitState else{
+            return
+        }
+        guard !isBeginScroll else {
+            return
+        }
+        isBeginScroll = true
+        tableViewBeginScroll()
+    }
+    override open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard isBeginScroll else {
+            return
+        }
+        isBeginScroll = false
+        tableViewEndScroll()
+    }
+    override open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if !isInitState{
+            isInitState = true
+        }
+        guard !isBeginScroll else {
+            return
+        }
+        isBeginScroll = true
+        tableViewBeginScroll()
+    }
+    
+    override open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        guard isBeginScroll else {
+            return
+        }
+        guard !decelerate else {
+            return
+        }
+        isBeginScroll = false
+        tableViewEndScroll()
+    }
+    
 }
 #endif
