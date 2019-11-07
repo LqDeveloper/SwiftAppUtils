@@ -21,8 +21,8 @@ public enum AppRouterType {
 }
 
 
-public struct AppRouter{
-    public let currentVC:UIViewController
+public class AppRouter{
+    public weak var currentVC:UIViewController?
     public init(viewController:UIViewController){
         currentVC = viewController
     }
@@ -32,25 +32,25 @@ public struct AppRouter{
         case .push(let vc,let pushType):
             switch pushType {
             case .notHideBar:
-                currentVC.navigationController?.pushViewController(vc)
+                currentVC?.navigationController?.pushViewController(vc)
             case .hideWhenPush:
-                currentVC.hidesBottomBarWhenPushed = true
-                currentVC.navigationController?.pushViewController(vc)
+                currentVC?.hidesBottomBarWhenPushed = true
+                currentVC?.navigationController?.pushViewController(vc)
             case .hideWhenPushAndBackNotHide:
-                currentVC.hidesBottomBarWhenPushed = true
-                currentVC.navigationController?.pushViewController(vc)
-                currentVC.hidesBottomBarWhenPushed = false
+                currentVC?.hidesBottomBarWhenPushed = true
+                currentVC?.navigationController?.pushViewController(vc)
+                currentVC?.hidesBottomBarWhenPushed = false
             }
         case .present(let vc):
-            currentVC.present(vc, animated: true, completion: nil)
+            currentVC?.present(vc, animated: true, completion: nil)
         case .back(let toRoot):
-            if currentVC.presentingViewController != nil {
-                currentVC.dismiss(animated: true, completion: nil)
+            if currentVC?.presentingViewController != nil {
+                currentVC?.dismiss(animated: true, completion: nil)
             } else {
                 if toRoot{
-                    _ = currentVC.navigationController?.popToRootViewController(animated: true)
+                    _ = currentVC?.navigationController?.popToRootViewController(animated: true)
                 }else{
-                    _ = currentVC.navigationController?.popViewController(animated: true)
+                    _ = currentVC?.navigationController?.popViewController(animated: true)
                 }
             }
         }
