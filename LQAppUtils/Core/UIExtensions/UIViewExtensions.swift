@@ -83,16 +83,6 @@ public extension UIView {
         }
     }
     
-    /// 视图高度
-    var height: CGFloat {
-        get {
-            return frame.size.height
-        }
-        set {
-            frame.size.height = newValue
-        }
-    }
-    
     /// 检查视图是不是从右向左排列
     var isRightToLeft: Bool {
         if #available(iOS 10.0, *, tvOS 10.0, *) {
@@ -154,17 +144,6 @@ public extension UIView {
         }
     }
     
-    /// 视图size
-    var size: CGSize {
-        get {
-            return frame.size
-        }
-        set {
-            width = newValue.width
-            height = newValue.height
-        }
-    }
-    
     /// 获取视图所在的ViewController
     var parentViewController: UIViewController? {
         weak var parentResponder: UIResponder? = self
@@ -177,6 +156,30 @@ public extension UIView {
         return nil
     }
     
+    /// 视图origin
+    var origin: CGPoint{
+        get {
+            return frame.origin
+        }
+        set {
+            x = newValue.x
+            y = newValue.y
+        }
+    }
+    
+    
+    /// 视图size
+    var size: CGSize {
+        get {
+            return frame.size
+        }
+        set {
+            width = newValue.width
+            height = newValue.height
+        }
+    }
+    
+    
     /// 视图的宽度
     var width: CGFloat {
         get {
@@ -184,6 +187,16 @@ public extension UIView {
         }
         set {
             frame.size.width = newValue
+        }
+    }
+    
+    /// 视图高度
+    var height: CGFloat {
+        get {
+            return frame.size.height
+        }
+        set {
+            frame.size.height = newValue
         }
     }
     
@@ -206,6 +219,16 @@ public extension UIView {
         set {
             frame.origin.y = newValue
         }
+    }
+    
+    /// 视图的maxX
+    var maxX:CGFloat{
+        return frame.maxX
+    }
+    
+    /// 视图的maxY
+    var maxY:CGFloat{
+        return frame.maxY
     }
 }
 
@@ -553,6 +576,50 @@ public extension UIView {
         return ancestorView(where: { $0 is T }) as? T
     }
     
+}
+
+
+public extension UIView{
+    
+    var navigationHeight:CGFloat{
+        return AppDeviceInfo.navigationHeight
+    }
+    
+    var tabBarHeight:CGFloat{
+        AppDeviceInfo.tabBarHeight
+    }
+    
+    var screenBounds:CGRect{
+        return UIScreen.main.bounds
+    }
+    
+    var screenWidth:CGFloat{
+        return AppDeviceInfo.screenWidth
+    }
+    
+    var screenHeight:CGFloat{
+        return AppDeviceInfo.screenHeight
+    }
+    
+    var isPhoneXSeries:Bool{
+        return AppDeviceInfo.isPhoneXSeries
+    }
+    
+    var isPhone5Series:Bool{
+        return AppDeviceInfo.isPhone5Series
+    }
+    
+    var topSpace:CGFloat{
+        return AppDeviceInfo.topSpace
+    }
+    
+    var bottomSpace:CGFloat{
+        return AppDeviceInfo.bottomSpace
+    }
+    
+    var statusBarHeight:CGFloat{
+        return AppDeviceInfo.statusBarHeight
+    }
 }
 
 

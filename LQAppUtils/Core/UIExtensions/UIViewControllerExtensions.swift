@@ -9,14 +9,6 @@
 import UIKit
 
 public extension UIViewController{
-    var navigationHeight:CGFloat{
-        return AppDeviceInfo.navigationHeight
-    }
-    
-    var tabBarHeight:CGFloat{
-        AppDeviceInfo.tabBarHeight
-    }
-    
     @IBInspectable var popGestureEnable:Bool{
         set{
             navigationController?.interactivePopGestureRecognizer?.isEnabled = newValue
@@ -101,6 +93,14 @@ public extension UIViewController{
         
         present(popoverContent, animated: animated, completion: completion)
     }
+    
+    func setupBackBarItem(width:CGFloat,image:UIImage?,title:String?,tintColor:UIColor = .white,style:UIBarButtonItem.Style = .plain){
+        navigationController?.navigationBar.backIndicatorImage = image
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = image
+        let backItem = UIBarButtonItem.init(title:title , style: style, target: nil, action: nil)
+        backItem.tintColor = tintColor
+        navigationItem.backBarButtonItem = backItem
+    }
 }
 
 public extension UIViewController{
@@ -161,11 +161,54 @@ public extension UIViewController{
     
     @IBInspectable var navigationBarHiden:Bool{
         get{
-            return navigationController?.navigationBar.isHidden ?? false
+            return navigationController?.isNavigationBarHidden ?? false
         }
         set{
-            navigationController?.setNavigationBarHidden(newValue, animated: true)
+            navigationController?.isNavigationBarHidden = newValue
         }
     }
 }
+
+public extension UIViewController{
+    var navigationHeight:CGFloat{
+        return AppDeviceInfo.navigationHeight
+    }
+    
+    var tabBarHeight:CGFloat{
+        AppDeviceInfo.tabBarHeight
+    }
+    
+    var screenBounds:CGRect{
+        return UIScreen.main.bounds
+    }
+    
+    var screenWidth:CGFloat{
+        return AppDeviceInfo.screenWidth
+    }
+    
+    var screenHeight:CGFloat{
+        return AppDeviceInfo.screenHeight
+    }
+    
+    var isPhoneXSeries:Bool{
+        return AppDeviceInfo.isPhoneXSeries
+    }
+    
+    var isPhone5Series:Bool{
+        return AppDeviceInfo.isPhone5Series
+    }
+    
+    var topSpace:CGFloat{
+        return AppDeviceInfo.topSpace
+    }
+    
+    var bottomSpace:CGFloat{
+        return AppDeviceInfo.bottomSpace
+    }
+    
+    var statusBarHeight:CGFloat{
+        return AppDeviceInfo.statusBarHeight
+    }
+}
+
 #endif
