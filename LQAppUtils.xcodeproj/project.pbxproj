@@ -77,6 +77,7 @@
 		512D3B91235723CF001677CF /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B90235723CF001677CF /* UIButtonExtensions.swift */; };
 		512D3B9323572710001677CF /* UIEdgeInsetsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B9223572710001677CF /* UIEdgeInsetsExtensions.swift */; };
 		5157A8DF23667E40001CB260 /* AppKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5157A8DE23667E40001CB260 /* AppKeyboardObserver.swift */; };
+		515B3B252374F9E2005275D3 /* AppCustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515B3B242374F9E2005275D3 /* AppCustomTableViewController.swift */; };
 		515D73562362C65F00B83605 /* AppCountDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515D73552362C65F00B83605 /* AppCountDownButton.swift */; };
 		51C80C0E23702D6D00EA898E /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C80C0D23702D6D00EA898E /* UIApplicationExtensions.swift */; };
 		51D79C2B2358000F00C13E22 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D79C2A2358000F00C13E22 /* UICollectionViewExtensions.swift */; };
@@ -200,6 +201,7 @@
 		512D3B90235723CF001677CF /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		512D3B9223572710001677CF /* UIEdgeInsetsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtensions.swift; sourceTree = "<group>"; };
 		5157A8DE23667E40001CB260 /* AppKeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeyboardObserver.swift; sourceTree = "<group>"; };
+		515B3B242374F9E2005275D3 /* AppCustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCustomTableViewController.swift; sourceTree = "<group>"; };
 		515D73552362C65F00B83605 /* AppCountDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCountDownButton.swift; sourceTree = "<group>"; };
 		51C80C0D23702D6D00EA898E /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
 		51D79C2A2358000F00C13E22 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				512D3B4A2356BDA1001677CF /* AppBaseViewController.swift */,
 				512D3B4D2356BDA2001677CF /* AppBaseTableViewController.swift */,
 				51F6043A23710EAB0030C8D3 /* AppBaseWebViewController.swift */,
+				515B3B242374F9E2005275D3 /* AppCustomTableViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				5103DBC4235ECB0700E62F78 /* LQUIUtils+UIGestureRecognizer.swift in Sources */,
 				5103DBBA235ECB0700E62F78 /* LQUIUtils+UIStackView.swift in Sources */,
 				51D79C452358107D00C13E22 /* UITextFieldExtensions.swift in Sources */,
+				515B3B252374F9E2005275D3 /* AppCustomTableViewController.swift in Sources */,
 				512D3B882357116A001677CF /* DoubleExtensions.swift in Sources */,
 				512D3B182356BD4B001677CF /* AppDelegate.swift in Sources */,
 				5103DBB3235ECB0700E62F78 /* LQUIUtils+UILongPressGestureRecognizer.swift in Sources */,
