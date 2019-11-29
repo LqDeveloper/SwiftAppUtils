@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: AppBaseViewController{
     lazy var countButton = { () -> AppCountDownButton in
-        let count = AppCountDownButton.init(title: "倒计时", font: UIFont.systemFont(ofSize: 15), normalColor: .red, textAlignment: .center)
+        let count = AppCountDownButton.init(title: "倒计时", font: UIFont.systemFont(ofSize: 15), normalColor: .red)
         count.backgroundColor = .green
         count.frame = CGRect.init(x: 100, y: 100, width: 100, height: 30)
         count.count = 5

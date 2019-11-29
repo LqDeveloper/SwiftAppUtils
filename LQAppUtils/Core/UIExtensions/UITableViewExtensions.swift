@@ -129,6 +129,8 @@ public extension UITableView {
     
     
     func safeScrollToRow(at indexPath: IndexPath, at scrollPosition: UITableView.ScrollPosition, animated: Bool) {
+        guard indexPath.row >= 0 else { return }
+        guard indexPath.section >= 0 else { return }
         guard indexPath.section < numberOfSections else { return }
         guard indexPath.row < numberOfRows(inSection: indexPath.section) else { return }
         scrollToRow(at: indexPath, at: scrollPosition, animated: animated)

@@ -13,12 +13,10 @@ public extension UIImage {
     
     /// 图片的大小 B
     var bytesSize: Int {
-        return jpegData(compressionQuality: 1)?.count ?? 0
-    }
-    
-    ///图片的大小 KB
-    var kilobytesSize: Int {
-        return bytesSize / 1024
+        guard let data = pngData() else {
+            return jpegData(compressionQuality: 0.5)?.count ?? 0
+        }
+        return data.count
     }
     
     ///alwaysOriginal

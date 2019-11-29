@@ -78,7 +78,7 @@ public extension String {
     
     
     /// 移除字符串中的空格
-    var camelCased: String {
+    var removeSpace: String {
         let source = lowercased()
         let first = source[..<source.index(after: source.startIndex)]
         if source.contains(" ") {
@@ -131,7 +131,7 @@ public extension String {
     
     
     /// 是否只包含字母
-    var isAlphabetic: Bool {
+    var isOnlyLetter: Bool {
         let hasLetters = rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
         let hasNumbers = rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
         return hasLetters && !hasNumbers
