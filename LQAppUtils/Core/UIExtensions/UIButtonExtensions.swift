@@ -157,21 +157,19 @@ public extension UIButton {
 }
 
 public extension UIButton {
-    convenience init(title: String?,font: UIFont?,normalColor:UIColor?,textAlignment:NSTextAlignment,normalImage:UIImage? = nil) {
+    convenience init(title: String?,font: UIFont?,normalColor:UIColor?,normalImage:UIImage? = nil) {
         self.init()
         setTitle(title, for: .normal)
         titleLabel?.font = font
         setTitleColor(normalColor, for: .normal)
-        titleLabel?.textAlignment = textAlignment
         setImage(normalImage, for: .normal)
     }
     
     
-    convenience init(title: String?,font: UIFont?,textAlignment:NSTextAlignment,normalColor:UIColor?,selectColor:UIColor?,normalImage:UIImage? = nil,selectImage:UIImage? = nil) {
+    convenience init(title: String?,font: UIFont?,normalColor:UIColor?,selectColor:UIColor?,normalImage:UIImage? = nil,selectImage:UIImage? = nil) {
         self.init()
         setTitle(title, for: .normal)
         titleLabel?.font = font
-        titleLabel?.textAlignment = textAlignment
         setTitleColor(normalColor, for: .normal)
         setTitleColor(selectColor, for: .selected)
         setImage(normalImage, for: .normal)
