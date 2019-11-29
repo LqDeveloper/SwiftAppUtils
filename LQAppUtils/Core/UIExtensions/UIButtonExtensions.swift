@@ -9,6 +9,11 @@
 #if canImport(UIKit) && !os(watchOS)
 import UIKit
 
+public enum ImageLocation{
+    case left,right,top,bottom
+}
+
+
 public extension UIButton {
     @IBInspectable
     var disabledImage: UIImage? {
@@ -213,35 +218,26 @@ public extension UIButton {
         contentEdgeInsets = UIEdgeInsets(top: 0, left: insetAmount, bottom: 0, right: insetAmount)
     }
     
-    func setIconInLeftWithSpacing(space:CGFloat){
-        titleEdgeInsets = UIEdgeInsets.init(top: 0, left: space/2, bottom: 0, right: -space/2)
-        imageEdgeInsets = UIEdgeInsets.init(top: 0, left: -space/2, bottom: 0, right: space/2)
-    }
-    
-    func setIconInRightWithSpacing(space:CGFloat){
-        let imageWidth = imageView?.bounds.size.width ?? 0
-        let titleWidth = titleLabel?.bounds.size.width ?? 0
-        imageEdgeInsets = UIEdgeInsets.init(top: 0, left: (titleWidth + space/2), bottom: 0, right: -(titleWidth + space/2))
-        titleEdgeInsets = UIEdgeInsets.init(top: 0, left:  -(imageWidth + space/2), bottom: 0, right: (imageWidth + space/2))
-    }
-    
-    func setIconInTopWithSpacing(space:CGFloat){
+    func setImage(location:ImageLocation,space:CGFloat){
         let imageWidth = imageView?.bounds.size.width ?? 0
         let imageHeight = imageView?.bounds.size.height ?? 0
         let titleWidth = titleLabel?.bounds.size.width ?? 0
         let titleHeight = titleLabel?.bounds.size.height ?? 0
-        imageEdgeInsets = UIEdgeInsets.init(top:-(imageHeight/2 + space/2), left: titleWidth/2, bottom: (imageHeight/2 + space/2), right: -(titleWidth/2))
-        titleEdgeInsets = UIEdgeInsets.init(top: (titleHeight/2 + space/2), left:  -(imageWidth/2), bottom: -(titleHeight/2 + space/2), right: imageWidth/2)
-    }
-    
-    
-    func setIconInBottomWithSpacing(space:CGFloat){
-        let imageWidth = imageView?.bounds.size.width ?? 0
-        let imageHeight = imageView?.bounds.size.height ?? 0
-        let titleWidth = titleLabel?.bounds.size.width ?? 0
-        let titleHeight = titleLabel?.bounds.size.height ?? 0
-        imageEdgeInsets = UIEdgeInsets.init(top:(imageHeight/2 + space/2), left: titleWidth/2, bottom: -(imageHeight/2 + space/2), right: -(titleWidth/2))
-        titleEdgeInsets = UIEdgeInsets.init(top: -(titleHeight/2 + space/2), left:  -(imageWidth/2), bottom: (titleHeight/2 + space/2), right: imageWidth/2)
+        
+        switch location {
+        case .left:
+            titleEdgeInsets = UIEdgeInsets.init(top: 0, left: space/2, bottom: 0, right: -space/2)
+            imageEdgeInsets = UIEdgeInsets.init(top: 0, left: -space/2, bottom: 0, right: space/2)
+        case .right:
+            imageEdgeInsets = UIEdgeInsets.init(top: 0, left: (titleWidth + space/2), bottom: 0, right: -(titleWidth + space/2))
+            titleEdgeInsets = UIEdgeInsets.init(top: 0, left:  -(imageWidth + space/2), bottom: 0, right: (imageWidth + space/2))
+        case .top:
+            imageEdgeInsets = UIEdgeInsets.init(top:-(imageHeight/2 + space/2), left: titleWidth/2, bottom: (imageHeight/2 + space/2), right: -(titleWidth/2))
+            titleEdgeInsets = UIEdgeInsets.init(top: (titleHeight/2 + space/2), left:  -(imageWidth/2), bottom: -(titleHeight/2 + space/2), right: imageWidth/2)
+        case .bottom:
+            imageEdgeInsets = UIEdgeInsets.init(top:(imageHeight/2 + space/2), left: titleWidth/2, bottom: -(imageHeight/2 + space/2), right: -(titleWidth/2))
+            titleEdgeInsets = UIEdgeInsets.init(top: -(titleHeight/2 + space/2), left:  -(imageWidth/2), bottom: (titleHeight/2 + space/2), right: imageWidth/2)
+        }
     }
     
 }
