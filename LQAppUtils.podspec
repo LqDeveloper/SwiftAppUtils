@@ -1,14 +1,14 @@
 Pod::Spec.new do |spec|
-  spec.name         = 'LQAppUtils'
-  spec.version      = '1.6.3'
+  spec.name         = 'SwiftAppUtils'
+  spec.version      = '1.0.0'
   spec.license = { type: 'MIT', file: 'LICENSE' }
   spec.author       = { "Quan Li" => "1083099465@qq.com" }
   spec.summary      = 'Extensions, base classes, tools commonly used in iOS development'
   spec.description  = <<-EOS
   LQAppUtils contains UI utils, common tool classes, MVVM framework, etc.
   EOS
-  spec.homepage     = 'https://github.com/LqDeveloper/LQAppUtils'
-  spec.source       = { :git => 'https://github.com/LqDeveloper/LQAppUtils.git', :tag => '1.6.3' }
+  spec.homepage     = 'https://github.com/LqDeveloper/SwiftAppUtils'
+  spec.source       = { :git => 'https://github.com/LqDeveloper/SwiftAppUtils.git', :tag => '1.0.0' }
   
   #spec.resource     = ""
   spec.requires_arc = true
