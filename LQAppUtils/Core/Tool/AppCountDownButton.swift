@@ -58,9 +58,9 @@ open class AppCountDownButton: UIButton {
         guard let count = countTimer else {
             return
         }
-        isUserInteractionEnabled = false
+        isEnabled = false
         delegate?.beginCountDown(btn: self, count: remainCount)
-        RunLoop.current.add(count, forMode: .default)
+        RunLoop.current.add(count, forMode: .common)
     }
     
     @objc func timerRun(){
@@ -77,7 +77,7 @@ open class AppCountDownButton: UIButton {
         guard countTimer != nil else {
             return
         }
-        isUserInteractionEnabled = true
+        isEnabled = true
         remainCount = count
         countTimer?.invalidate()
         countTimer = nil

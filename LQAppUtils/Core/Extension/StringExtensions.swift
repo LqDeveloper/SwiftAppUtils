@@ -35,6 +35,16 @@ public extension String {
         return NSRange.init(location: 0, length: self.count)
     }
     
+    var data:Data?{
+        return data(using: .utf8)
+    }
+    
+    var json:[String:Any]?{
+        guard let data = self.data else {
+            return nil
+        }
+        return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any]
+    }
     
     ///base64 解密
     ///
@@ -129,12 +139,18 @@ public extension String {
         return rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
     }
     
+    /// 是否包含中文
+    var hasChinese: Bool {
+        let predicateStr = "([\\s\\S]*)[\\u4e00-\\u9fa5]+([\\s\\S]*)"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: self)
+    }
     
     /// 是否只包含字母
     var isOnlyLetter: Bool {
-        let hasLetters = rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
-        let hasNumbers = rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
-        return hasLetters && !hasNumbers
+        let predicateStr = "^[a-zA-Z]+$"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: self)
     }
     
     /// 是否包含最少一个字母和最少一个字母数字
@@ -191,8 +207,8 @@ public extension String {
     }
     
     /// 是否全是中文字符
-    var isChinese:Bool{
-        let predicateStr = "(^[\u{4e00}-\u{9fa5}]+$)"
+    var isAllChinese:Bool{
+        let predicateStr = "(^[\\u4e00-\\u9fa5]+$)"
         let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
         return predicate.evaluate(with: self)
     }
@@ -313,6 +329,20 @@ public extension String {
         return replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
     }
     
+    /// 获取Url中的请求参数
+    /// ?name=demo&age=10
+    ///["name": "demo", "age": "10"]
+    var queryParameters: [String: String]? {
+        guard let components = URLComponents.init(string: self), let queryItems = components.queryItems else { return nil }
+        
+        var items: [String: String] = [:]
+        
+        for queryItem in queryItems {
+            items[queryItem.name] = queryItem.value
+        }
+        
+        return items
+    }
 }
 
 // MARK: - Methods

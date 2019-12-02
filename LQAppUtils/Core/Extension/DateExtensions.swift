@@ -61,7 +61,7 @@ public extension Date {
     }
     
     
-    /// 这个月的第几个星期
+    /// 这个月的第几个月
     var weekOfMonth: Int {
         return calendar.component(.weekOfMonth, from: self)
     }
@@ -197,22 +197,6 @@ public extension Date {
         }
     }
     
-    /// 毫秒 可以被修改  这个不是时间戳
-    var millisecond: Int {
-        get {
-            return calendar.component(.nanosecond, from: self) / 1000000
-        }
-        set {
-            let nanoSeconds = newValue * 1000000
-            let allowedRange = calendar.range(of: .nanosecond, in: .second, for: self)!
-            guard allowedRange.contains(nanoSeconds) else { return }
-            
-            if let date = calendar.date(bySetting: .nanosecond, value: nanoSeconds, of: self) {
-                self = date
-            }
-        }
-    }
-    
     /// 获取当前 秒级 时间戳 - 10位
     var secondStamp : Int {
         let timeInterval: TimeInterval = self.timeIntervalSince1970
@@ -238,42 +222,42 @@ public extension Date {
         return self < Date()
     }
     
-    /// 检查时间是否在今天之内。
+    /// 检查时间是否在今天之内
     var isInToday: Bool {
         return calendar.isDateInToday(self)
     }
     
-    /// 检查时间是否在昨天之内。
+    /// 检查时间是否在昨天之内
     var isInYesterday: Bool {
         return calendar.isDateInYesterday(self)
     }
     
-    /// 检查时间是否在明天之内。
+    /// 检查时间是否在明天之内
     var isInTomorrow: Bool {
         return calendar.isDateInTomorrow(self)
     }
     
-    /// 检查日期是否在周末时间内。
+    /// 检查日期是否在周末时间内
     var isInWeekend: Bool {
         return calendar.isDateInWeekend(self)
     }
     
-    /// 检查日期是否在工作日内。
+    /// 检查日期是否在工作日内
     var isWorkday: Bool {
         return !calendar.isDateInWeekend(self)
     }
     
-    /// 检查日期是否在当前星期内。
+    /// 检查日期是否在当前星期内
     var isInCurrentWeek: Bool {
         return calendar.isDate(self, equalTo: Date(), toGranularity: .weekOfYear)
     }
     
-    /// 检查日期是否在当前月份之内。
+    /// 检查日期是否在当前月份之内
     var isInCurrentMonth: Bool {
         return calendar.isDate(self, equalTo: Date(), toGranularity: .month)
     }
     
-    /// 检查日期是否在当前年份之内。
+    /// 检查日期是否在当前年份之内
     var isInCurrentYear: Bool {
         return calendar.isDate(self, equalTo: Date(), toGranularity: .year)
     }

@@ -32,8 +32,9 @@ class ViewController: AppBaseViewController{
         observer.delegate = self
         textField.textType = .password
         
-        debugPrint("全是中文dasd".isChinese)
+        debugPrint("\n这是".hasChinese)
         print(AppDeviceInfo.statusBarHeight)
+        print("?name=demo&age=10".queryParameters!)
     }
     @IBAction func clickButton(_ sender: Any) {
         

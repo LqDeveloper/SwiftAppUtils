@@ -93,11 +93,18 @@ public extension UITextField {
         return predicate.evaluate(with: text)
     }
     
-    /// 是否全是中文字符
-    var isChinese:Bool{
-        let predicateStr = "(^[\u{4e00}-\u{9fa5}]$)"
+    /// 是否包含中文
+    var hasChinese: Bool {
+        let predicateStr = "([\\s\\S]*)[\\u4e00-\\u9fa5]+([\\s\\S]*)"
         let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
-        return predicate.evaluate(with: text)
+        return predicate.evaluate(with: self.text)
+    }
+    
+    /// 是否全是中文字符
+    var isAllChinese:Bool{
+        let predicateStr = "(^[\\u4e00-\\u9fa5]+$)"
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: self.text)
     }
     
     /// 检查身份证号是否合法
