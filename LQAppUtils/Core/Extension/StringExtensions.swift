@@ -39,6 +39,18 @@ public extension String {
         return data(using: .utf8)
     }
     
+    func replaceRegularExpression(pattern:String?,withStr:String?) -> String{
+        return replaceRegularExpression(pattern: pattern, withStr: withStr, range: self.range)
+    }
+    
+    func replaceRegularExpression(pattern:String?,withStr:String?,range:NSRange) -> String{
+        guard let pn = pattern,let str = withStr else {
+            return self
+        }
+        let re = try? NSRegularExpression.init(pattern: pn, options: .caseInsensitive)
+        return  re?.stringByReplacingMatches(in: self, options: .reportCompletion, range: range, withTemplate: str) ?? self
+    }
+    
     var json:[String:Any]?{
         guard let data = self.data else {
             return nil
@@ -46,7 +58,7 @@ public extension String {
         return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any]
     }
     
-    ///base64 解密
+    ///base64 解码
     ///
     ///"SGVsbG8gV29ybGQh".base64Decoded = Optional("Hello World!")
     ///
@@ -55,7 +67,7 @@ public extension String {
         return String(data: decodedData, encoding: .utf8)
     }
     
-    ///base64 加密
+    ///base64 编码
     ///
     ///        "Hello World!".base64Encoded -> Optional("SGVsbG8gV29ybGQh")
     ///

@@ -19,6 +19,28 @@ public extension UILabel {
         }
     }
     
+    var requiredSize:CGSize{
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.font = font
+        label.text = text
+        label.attributedText = attributedText
+        label.sizeToFit()
+        return label.frame.size
+    }
+    
+    var requiredWidth: CGFloat {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat.greatestFiniteMagnitude, height: frame.height))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.font = font
+        label.text = text
+        label.attributedText = attributedText
+        label.sizeToFit()
+        return label.frame.width
+    }
+    
     /// 获取Label需要的高度
     var requiredHeight: CGFloat {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: frame.width, height: CGFloat.greatestFiniteMagnitude))

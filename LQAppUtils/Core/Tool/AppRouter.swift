@@ -27,37 +27,37 @@ public class AppRouter{
         currentVC = viewController
     }
     
-    public func switchToViewController(type:AppRouterType){
+    public func switchToViewController(type:AppRouterType, _ completion: (() -> Void)? = nil){
         switch type {
         case .push(let vc,let pushType,let animated):
             switch pushType {
             case .notHideBar:
-                currentVC?.navigationController?.pushViewController(vc, animated: animated)
+                currentVC?.navigationController?.pushViewController(vc,animated,completion)
             case .hideWhenPush:
                 currentVC?.hidesBottomBarWhenPushed = true
-                currentVC?.navigationController?.pushViewController(vc, animated: animated)
+                currentVC?.navigationController?.pushViewController(vc,animated,completion)
             case .hideWhenPushAndBackNotHide:
                 currentVC?.hidesBottomBarWhenPushed = true
-                currentVC?.navigationController?.pushViewController(vc, animated: animated)
+                currentVC?.navigationController?.pushViewController(vc,animated,completion)
                 currentVC?.hidesBottomBarWhenPushed = false
             }
         case .present(let vc,let animated):
-            currentVC?.present(vc, animated: animated, completion: nil)
+            currentVC?.present(vc, animated: animated, completion: completion)
         case .back(let toRoot,let animated):
             if currentVC?.presentingViewController != nil {
-                currentVC?.dismiss(animated: animated, completion: nil)
+                currentVC?.dismiss(animated: animated, completion: completion)
             } else {
                 if toRoot{
-                    _ = currentVC?.navigationController?.popToRootViewController(animated: animated)
+                    currentVC?.navigationController?.popToRootViewController(animated, completion)
                 }else{
-                    _ = currentVC?.navigationController?.popViewController(animated: animated)
+                    currentVC?.navigationController?.popViewController(animated, completion)
                 }
             }
         }
     }
     
-    public func backToVC(_ toRoot:Bool = false,_ animated:Bool = true){
-        switchToViewController(type: .back(toRoot,animated))
+    public func backToVC(_ toRoot:Bool = false,_ animated:Bool = true , _ completion: (() -> Void)? = nil){
+        switchToViewController(type: .back(toRoot,animated),completion)
     }
 }
 
