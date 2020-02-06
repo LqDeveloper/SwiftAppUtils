@@ -25,16 +25,17 @@ class ViewController: AppBaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = .green
-        let status = AppKeychainManager.save(service: "demo.williamoneil.com", account: "13818713453", password: "123456").checkStatus
-        print(status.rawValue)
-        observer.delegate = self
-        textField.textType = .password
-        
-        debugPrint("\n这是".hasChinese)
-        print(AppDeviceInfo.statusBarHeight)
-        print("?name=demo&age=10".queryParameters!)
+        //        navigationController?.navigationBar.isTranslucent = false
+        //        navigationController?.navigationBar.barTintColor = .green
+        //        let status = AppKeychainManager.save(service: "demo.williamoneil.com", account: "13818713453", password: "123456").checkStatus
+        //        print(status.rawValue)
+        //        observer.delegate = self
+        //        textField.textType = .password
+        //
+        //        debugPrint("\n这是".hasChinese)
+        //        print(AppDeviceInfo.statusBarHeight)
+        //        print("?name=demo&age=10".queryParameters!)
+        aes()
     }
     @IBAction func clickButton(_ sender: Any) {
         
@@ -43,17 +44,17 @@ class ViewController: AppBaseViewController{
     
     func aes(){
         let password = "UserPassword1!"
-        let key128   = "1234567890123456"                   // 16 bytes for AES128
-        //        let key256   = "12345678901234561234567890123456"   // 32 bytes for AES256
+//        let key128   = "1234567890123456"                   // 16 bytes for AES128
+                let key256   = "12345678901234561234567890123456"   // 32 bytes for AES256
         let iv       = "abcdefghijklmnop"                   // 16 bytes for AES128
         
-        guard let enData = password.aesEncrypt(key: key128, iv: iv) else{
+        guard let enData = password.aesEncrypt(key: key256, iv: iv) else{
             return
         }
         let enStr = enData.toHexString()
         print(enStr)
-        let deStr = Data.init(hex: enStr).aesDecrypt(key: key128, iv: iv)
-        print(deStr!)
+        let deStr = enData.aesDecrypt(key: key256, iv: iv)
+        print(deStr)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

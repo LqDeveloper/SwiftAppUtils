@@ -104,6 +104,7 @@
 		51F6043B23710EAB0030C8D3 /* AppBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6043A23710EAB0030C8D3 /* AppBaseWebViewController.swift */; };
 		51F6043D2371120C0030C8D3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6043C2371120C0030C8D3 /* WebViewController.swift */; };
 		51FD3971236145A7005BA224 /* LQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD3970236145A7005BA224 /* LQViewController.swift */; };
+		5A46CCB823EC069B00C7444C /* EncryptionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A46CCB723EC069B00C7444C /* EncryptionTool.swift */; };
 		5AE618362371A8CF00A2D973 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE618352371A8CF00A2D973 /* DemoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -228,6 +229,7 @@
 		51F6043A23710EAB0030C8D3 /* AppBaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseWebViewController.swift; sourceTree = "<group>"; };
 		51F6043C2371120C0030C8D3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		51FD3970236145A7005BA224 /* LQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LQViewController.swift; sourceTree = "<group>"; };
+		5A46CCB723EC069B00C7444C /* EncryptionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionTool.swift; sourceTree = "<group>"; };
 		5AE618352371A8CF00A2D973 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -394,6 +396,7 @@
 				512D3B562356EEA4001677CF /* AppKeychainManager.swift */,
 				515D73552362C65F00B83605 /* AppCountDownButton.swift */,
 				5157A8DE23667E40001CB260 /* AppKeyboardObserver.swift */,
+				5A46CCB723EC069B00C7444C /* EncryptionTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A46CCB823EC069B00C7444C /* EncryptionTool.swift in Sources */,
 				515D73562362C65F00B83605 /* AppCountDownButton.swift in Sources */,
 				5103DBB6235ECB0700E62F78 /* LQUIUtils+UIImageView.swift in Sources */,
 				5103DBC0235ECB0700E62F78 /* LQUIUtils+UIWebView.swift in Sources */,
