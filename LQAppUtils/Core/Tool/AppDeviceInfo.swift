@@ -305,5 +305,11 @@ public extension AppDeviceInfo{
             return [:]
         }
     }
+    
+    ///设置 深色模式 浅色模式 未指定模式
+    @available(iOS 13.0,*)
+    var userInterfaceStyle:UIUserInterfaceStyle{
+        return UITraitCollection.current.userInterfaceStyle
+    }
 }
 #endif
