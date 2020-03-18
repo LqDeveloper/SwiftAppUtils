@@ -1,6 +1,6 @@
 //
 //  AESExtension.swift
-//  LQAppUtils
+//  SwiftAppUtils
 //
 //  Created by Quan Li on 2018/7/11.
 //  Copyright © 2019 Quan Li. All rights reserved.
@@ -111,8 +111,8 @@ public extension Data{
         self.init(Array<UInt8>(hex: hex))
     }
     
-    var bytes: Array<UInt8> {
-        return Array(self)
+    var bytes: [UInt8] {
+        return [UInt8](self)
     }
     
     func toHexString() -> String {

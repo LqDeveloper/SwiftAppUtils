@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  LQAppUtils
+//  SwiftAppUtils
 //
 //  Created by Quan Li on 2019/10/16.
 //  Copyright © 2019 Quan Li. All rights reserved.
@@ -25,6 +25,8 @@ class ViewController: AppBaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(UIColor.red.hexString("0x"))
+        print(UIColor.green.hexString)
         //        navigationController?.navigationBar.isTranslucent = false
         //        navigationController?.navigationBar.barTintColor = .green
         //        let status = AppKeychainManager.save(service: "demo.williamoneil.com", account: "13818713453", password: "123456").checkStatus

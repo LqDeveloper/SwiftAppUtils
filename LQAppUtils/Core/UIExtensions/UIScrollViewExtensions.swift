@@ -1,6 +1,6 @@
 //
 //  UIScrollViewExtensions.swift
-//  LQAppUtils
+//  SwiftAppUtils
 //
 //  Created by Quan Li on 2018/7/11.
 //  Copyright © 2019 Quan Li. All rights reserved.

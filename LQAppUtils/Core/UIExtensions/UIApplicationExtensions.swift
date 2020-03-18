@@ -1,9 +1,9 @@
 //
 //  UIApplicationExtensions.swift
-//  LQAppUtils
+//  SwiftAppUtils
 //
 //  Created by Quan Li on 2019/11/4.
-//  Copyright © 2019 williamoneilchina. All rights reserved.
+//  Copyright © 2019 Quan Li. All rights reserved.
 //
 
 #if canImport(UIKit) && os(iOS)

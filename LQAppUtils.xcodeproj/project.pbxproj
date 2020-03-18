@@ -39,6 +39,15 @@
 		5103DBD0235ECB0700E62F78 /* LQUIUtils+UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBB2235ECB0700E62F78 /* LQUIUtils+UITapGestureRecognizer.swift */; };
 		5103DBD8235ED45300E62F78 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBD7235ED45300E62F78 /* AppRouter.swift */; };
 		5103DBDC235ED9C700E62F78 /* MVVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBDB235ED9C700E62F78 /* MVVMProtocol.swift */; };
+		511F88C32421B1540009F2FB /* BidirectionalCollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88C22421B1540009F2FB /* BidirectionalCollectionExtensions.swift */; };
+		511F88C52421B1890009F2FB /* BinaryFloatingPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88C42421B1890009F2FB /* BinaryFloatingPointExtensions.swift */; };
+		511F88C72421B27D0009F2FB /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88C62421B27D0009F2FB /* CalendarExtensions.swift */; };
+		511F88C92421B3950009F2FB /* ComparableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88C82421B3950009F2FB /* ComparableExtensions.swift */; };
+		511F88CB2421B5EA0009F2FB /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88CA2421B5EA0009F2FB /* IntExtensions.swift */; };
+		511F88D12421B79E0009F2FB /* SignedIntegerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88D02421B79E0009F2FB /* SignedIntegerExtensions.swift */; };
+		511F88D32421BB5D0009F2FB /* OptionalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88D22421BB5D0009F2FB /* OptionalExtensions.swift */; };
+		511F88D52421BE890009F2FB /* RandomAccessCollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88D42421BE890009F2FB /* RandomAccessCollectionExtensions.swift */; };
+		511F88D72421BF7A0009F2FB /* UIBezierPathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88D62421BF7A0009F2FB /* UIBezierPathExtensions.swift */; };
 		512D3B182356BD4B001677CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B172356BD4B001677CF /* AppDelegate.swift */; };
 		512D3B1A2356BD4B001677CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B192356BD4B001677CF /* SceneDelegate.swift */; };
 		512D3B1C2356BD4B001677CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B1B2356BD4B001677CF /* ViewController.swift */; };
@@ -158,6 +167,15 @@
 		5103DBB2235ECB0700E62F78 /* LQUIUtils+UITapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UITapGestureRecognizer.swift"; sourceTree = "<group>"; };
 		5103DBD7235ED45300E62F78 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		5103DBDB235ED9C700E62F78 /* MVVMProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMProtocol.swift; sourceTree = "<group>"; };
+		511F88C22421B1540009F2FB /* BidirectionalCollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidirectionalCollectionExtensions.swift; sourceTree = "<group>"; };
+		511F88C42421B1890009F2FB /* BinaryFloatingPointExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryFloatingPointExtensions.swift; sourceTree = "<group>"; };
+		511F88C62421B27D0009F2FB /* CalendarExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
+		511F88C82421B3950009F2FB /* ComparableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableExtensions.swift; sourceTree = "<group>"; };
+		511F88CA2421B5EA0009F2FB /* IntExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
+		511F88D02421B79E0009F2FB /* SignedIntegerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedIntegerExtensions.swift; sourceTree = "<group>"; };
+		511F88D22421BB5D0009F2FB /* OptionalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalExtensions.swift; sourceTree = "<group>"; };
+		511F88D42421BE890009F2FB /* RandomAccessCollectionExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomAccessCollectionExtensions.swift; sourceTree = "<group>"; };
+		511F88D62421BF7A0009F2FB /* UIBezierPathExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtensions.swift; sourceTree = "<group>"; };
 		512D3B142356BD4B001677CF /* LQAppUtilsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LQAppUtilsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		512D3B172356BD4B001677CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		512D3B192356BD4B001677CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -423,6 +441,14 @@
 				51DEF0B1235837080024E550 /* URLRequestExtensions.swift */,
 				51DEF0B3235837C20024E550 /* UserDefaultsExtensions.swift */,
 				51DEF0B92358596F0024E550 /* NSAttributedStringExtensions.swift */,
+				511F88C22421B1540009F2FB /* BidirectionalCollectionExtensions.swift */,
+				511F88C42421B1890009F2FB /* BinaryFloatingPointExtensions.swift */,
+				511F88C62421B27D0009F2FB /* CalendarExtensions.swift */,
+				511F88C82421B3950009F2FB /* ComparableExtensions.swift */,
+				511F88D02421B79E0009F2FB /* SignedIntegerExtensions.swift */,
+				511F88CA2421B5EA0009F2FB /* IntExtensions.swift */,
+				511F88D22421BB5D0009F2FB /* OptionalExtensions.swift */,
+				511F88D42421BE890009F2FB /* RandomAccessCollectionExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -452,6 +478,7 @@
 				51D79C46235811C700C13E22 /* UITextViewExtensions.swift */,
 				51DEF0AD235834BA0024E550 /* UIWindowExtensions.swift */,
 				51C80C0D23702D6D00EA898E /* UIApplicationExtensions.swift */,
+				511F88D62421BF7A0009F2FB /* UIBezierPathExtensions.swift */,
 			);
 			path = UIExtensions;
 			sourceTree = "<group>";
@@ -616,11 +643,14 @@
 				51D79C4323580EC100C13E22 /* UITableViewExtensions.swift in Sources */,
 				51F6043B23710EAB0030C8D3 /* AppBaseWebViewController.swift in Sources */,
 				5103DBC5235ECB0700E62F78 /* LQUIUtils+WKWebView.swift in Sources */,
+				511F88D12421B79E0009F2FB /* SignedIntegerExtensions.swift in Sources */,
 				512D3B802357045F001677CF /* DataExtensions.swift in Sources */,
 				51DEF0B823583F550024E550 /* AppViewProtocol.swift in Sources */,
 				512D3B6C2356F2F3001677CF /* AESExtensions.swift in Sources */,
 				51D79C3D23580DDE00C13E22 /* UISegmentedControlExtensions.swift in Sources */,
 				512D3B7C2356FF7E001677CF /* CGSizeExtensions.swift in Sources */,
+				511F88D32421BB5D0009F2FB /* OptionalExtensions.swift in Sources */,
+				511F88C52421B1890009F2FB /* BinaryFloatingPointExtensions.swift in Sources */,
 				5157A8DF23667E40001CB260 /* AppKeyboardObserver.swift in Sources */,
 				5103DBB4235ECB0700E62F78 /* LQUIUtils+UITextField.swift in Sources */,
 				512D3B572356EEA4001677CF /* AppKeychainManager.swift in Sources */,
@@ -630,9 +660,11 @@
 				512D3B5B2356EEC2001677CF /* AppDefaultsProtocol.swift in Sources */,
 				512D3B642356F12E001677CF /* UIViewExtensions.swift in Sources */,
 				512D3B502356BDA2001677CF /* AppBaseTabBarController.swift in Sources */,
+				511F88C92421B3950009F2FB /* ComparableExtensions.swift in Sources */,
 				5103DBC4235ECB0700E62F78 /* LQUIUtils+UIGestureRecognizer.swift in Sources */,
 				5103DBBA235ECB0700E62F78 /* LQUIUtils+UIStackView.swift in Sources */,
 				51D79C452358107D00C13E22 /* UITextFieldExtensions.swift in Sources */,
+				511F88C32421B1540009F2FB /* BidirectionalCollectionExtensions.swift in Sources */,
 				515B3B252374F9E2005275D3 /* AppCustomTableViewController.swift in Sources */,
 				512D3B882357116A001677CF /* DoubleExtensions.swift in Sources */,
 				512D3B182356BD4B001677CF /* AppDelegate.swift in Sources */,
@@ -667,12 +699,16 @@
 				512D3B7E235700F6001677CF /* CharacterExtensions.swift in Sources */,
 				512D3B552356DF8F001677CF /* AppDeviceInfo.swift in Sources */,
 				5103DBCD235ECB0700E62F78 /* LQUIUtilsNameSpace.swift in Sources */,
+				511F88D72421BF7A0009F2FB /* UIBezierPathExtensions.swift in Sources */,
 				51D79C47235811C700C13E22 /* UITextViewExtensions.swift in Sources */,
 				512D3B682356F16E001677CF /* StringExtensions.swift in Sources */,
+				511F88D52421BE890009F2FB /* RandomAccessCollectionExtensions.swift in Sources */,
 				512D3B4F2356BDA2001677CF /* AppBaseViewController.swift in Sources */,
 				512D3B1A2356BD4B001677CF /* SceneDelegate.swift in Sources */,
+				511F88C72421B27D0009F2FB /* CalendarExtensions.swift in Sources */,
 				512D3B8D23571F77001677CF /* UIAlertControllerExtensions.swift in Sources */,
 				512D3B8623571103001677CF /* DispatchQueueExtensions.swift in Sources */,
+				511F88CB2421B5EA0009F2FB /* IntExtensions.swift in Sources */,
 				5103DBC8235ECB0700E62F78 /* LQUIUtils+WKWebViewConfiguration.swift in Sources */,
 				51FD3971236145A7005BA224 /* LQViewController.swift in Sources */,
 				512D3B9323572710001677CF /* UIEdgeInsetsExtensions.swift in Sources */,

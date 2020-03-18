@@ -1,6 +1,6 @@
 //
 //  AppUtils+UIColor.swift
-//  LQAppUtils
+//  SwiftAppUtils
 //
 //  Created by Quan Li on 2018/7/11.
 //  Copyright © 2019 Quan Li. All rights reserved.
@@ -121,18 +121,30 @@ public extension UIColor{
 }
 
 
-extension UIColor{
+public extension UIColor{
     var alpha: CGFloat {
         return cgColor.alpha
     }
     
     var hexString: String {
+        return hexString("#")
+    }
+    
+    func hexString(_ prefix:String = "#") -> String{
         let components: [Int] = {
             let comps = cgColor.components!
             let components = comps.count == 4 ? comps : [comps[0], comps[0], comps[0], comps[1]]
             return components.map { Int($0 * 255.0) }
         }()
-        return String(format: "#%02X%02X%02X", components[0], components[1], components[2])
+        return String(format: "%@%02X%02X%02X",prefix,components[0], components[1], components[2])
     }
 }
+
+public extension CGColor {
+    //返回UIColor.
+    var uiColor: UIColor? {
+        return UIColor(cgColor: self)
+    }
+}
+
 #endif

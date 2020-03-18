@@ -1,9 +1,9 @@
 //
 //  EncryptionTool.swift
-//  LQAppUtils
+//  SwiftAppUtils
 //
 //  Created by liquan on 2020/2/6.
-//  Copyright © 2020 williamoneilchina. All rights reserved.
+//  Copyright © 2020 Quan Li. All rights reserved.
 //
 
 import Foundation

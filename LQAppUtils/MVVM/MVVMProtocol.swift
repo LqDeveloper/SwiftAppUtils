@@ -1,6 +1,6 @@
 //
 //  MVVMProtocol.swift
-//  LQAppUtils
+//  SwiftAppUtils
 //
 //  Created by Quan Li on 2019/9/29.
 //  Copyright © 2019 Quan Li. All rights reserved.

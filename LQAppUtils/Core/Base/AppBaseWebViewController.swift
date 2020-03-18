@@ -1,9 +1,9 @@
 //
 //  AppBaseWebViewController.swift
-//  LQAppUtils
+//  SwiftAppUtils
 //
 //  Created by Quan Li on 2019/11/5.
-//  Copyright © 2019 williamoneilchina. All rights reserved.
+//  Copyright © 2019 Quan Li. All rights reserved.
 //
 #if canImport(UIKit) && os(iOS) && canImport(WebKit)
 import UIKit

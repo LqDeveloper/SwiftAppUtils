@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  LQAppUtils
+//  SwiftAppUtils
 //
 //  Created by Quan Li on 2019/10/16.
 //  Copyright © 2019 Quan Li. All rights reserved.

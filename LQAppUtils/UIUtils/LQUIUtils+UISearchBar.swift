@@ -3,7 +3,7 @@
 //  LQUIUtils
 //
 //  Created by Quan Li on 2019/9/24.
-//  Copyright © 2019 williamoneilchina. All rights reserved.
+//  Copyright © 2019 Quan Li. All rights reserved.
 //
 
 import UIKit

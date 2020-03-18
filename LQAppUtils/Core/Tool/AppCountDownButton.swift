@@ -1,6 +1,6 @@
 //
 //  AppCountDownButton.swift
-//  LQAppUtils
+//  SwiftAppUtils
 //
 //  Created by Quan Li on 2019/10/25.
 //  Copyright © 2019 Quan Li. All rights reserved.

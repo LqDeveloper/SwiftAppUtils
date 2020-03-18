@@ -1,9 +1,9 @@
 //
 //  DemoViewController.swift
-//  LQAppUtils
+//  SwiftAppUtils
 //
 //  Created by liquan on 2019/11/5.
-//  Copyright © 2019 williamoneilchina. All rights reserved.
+//  Copyright © 2019 Quan Li. All rights reserved.
 //
 
 import UIKit
