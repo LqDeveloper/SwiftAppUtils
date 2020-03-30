@@ -50,13 +50,13 @@ class ViewController: AppBaseViewController{
                 let key256   = "12345678901234561234567890123456"   // 32 bytes for AES256
         let iv       = "abcdefghijklmnop"                   // 16 bytes for AES128
         
-        guard let enData = password.aesEncrypt(key: key256, iv: iv) else{
+        guard let enData = password.aesEncrypt(key: key256, iv: iv,algorithm: .algorithmAES128) else{
             return
         }
         let enStr = enData.toHexString()
         print(enStr)
-        let deStr = enData.aesDecrypt(key: key256, iv: iv)
-        print(deStr)
+        let deData = enData.aesDecrypt(key: key256, iv: iv,algorithm: .algorithmAES128)
+        print(String.init(data: deData!, encoding: .utf8))
     }
     
     override func viewWillDisappear(_ animated: Bool) {

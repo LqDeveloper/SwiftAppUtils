@@ -22,12 +22,20 @@ open class AppBaseWebViewController: AppBaseViewController,WKUIDelegate,WKNaviga
         view.addSubview(webView)
     }
     
-    open func loadUrl(_ urlStr:String?){
+    open func loadUrl(_ urlStr:String?,_ cookieStr:String? = nil){
         guard let webUrl = URL.init(string: urlStr ?? "") else {
             return
         }
-        webView.load(URLRequest.init(url: webUrl))
+        
+        if let cookie = cookieStr {
+            var request = URLRequest.init(url: webUrl)
+            request.addValue(cookie, forHTTPHeaderField: "Cookie")
+            webView.load(URLRequest.init(url: webUrl))
+        }else{
+            webView.load(URLRequest.init(url: webUrl))
+        }
     }
+    
     
     open func loadHTMLString(_ htmlStr:String?,_ baseUrl:URL? = nil){
         guard let html = htmlStr else{

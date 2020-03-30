@@ -34,8 +34,8 @@ public extension String{
     ///   - algorithm: 加密算法、默认的 AES/DES
     ///   - option: 是采用CBC还是ECB
     /// - Returns: 加密后的字符串
-    func aesEncrypt(key:String,iv:String?,option:EncryptionTool.OptionType = .CBC) -> Data? {
-        guard let encrypyData = EncryptionTool.encryption(key: key, iv: iv, value: self.data(using: .utf8), algorithm: .algorithmAES, option: option) else {
+    func aesEncrypt(key:String,iv:String?,algorithm:EncryptionTool.AlgorithmType = .algorithmAES,option:EncryptionTool.OptionType = .CBC) -> Data? {
+        guard let encrypyData = self.data(using: .utf8)?.aesEncrypt(key: key, iv: iv,algorithm: algorithm,option: option) else {
             return nil
         }
         return encrypyData
@@ -119,18 +119,34 @@ public extension Data{
         return bytes.toHexString()
     }
     
-    /// AES 解密  字符串本身是加密后的字符
+    /// AES 加密
+    ///
+    /// - Parameters:
+    ///   - key: 密钥
+    ///   - iv:  初始化向量，ECB 不需要指定
+    ///   - algorithm: 加密算法、默认的 AES/DES
+    ///   - option: 是采用CBC还是ECB
+    /// - Returns: 加密后的字符串
+    func aesEncrypt(key:String,iv:String?,algorithm:EncryptionTool.AlgorithmType = .algorithmAES,option:EncryptionTool.OptionType = .CBC) -> Data? {
+        guard let encrypyData = EncryptionTool.encryption(key: key, iv: iv, value: self, algorithm: algorithm, option: option) else {
+            return nil
+        }
+        return encrypyData
+    }
+    
+    
+    /// AES 解密
     ///
     /// - Parameters:
     ///   - key: key
     ///   - iv: 密钥
     ///   - option: 是采用CBC还是ECB
     /// - Returns: 解密后的字符
-    func aesDecrypt(key:String,iv:String?,option:EncryptionTool.OptionType = .CBC) -> String? {
-        guard let decryptedData = EncryptionTool.decrypttion(key: key, iv: iv, value: self, algorithm: .algorithmAES, option: option) else {
+    func aesDecrypt(key:String,iv:String?,algorithm:EncryptionTool.AlgorithmType = .algorithmAES,option:EncryptionTool.OptionType = .CBC) -> Data? {
+        guard let decryptedData = EncryptionTool.decrypttion(key: key, iv: iv, value: self, algorithm: algorithm, option: option) else {
             return nil
         }
-        return String.init(data: decryptedData, encoding: .utf8)
+        return decryptedData
     }
 }
 
