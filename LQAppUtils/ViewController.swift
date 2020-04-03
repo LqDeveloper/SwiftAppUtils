@@ -56,7 +56,7 @@ class ViewController: AppBaseViewController{
         let enStr = enData.toHexString()
         print(enStr)
         let deData = enData.aesDecrypt(key: key256, iv: iv,algorithm: .algorithmAES128)
-        print(String.init(data: deData!, encoding: .utf8))
+        print(String.init(data: deData!, encoding: .utf8) ?? "")
     }
     
     override func viewWillDisappear(_ animated: Bool) {

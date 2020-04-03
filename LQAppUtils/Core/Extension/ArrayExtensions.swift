@@ -58,7 +58,7 @@ public extension Array where Element: Equatable {
     /// - Parameter path: keyPath
     func withoutDuplicates<E: Equatable>(keyPath path: KeyPath<Element, E>) -> [Element] {
         return reduce(into: [Element]()) { (result, element) in
-            if !result.contains { $0[keyPath: path] == element[keyPath: path] } {
+            if !result.contains(where: { $0[keyPath: path] == element[keyPath: path] }) {
                 result.append(element)
             }
         }
