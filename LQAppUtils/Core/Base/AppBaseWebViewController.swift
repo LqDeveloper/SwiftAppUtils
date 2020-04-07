@@ -10,8 +10,8 @@ import UIKit
 import WebKit
 open class AppBaseWebViewController: AppBaseViewController,WKUIDelegate,WKNavigationDelegate {
     
-    public lazy var webView = { () -> WKWebView in
-        let web = WKWebView.init(frame: UIScreen.main.bounds)
+    public lazy var webView = { () -> AppCookieWebView in
+        let web = AppCookieWebView.init(frame: CGRect.init(x: 0, y: AppDeviceInfo.topSpace, width: AppDeviceInfo.screenWidth, height: AppDeviceInfo.screenHeight - AppDeviceInfo.topSpace - AppDeviceInfo.bottomSpace))
         web.uiDelegate = self
         web.navigationDelegate = self
         return web
@@ -23,25 +23,12 @@ open class AppBaseWebViewController: AppBaseViewController,WKUIDelegate,WKNaviga
     }
     
     open func loadUrl(_ urlStr:String?,_ cookieStr:String? = nil){
-        guard let webUrl = URL.init(string: urlStr ?? "") else {
-            return
-        }
-        
-        if let cookie = cookieStr {
-            var request = URLRequest.init(url: webUrl)
-            request.addValue(cookie, forHTTPHeaderField: "Cookie")
-            webView.load(URLRequest.init(url: webUrl))
-        }else{
-            webView.load(URLRequest.init(url: webUrl))
-        }
+        webView.loadUrl(urlStr, cookieStr)
     }
     
     
     open func loadHTMLString(_ htmlStr:String?,_ baseUrl:URL? = nil){
-        guard let html = htmlStr else{
-            return
-        }
-        webView.loadHTMLString(html, baseURL:baseUrl)
+        webView.loadHTMLString(htmlStr, baseUrl)
     }
 }
 #endif
