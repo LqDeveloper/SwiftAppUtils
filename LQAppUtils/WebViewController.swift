@@ -13,6 +13,9 @@ class WebViewController: AppBaseWebViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUrl("https://www.baidu.com")
+       let window =  UIApplication.shared.windows.last
+//        print(self)
+//        print(window?.topViewController!)
     }
     
 }

@@ -42,6 +42,25 @@ public extension UIWindow {
         })
     }
     
+    var topVC:UIViewController?{
+        return UIWindow.getTopVc(rootViewController)
+    }
+    
+    static func getTopVc(_ rootVC:UIViewController?)->UIViewController?{
+        guard let vc = rootVC else {
+            return nil
+        }
+        if vc.presentedViewController != nil {
+            return vc.presentedViewController
+        }else if vc is UITabBarController{
+            return getTopVc((vc as? UITabBarController)?.selectedViewController)
+        }else if vc is UINavigationController{
+            return getTopVc((vc as? UINavigationController)?.topViewController)
+        }else{
+            return vc
+        }
+    }
+    
 }
 
 #endif
