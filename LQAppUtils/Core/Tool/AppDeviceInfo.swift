@@ -232,7 +232,7 @@ public extension AppDeviceInfo{
     static var uuid:String{
         let uuidRef = CFUUIDCreate(nil)
         let uuidStringRef = CFUUIDCreateString(nil,uuidRef)
-        return uuidStringRef as String? ?? ""
+        return (uuidStringRef as String?) ?? ""
     }
     
     /// 国家编码

@@ -235,6 +235,24 @@ public extension UIView {
 // MARK: - Methods
 public extension UIView {
     
+    /// 根据sketch设计图设置阴影
+    /// - Parameters:
+    ///   - color: 阴影颜色
+    ///   - alpha: 阴影透明度
+    ///   - x: sketch中offset的x
+    ///   - y: sketch中offset的y
+    ///   - blur: sketch中effect的Blur
+    ///   - spread: sketch中effect的Spread
+    func skt_setShadow(color:UIColor,alpha:CGFloat = 1,x:CGFloat = 0,y:CGFloat = 0,blur:CGFloat = 0, spread:CGFloat){
+        layer.shadowOffset = CGSize.init(width: x, height: y)
+        layer.shadowRadius = blur * 0.5
+        layer.shadowOpacity = Float(alpha)
+        layer.shadowColor = color.cgColor
+        let rect = bounds.insetBy(dx: -spread, dy: -spread)
+        let path = UIBezierPath.init(roundedRect: rect, cornerRadius: cornerRadius)
+        layer.shadowPath = path.cgPath
+    }
+    
     /// 递归查找第一响应者。
     func firstResponder() -> UIView? {
         var views = [UIView](arrayLiteral: self)
