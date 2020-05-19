@@ -244,13 +244,7 @@ public extension UIView {
     ///   - blur: sketch中effect的Blur
     ///   - spread: sketch中effect的Spread
     func skt_setShadow(color:UIColor,alpha:CGFloat = 1,x:CGFloat = 0,y:CGFloat = 0,blur:CGFloat = 0, spread:CGFloat){
-        layer.shadowOffset = CGSize.init(width: x, height: y)
-        layer.shadowRadius = blur * 0.5
-        layer.shadowOpacity = Float(alpha)
-        layer.shadowColor = color.cgColor
-        let rect = bounds.insetBy(dx: -spread, dy: -spread)
-        let path = UIBezierPath.init(roundedRect: rect, cornerRadius: cornerRadius)
-        layer.shadowPath = path.cgPath
+        layer.skt_setShadow(color: color, alpha: alpha, x: x, y: x, blur: blur, spread: spread)
     }
     
     /// 递归查找第一响应者。
