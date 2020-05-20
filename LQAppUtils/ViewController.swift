@@ -37,8 +37,7 @@ class ViewController: AppBaseViewController{
         //        debugPrint("\n这是".hasChinese)
         //        print(AppDeviceInfo.statusBarHeight)
         //        print("?name=demo&age=10".queryParameters!)
-       
-        
+    
     }
     @IBAction func clickButton(_ sender: Any) {
         

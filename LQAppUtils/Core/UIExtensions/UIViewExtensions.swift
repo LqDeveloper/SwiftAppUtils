@@ -234,6 +234,24 @@ public extension UIView {
 
 // MARK: - Methods
 public extension UIView {
+    func getParentVC(_ window:UIWindow) -> UIViewController? {
+        return getParentVCFromRootVC(window.rootViewController)
+    }
+    
+    func getParentVCFromRootVC(_ rootVc:UIViewController?) -> UIViewController? {
+        var currentVC:UIViewController? = nil
+        if rootVc?.presentedViewController != nil {
+            currentVC = rootVc?.presentedViewController
+        }else if let tabBar = rootVc as? UITabBarController{
+            currentVC = getParentVCFromRootVC(tabBar.selectedViewController)
+        }else if let nav = rootVc as? UINavigationController{
+            currentVC = getParentVCFromRootVC(nav.topViewController)
+        }else{
+            currentVC = rootVc
+        }
+        return currentVC
+    }
+    
     
     /// 根据sketch设计图设置阴影
     /// - Parameters:
