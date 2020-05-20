@@ -105,6 +105,7 @@ public extension DispatchQueue {
     ///              有些比如Timer等是不会自动释放的，是需要手动释放。
     ///   - target: target
     /// - Returns: DispatchQueue
+    @available(iOS 10.0, *)
     static func concurrentQueue(_ label:String,_ qos: DispatchQoS = .default,_ autoreleaseFrequency: AutoreleaseFrequency = .workItem,_ target: DispatchQueue? = nil) -> DispatchQueue{
         
         return DispatchQueue.init(label: label, qos: qos, attributes: DispatchQueue.Attributes.concurrent, autoreleaseFrequency: autoreleaseFrequency, target: target)
