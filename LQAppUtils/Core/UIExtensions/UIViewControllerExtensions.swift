@@ -9,6 +9,8 @@
 import UIKit
 
 public extension UIViewController{
+    
+    /// 是否允许左侧边界返回
     @IBInspectable var popGestureEnable:Bool{
         set{
             navigationController?.interactivePopGestureRecognizer?.isEnabled = newValue
@@ -18,6 +20,7 @@ public extension UIViewController{
         }
     }
     
+    /// 是否显示了
     var isVisible: Bool {
         return isViewLoaded && view.window != nil
     }
@@ -56,15 +59,31 @@ public extension UIViewController{
         return alertController
     }
     
+    /// 显示alert
+    /// - Parameters:
+    ///   - title: 标题
+    ///   - message: 描述
+    ///   - actions: UIAlertAction数组
+    func showAlert(title: String?, message: String?,actions:[UIAlertAction]){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addActions(actions)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    /// 将子ViewController的view添加到containerView上
+    /// - Parameters:
+    ///   - child: 子VC
+    ///   - containerView: containerView
     func addChildViewController(_ child: UIViewController, toContainerView containerView: UIView) {
         addChild(child)
         containerView.addSubview(child.view)
         child.didMove(toParent: self)
     }
     
+    
+    /// 从父视图移除
     func removeViewAndControllerFromParentViewController() {
         guard parent != nil else { return }
-        
         willMove(toParent: nil)
         removeFromParent()
         view.removeFromSuperview()
@@ -94,6 +113,13 @@ public extension UIViewController{
         present(popoverContent, animated: animated, completion: completion)
     }
     
+    /// 设置navigationController?.navigationBar
+    /// - Parameters:
+    ///   - width: 宽度
+    ///   - image: 图片
+    ///   - title: 标题
+    ///   - tintColor: 颜色
+    ///   - style: 类型
     func setupBackBarItem(width:CGFloat,image:UIImage?,title:String?,tintColor:UIColor = .white,style:UIBarButtonItem.Style = .plain){
         navigationController?.navigationBar.backIndicatorImage = image
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = image
@@ -104,6 +130,8 @@ public extension UIViewController{
 }
 
 public extension UIViewController{
+    
+    /// tabBarItem的normal图片
     @IBInspectable var normalImage:UIImage?{
         get{
             return tabBarItem.image
@@ -113,6 +141,7 @@ public extension UIViewController{
         }
     }
     
+    /// tabBarItem的select图片
     @IBInspectable var selectImage:UIImage?{
         get{
             return tabBarItem.selectedImage
@@ -122,6 +151,8 @@ public extension UIViewController{
         }
     }
     
+    
+    /// tabBarItem的normal字体
     @IBInspectable var normalFont:UIFont?{
         get{
             guard let font = tabBarItem.titleTextAttributes(for: .normal)?[.font] as? UIFont else {
@@ -136,6 +167,7 @@ public extension UIViewController{
         }
     }
     
+    /// tabBarItem的select字体
     @IBInspectable var selectFont:UIFont?{
         get{
             guard let font = tabBarItem.titleTextAttributes(for: .selected)?[.font] as? UIFont else {
@@ -150,6 +182,7 @@ public extension UIViewController{
         }
     }
     
+    /// tabBarItem的标题
     @IBInspectable var tabTitle:String?{
         get{
             return tabBarItem.title
@@ -159,6 +192,7 @@ public extension UIViewController{
         }
     }
     
+    /// 是否隐藏导航栏
     @IBInspectable var navigationBarHiden:Bool{
         get{
             return navigationController?.isNavigationBarHidden ?? false
@@ -169,3 +203,36 @@ public extension UIViewController{
     }
 }
 #endif
+
+
+public extension UIViewController{
+    
+    /// 弹出评价弹窗
+    @available(iOS 10.3, *)
+    func showAppReview(){
+        UIApplication.showAppReview()
+    }
+    
+    /// 跳转到APP设置页面
+    func openSetting(){
+        UIApplication.openSetting()
+    }
+    
+    /// 跳转到App Store
+    /// - Parameter appId: appId
+    func pushToAppStore(_ appId:String){
+        UIApplication.pushToAppStore(appId)
+    }
+    
+    ///应用内弹出App在App Store中的页面
+    /// - Parameter appId: appId
+    func showAppStoreInApp(_ appId:String){
+        UIApplication.showAppStoreInApp(appId, self)
+    }
+    
+    /// 判断是否推送是否打开
+    /// - Parameter completion: 回调
+    func checkNotificationEnable(_ completion:@escaping (Bool)->()){
+        UIApplication.checkNotificationEnable(completion)
+    }
+}

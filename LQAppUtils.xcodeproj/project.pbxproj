@@ -914,7 +914,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = williamoneichina.LQAppUtils;
+				PRODUCT_BUNDLE_IDENTIFIER = LQ.LQAppUtils;
 				PRODUCT_NAME = LQAppUtilsDemo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -933,7 +933,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = williamoneichina.LQAppUtils;
+				PRODUCT_BUNDLE_IDENTIFIER = LQ.LQAppUtils;
 				PRODUCT_NAME = LQAppUtilsDemo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

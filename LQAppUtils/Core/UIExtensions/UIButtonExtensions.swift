@@ -216,6 +216,10 @@ public extension UIButton {
         contentEdgeInsets = UIEdgeInsets(top: 0, left: insetAmount, bottom: 0, right: insetAmount)
     }
     
+    /// 设置image位置（必须要先设置frame）
+    /// - Parameters:
+    ///   - location: 位置
+    ///   - space: 标题与图片的间距
     func setImage(location:ImageLocation,space:CGFloat){
         let imageWidth = imageView?.bounds.size.width ?? 0
         let imageHeight = imageView?.bounds.size.height ?? 0

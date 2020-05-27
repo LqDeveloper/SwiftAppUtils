@@ -38,6 +38,9 @@ class ViewController: AppBaseViewController{
         //        print(AppDeviceInfo.statusBarHeight)
         //        print("?name=demo&age=10".queryParameters!)
     
+        checkNotificationEnable { (isSuccess) in
+            print(isSuccess)
+        }
     }
     @IBAction func clickButton(_ sender: Any) {
         

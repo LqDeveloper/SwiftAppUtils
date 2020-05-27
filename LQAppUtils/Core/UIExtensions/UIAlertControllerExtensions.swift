@@ -41,5 +41,13 @@ public extension UIAlertController {
             view.tintColor = color
         }
     }
+    
+    /// 添加UIAlertAction数组
+    /// - Parameter actions: UIAlertAction数组
+    func addActions(_ actions:[UIAlertAction]) {
+        for action in actions {
+            addAction(action)
+        }
+    }
 }
 #endif

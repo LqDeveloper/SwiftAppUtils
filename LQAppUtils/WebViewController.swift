@@ -13,11 +13,17 @@ class WebViewController: AppBaseWebViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUrl("https://www.baidu.com")
+        if #available(iOS 10.3, *) {
+            showAppReview()
+        } else {
+            // Fallback on earlier versions
+        }
+//        UIApplication.openSetting()
+        
 //       let window =  UIApplication.shared.windows.last
 //        print(self)
 //        print(window?.topViewController!)
     }
-    
 }
 
 
