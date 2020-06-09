@@ -55,6 +55,9 @@ public extension Character {
         return String(self).uppercased().first!
     }
     
+    var isChinese:Bool{
+        return "\u{4E00}" <= self  && self <= "\u{9FA5}"
+    }
     
     /// 字母和数字的随机数
     static func randomAlphanumeric() -> Character {
