@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 class WebViewController: AppBaseWebViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUrl("https://www.baidu.com")
@@ -18,11 +18,12 @@ class WebViewController: AppBaseWebViewController {
         } else {
             // Fallback on earlier versions
         }
-//        UIApplication.openSetting()
+        //        UIApplication.openSetting()
         
-//       let window =  UIApplication.shared.windows.last
-//        print(self)
-//        print(window?.topViewController!)
+        //       let window =  UIApplication.shared.windows.last
+        //        print(self)
+        //        print(window?.topViewController!)
+       
     }
 }
 

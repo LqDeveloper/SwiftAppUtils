@@ -37,10 +37,32 @@ class ViewController: AppBaseViewController{
         //        debugPrint("\n这是".hasChinese)
         //        print(AppDeviceInfo.statusBarHeight)
         //        print("?name=demo&age=10".queryParameters!)
-    
+        
         checkNotificationEnable { (isSuccess) in
             print(isSuccess)
         }
+        print("1234".encrypt(.md5))
+        print("1234".encrypt(.sha1))
+        print("1234".encrypt(.sha224))
+        print("1234".encrypt(.sha256))
+        print("1234".encrypt(.sha384))
+        print("1234".encrypt(.sha512))
+        print("-----------")
+        
+        print("1234".hmacEncrypt(type: .md5, key: "key"))
+        print("1234".hmacEncrypt(type: .sha1, key: "key"))
+        print("1234".hmacEncrypt(type: .sha224, key: "key"))
+        print("1234".hmacEncrypt(type: .sha256, key: "key"))
+        print("1234".hmacEncrypt(type: .sha384, key: "key"))
+        print("1234".hmacEncrypt(type: .sha512, key: "key"))
+        
+        let path = Bundle.main.path(forResource: "image", ofType: "jpg")
+        print(path?.fileMD5Hash ?? "")
+        print(path?.fileSHA1Hash ?? "")
+        print(path?.fileSHA224Hash ?? "")
+        print(path?.fileSHA256Hash ?? "")
+        print(path?.fileSHA384Hash ?? "")
+        print(path?.fileSHA512Hash ?? "")
     }
     @IBAction func clickButton(_ sender: Any) {
         
@@ -49,8 +71,8 @@ class ViewController: AppBaseViewController{
     
     func aes(){
         let password = "UserPassword1!"
-//        let key128   = "1234567890123456"                   // 16 bytes for AES128
-                let key256   = "12345678901234561234567890123456"   // 32 bytes for AES256
+        //        let key128   = "1234567890123456"                   // 16 bytes for AES128
+        let key256   = "12345678901234561234567890123456"   // 32 bytes for AES256
         let iv       = "abcdefghijklmnop"                   // 16 bytes for AES128
         
         guard let enData = password.aesEncrypt(key: key256, iv: iv,algorithm: .algorithmAES128) else{

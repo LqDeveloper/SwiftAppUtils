@@ -83,66 +83,6 @@ public extension String {
     }
     
     
-    /// MD5加密
-    func md5() -> String {
-        let str = self.cString(using: String.Encoding.utf8)
-        let strLen = CUnsignedInt(self.lengthOfBytes(using: String.Encoding.utf8))
-        let digestLen = Int(CC_MD5_DIGEST_LENGTH)
-        let result = UnsafeMutablePointer<UInt8>.allocate(capacity: digestLen * 2)
-        CC_MD5(str, strLen, result)
-        let hash = NSMutableString()
-        for i in 0 ..< digestLen {
-            hash.appendFormat("%02x", result[i])
-        }
-        free(result)
-        return String(format: hash as String)
-    }
-    
-    enum SHAType{
-        case sha1,sha224,sha256,sha384,sha512
-    }
-    
-    func sha(_ type:SHAType) -> String{
-        var digestLen:Int = 0
-        switch type {
-        case .sha1:
-            digestLen = Int(CC_SHA1_DIGEST_LENGTH)
-        case .sha224:
-            digestLen = Int(CC_SHA224_DIGEST_LENGTH)
-        case .sha256:
-            digestLen = Int(CC_SHA256_DIGEST_LENGTH)
-        case .sha384:
-            digestLen = Int(CC_SHA384_DIGEST_LENGTH)
-        case .sha512:
-            digestLen = Int(CC_SHA512_DIGEST_LENGTH)
-        }
-        
-        let unsafePointer = self.cString(using: String.Encoding.utf8)
-        let strLen = CUnsignedInt(self.lengthOfBytes(using: String.Encoding.utf8))
-        let result = UnsafeMutablePointer<UInt8>.allocate(capacity: digestLen * 2)
-        
-        switch type {
-        case .sha1:
-            CC_SHA1(unsafePointer, strLen, result)
-        case .sha224:
-            CC_SHA224(unsafePointer, strLen, result)
-        case .sha256:
-            CC_SHA256(unsafePointer, strLen, result)
-        case .sha384:
-            CC_SHA384(unsafePointer, strLen, result)
-        case .sha512:
-            CC_SHA512(unsafePointer, strLen, result)
-        }
-        
-        let hash = NSMutableString()
-        for i in 0 ..< digestLen {
-            hash.appendFormat("%02x", result[i])
-        }
-        free(result)
-        return String(format: hash as String)
-    }
-    
-    
     /// 移除字符串中的空格
     var removeSpace: String {
         let source = lowercased()

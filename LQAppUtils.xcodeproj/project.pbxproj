@@ -114,6 +114,8 @@
 		51DEF0BA2358596F0024E550 /* NSAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B92358596F0024E550 /* NSAttributedStringExtensions.swift */; };
 		51F6043B23710EAB0030C8D3 /* AppBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6043A23710EAB0030C8D3 /* AppBaseWebViewController.swift */; };
 		51F6043D2371120C0030C8D3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6043C2371120C0030C8D3 /* WebViewController.swift */; };
+		51F716332491D6A3005206F6 /* StringEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F716322491D6A3005206F6 /* StringEncryption.swift */; };
+		51F716352491E5BE005206F6 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51F716342491E5BE005206F6 /* image.jpg */; };
 		51FD3971236145A7005BA224 /* LQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD3970236145A7005BA224 /* LQViewController.swift */; };
 		5A46CCB823EC069B00C7444C /* EncryptionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A46CCB723EC069B00C7444C /* EncryptionTool.swift */; };
 		5AE618362371A8CF00A2D973 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE618352371A8CF00A2D973 /* DemoViewController.swift */; };
@@ -250,6 +252,8 @@
 		51DEF0B92358596F0024E550 /* NSAttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtensions.swift; sourceTree = "<group>"; };
 		51F6043A23710EAB0030C8D3 /* AppBaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseWebViewController.swift; sourceTree = "<group>"; };
 		51F6043C2371120C0030C8D3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		51F716322491D6A3005206F6 /* StringEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEncryption.swift; sourceTree = "<group>"; };
+		51F716342491E5BE005206F6 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		51FD3970236145A7005BA224 /* LQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LQViewController.swift; sourceTree = "<group>"; };
 		5A46CCB723EC069B00C7444C /* EncryptionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionTool.swift; sourceTree = "<group>"; };
 		5AE618352371A8CF00A2D973 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 				512D3B472356BD83001677CF /* Core */,
 				512D3B172356BD4B001677CF /* AppDelegate.swift */,
 				512D3B192356BD4B001677CF /* SceneDelegate.swift */,
+				51F716342491E5BE005206F6 /* image.jpg */,
 				512D3B1B2356BD4B001677CF /* ViewController.swift */,
 				51F6043C2371120C0030C8D3 /* WebViewController.swift */,
 				512D3B1D2356BD4B001677CF /* Main.storyboard */,
@@ -428,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				512D3B672356F16E001677CF /* StringExtensions.swift */,
+				51F716322491D6A3005206F6 /* StringEncryption.swift */,
 				512D3B5F2356EF50001677CF /* UIColorExtensions.swift */,
 				512D3B6B2356F2F3001677CF /* AESExtensions.swift */,
 				512D3B732356F613001677CF /* ArrayExtensions.swift */,
@@ -605,6 +611,7 @@
 				512D3B242356BD4D001677CF /* LaunchScreen.storyboard in Resources */,
 				512D3B212356BD4D001677CF /* Assets.xcassets in Resources */,
 				512D3B1F2356BD4B001677CF /* Main.storyboard in Resources */,
+				51F716352491E5BE005206F6 /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +675,7 @@
 				512D3B642356F12E001677CF /* UIViewExtensions.swift in Sources */,
 				512D3B502356BDA2001677CF /* AppBaseTabBarController.swift in Sources */,
 				511F88C92421B3950009F2FB /* ComparableExtensions.swift in Sources */,
+				51F716332491D6A3005206F6 /* StringEncryption.swift in Sources */,
 				5103DBC4235ECB0700E62F78 /* LQUIUtils+UIGestureRecognizer.swift in Sources */,
 				5103DBBA235ECB0700E62F78 /* LQUIUtils+UIStackView.swift in Sources */,
 				51D79C452358107D00C13E22 /* UITextFieldExtensions.swift in Sources */,
