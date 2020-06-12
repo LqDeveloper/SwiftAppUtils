@@ -87,23 +87,23 @@ public extension Data{
         case decrypt
     }
     
-    func aesEncrypt(key: String, iv: String, operation: AESOperation) -> Data?{
+    func aesEncrypt(key: String, iv: String, operation: AESOperation,keySize:Int = kCCKeySizeAES128) -> Data?{
         guard let keyData = key.data(using: .utf8),let ivData = iv.data(using: .utf8) else {
             return nil
         }
         if operation == .encrypt{
-            return aesEncrypt(keyData: keyData, ivData: ivData, operation: kCCEncrypt)
+            return aesEncrypt(keyData: keyData, ivData: ivData, operation: kCCEncrypt,keySize: keySize)
         }else{
-            return aesEncrypt(keyData: keyData, ivData: ivData, operation: kCCDecrypt)
+            return aesEncrypt(keyData: keyData, ivData: ivData, operation: kCCDecrypt,keySize: keySize)
         }
     }
     
-    func aesEncrypt(keyData: Data, ivData: Data, operation: Int) -> Data {
+    func aesEncrypt(keyData: Data, ivData: Data, operation: Int,keySize:Int = kCCKeySizeAES128) -> Data {
         let dataLength = self.count
         let cryptLength  = size_t(dataLength + kCCBlockSizeAES128)
         var cryptData = Data(count:cryptLength)
         
-        let keyLength = size_t(kCCKeySizeAES128)
+        let keyLength = size_t(keySize)
         let options = CCOptions(kCCOptionPKCS7Padding)
         
         

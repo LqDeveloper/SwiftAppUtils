@@ -71,14 +71,14 @@ class ViewController: AppBaseViewController{
         let keyData     = key.data(using: .utf8)!
         let ivData      = ivString.data(using: .utf8)!
         
-        let encryptedData = messageData.aesEncrypt( keyData:keyData, ivData:ivData, operation:kCCEncrypt)
-        let decryptedData = encryptedData.aesEncrypt( keyData:keyData, ivData:ivData, operation:kCCDecrypt)
+        let encryptedData = messageData.aesEncrypt( keyData:keyData, ivData:ivData, operation:kCCEncrypt,keySize: kCCKeySizeAES256)
+        let decryptedData = encryptedData.aesEncrypt( keyData:keyData, ivData:ivData, operation:kCCDecrypt,keySize: kCCKeySizeAES256)
         let decrypted     = String(bytes:decryptedData, encoding:String.Encoding.utf8)!
         print(encryptedData.base64EncodedString())
         print(decrypted)
         
-        let encrypt = messageData.aesEncrypt(key: key, iv: ivString, operation: .encrypt)!
-        let decrypt = encrypt.aesEncrypt(key: key, iv: ivString, operation: .decrypt)!
+        let encrypt = messageData.aesEncrypt(key: key, iv: ivString, operation: .encrypt,keySize: kCCKeySizeAES256)!
+        let decrypt = encrypt.aesEncrypt(key: key, iv: ivString, operation: .decrypt,keySize: kCCKeySizeAES256)!
         let decryptStr = String(bytes:decrypt, encoding:String.Encoding.utf8)!
         print(encrypt.base64EncodedString())
         print(decryptStr)
