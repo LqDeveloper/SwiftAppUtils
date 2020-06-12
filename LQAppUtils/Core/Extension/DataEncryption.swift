@@ -87,23 +87,41 @@ public extension Data{
         case decrypt
     }
     
-    func aesEncrypt(key: String, iv: String, operation: AESOperation) -> Data?{
+    enum AESKeySize{
+        case keySizeAES128
+        case keySizeAES192
+        case keySizeAES256
+        
+        var value:Int{
+            switch self {
+            case .keySizeAES128:
+                return kCCKeySizeAES128
+            case .keySizeAES192:
+                return kCCKeySizeAES192
+            case .keySizeAES256:
+                return kCCKeySizeAES256
+            }
+        }
+        
+    }
+    
+    func aesEncrypt(key: String, iv: String, operation: AESOperation,keySize:AESKeySize = .keySizeAES128) -> Data?{
         guard let keyData = key.data(using: .utf8),let ivData = iv.data(using: .utf8) else {
             return nil
         }
         if operation == .encrypt{
-            return aesEncrypt(keyData: keyData, ivData: ivData, operation: kCCEncrypt)
+            return aesEncrypt(keyData: keyData, ivData: ivData, operation: kCCEncrypt,keySize: keySize)
         }else{
-            return aesEncrypt(keyData: keyData, ivData: ivData, operation: kCCDecrypt)
+            return aesEncrypt(keyData: keyData, ivData: ivData, operation: kCCDecrypt,keySize: keySize)
         }
     }
     
-    func aesEncrypt(keyData: Data, ivData: Data, operation: Int) -> Data {
+    func aesEncrypt(keyData: Data, ivData: Data, operation: Int,keySize:AESKeySize = .keySizeAES128) -> Data {
         let dataLength = self.count
         let cryptLength  = size_t(dataLength + kCCBlockSizeAES128)
         var cryptData = Data(count:cryptLength)
         
-        let keyLength = size_t(kCCKeySizeAES128)
+        let keyLength = size_t(keySize.value)
         let options = CCOptions(kCCOptionPKCS7Padding)
         
         
