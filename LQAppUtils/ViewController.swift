@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CommonCrypto
 class ViewController: AppBaseViewController{
     lazy var countButton = { () -> AppCountDownButton in
         let count = AppCountDownButton.init(title: "倒计时", font: UIFont.systemFont(ofSize: 15), normalColor: .red)
@@ -63,26 +63,32 @@ class ViewController: AppBaseViewController{
         print(path?.fileSHA256Hash ?? "")
         print(path?.fileSHA384Hash ?? "")
         print(path?.fileSHA512Hash ?? "")
+        
+        let message     = "123456"
+        let key   = "key890123456dasdaeqweqweqweqwe"
+        let ivString = "abcdefghijklmnop"   // 16 bytes for AES128
+        let messageData = message.data(using:.utf8)!
+        let keyData     = key.data(using: .utf8)!
+        let ivData      = ivString.data(using: .utf8)!
+        
+        let encryptedData = messageData.aesEncrypt( keyData:keyData, ivData:ivData, operation:kCCEncrypt)
+        let decryptedData = encryptedData.aesEncrypt( keyData:keyData, ivData:ivData, operation:kCCDecrypt)
+        let decrypted     = String(bytes:decryptedData, encoding:String.Encoding.utf8)!
+        print(encryptedData.base64EncodedString())
+        print(decrypted)
+        
+        let encrypt = messageData.aesEncrypt(key: key, iv: ivString, operation: .encrypt)!
+        let decrypt = encrypt.aesEncrypt(key: key, iv: ivString, operation: .decrypt)!
+        let decryptStr = String(bytes:decrypt, encoding:String.Encoding.utf8)!
+        print(encrypt.base64EncodedString())
+        print(decryptStr)
+        
     }
     @IBAction func clickButton(_ sender: Any) {
         
     }
     
     
-    func aes(){
-        let password = "UserPassword1!"
-        //        let key128   = "1234567890123456"                   // 16 bytes for AES128
-        let key256   = "12345678901234561234567890123456"   // 32 bytes for AES256
-        let iv       = "abcdefghijklmnop"                   // 16 bytes for AES128
-        
-        guard let enData = password.aesEncrypt(key: key256, iv: iv,algorithm: .algorithmAES128) else{
-            return
-        }
-        let enStr = enData.toHexString()
-        print(enStr)
-        let deData = enData.aesDecrypt(key: key256, iv: iv,algorithm: .algorithmAES128)
-        print(String.init(data: deData!, encoding: .utf8) ?? "")
-    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

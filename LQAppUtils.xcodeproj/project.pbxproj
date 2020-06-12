@@ -39,6 +39,7 @@
 		5103DBD0235ECB0700E62F78 /* LQUIUtils+UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBB2235ECB0700E62F78 /* LQUIUtils+UITapGestureRecognizer.swift */; };
 		5103DBD8235ED45300E62F78 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBD7235ED45300E62F78 /* AppRouter.swift */; };
 		5103DBDC235ED9C700E62F78 /* MVVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBDB235ED9C700E62F78 /* MVVMProtocol.swift */; };
+		5115FDA824936105005DC2FE /* DataEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115FDA724936105005DC2FE /* DataEncryption.swift */; };
 		511F88C32421B1540009F2FB /* BidirectionalCollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88C22421B1540009F2FB /* BidirectionalCollectionExtensions.swift */; };
 		511F88C52421B1890009F2FB /* BinaryFloatingPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88C42421B1890009F2FB /* BinaryFloatingPointExtensions.swift */; };
 		511F88C72421B27D0009F2FB /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88C62421B27D0009F2FB /* CalendarExtensions.swift */; };
@@ -69,7 +70,6 @@
 		512D3B622356F11A001677CF /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B612356F11A001677CF /* UIViewControllerExtensions.swift */; };
 		512D3B642356F12E001677CF /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B632356F12D001677CF /* UIViewExtensions.swift */; };
 		512D3B682356F16E001677CF /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B672356F16E001677CF /* StringExtensions.swift */; };
-		512D3B6C2356F2F3001677CF /* AESExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B6B2356F2F3001677CF /* AESExtensions.swift */; };
 		512D3B742356F613001677CF /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B732356F613001677CF /* ArrayExtensions.swift */; };
 		512D3B762356FD18001677CF /* BoolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B752356FD18001677CF /* BoolExtensions.swift */; };
 		512D3B782356FD78001677CF /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D3B772356FD78001677CF /* CGFloatExtensions.swift */; };
@@ -117,7 +117,6 @@
 		51F716332491D6A3005206F6 /* StringEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F716322491D6A3005206F6 /* StringEncryption.swift */; };
 		51F716352491E5BE005206F6 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51F716342491E5BE005206F6 /* image.jpg */; };
 		51FD3971236145A7005BA224 /* LQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD3970236145A7005BA224 /* LQViewController.swift */; };
-		5A46CCB823EC069B00C7444C /* EncryptionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A46CCB723EC069B00C7444C /* EncryptionTool.swift */; };
 		5AE618362371A8CF00A2D973 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE618352371A8CF00A2D973 /* DemoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -171,6 +170,7 @@
 		5103DBB2235ECB0700E62F78 /* LQUIUtils+UITapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UITapGestureRecognizer.swift"; sourceTree = "<group>"; };
 		5103DBD7235ED45300E62F78 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		5103DBDB235ED9C700E62F78 /* MVVMProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMProtocol.swift; sourceTree = "<group>"; };
+		5115FDA724936105005DC2FE /* DataEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEncryption.swift; sourceTree = "<group>"; };
 		511F88C22421B1540009F2FB /* BidirectionalCollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidirectionalCollectionExtensions.swift; sourceTree = "<group>"; };
 		511F88C42421B1890009F2FB /* BinaryFloatingPointExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryFloatingPointExtensions.swift; sourceTree = "<group>"; };
 		511F88C62421B27D0009F2FB /* CalendarExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
@@ -207,7 +207,6 @@
 		512D3B612356F11A001677CF /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		512D3B632356F12D001677CF /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		512D3B672356F16E001677CF /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		512D3B6B2356F2F3001677CF /* AESExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AESExtensions.swift; sourceTree = "<group>"; };
 		512D3B732356F613001677CF /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		512D3B752356FD18001677CF /* BoolExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolExtensions.swift; sourceTree = "<group>"; };
 		512D3B772356FD78001677CF /* CGFloatExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
@@ -255,7 +254,6 @@
 		51F716322491D6A3005206F6 /* StringEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEncryption.swift; sourceTree = "<group>"; };
 		51F716342491E5BE005206F6 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		51FD3970236145A7005BA224 /* LQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LQViewController.swift; sourceTree = "<group>"; };
-		5A46CCB723EC069B00C7444C /* EncryptionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionTool.swift; sourceTree = "<group>"; };
 		5AE618352371A8CF00A2D973 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -424,7 +422,6 @@
 				512D3B562356EEA4001677CF /* AppKeychainManager.swift */,
 				515D73552362C65F00B83605 /* AppCountDownButton.swift */,
 				5157A8DE23667E40001CB260 /* AppKeyboardObserver.swift */,
-				5A46CCB723EC069B00C7444C /* EncryptionTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -434,8 +431,8 @@
 			children = (
 				512D3B672356F16E001677CF /* StringExtensions.swift */,
 				51F716322491D6A3005206F6 /* StringEncryption.swift */,
+				5115FDA724936105005DC2FE /* DataEncryption.swift */,
 				512D3B5F2356EF50001677CF /* UIColorExtensions.swift */,
-				512D3B6B2356F2F3001677CF /* AESExtensions.swift */,
 				512D3B732356F613001677CF /* ArrayExtensions.swift */,
 				512D3B752356FD18001677CF /* BoolExtensions.swift */,
 				512D3B772356FD78001677CF /* CGFloatExtensions.swift */,
@@ -636,7 +633,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A46CCB823EC069B00C7444C /* EncryptionTool.swift in Sources */,
 				515D73562362C65F00B83605 /* AppCountDownButton.swift in Sources */,
 				5103DBB6235ECB0700E62F78 /* LQUIUtils+UIImageView.swift in Sources */,
 				5103DBC0235ECB0700E62F78 /* LQUIUtils+UIWebView.swift in Sources */,
@@ -660,7 +656,7 @@
 				512D3B802357045F001677CF /* DataExtensions.swift in Sources */,
 				519612DF2462AD42008BC60E /* CALayerExtensions.swift in Sources */,
 				51DEF0B823583F550024E550 /* AppViewProtocol.swift in Sources */,
-				512D3B6C2356F2F3001677CF /* AESExtensions.swift in Sources */,
+				5115FDA824936105005DC2FE /* DataEncryption.swift in Sources */,
 				51D79C3D23580DDE00C13E22 /* UISegmentedControlExtensions.swift in Sources */,
 				512D3B7C2356FF7E001677CF /* CGSizeExtensions.swift in Sources */,
 				511F88D32421BB5D0009F2FB /* OptionalExtensions.swift in Sources */,
