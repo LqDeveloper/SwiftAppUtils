@@ -64,7 +64,7 @@ class ViewController: AppBaseViewController{
         print(path?.fileSHA384Hash ?? "")
         print(path?.fileSHA512Hash ?? "")
         
-        let message     = "123456"
+        let message     = "123456".reverse()
         let key   = "key890123456dasdaeqweqweqweqwe"
         let ivString = "abcdefghijklmnop"   // 16 bytes for AES128
         let messageData = message.data(using:.utf8)!

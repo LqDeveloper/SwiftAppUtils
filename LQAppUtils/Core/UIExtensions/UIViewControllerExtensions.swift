@@ -25,50 +25,41 @@ public extension UIViewController{
         return isViewLoaded && view.window != nil
     }
     
-    ///使用UIAlertController显示警报
-    ///
-    /// - Parameters:
-    ///   - title: title of the alert
-    ///   - message: message/body of the alert
-    ///   - buttonTitles: (Optional)list of button titles for the alert. Default button i.e "OK" will be shown if this paramter is nil
-    ///   - highlightedButtonIndex: (Optional) index of the button from buttonTitles that should be highlighted. If this parameter is nil no button will be highlighted
-    ///   - completion: (Optional) completion block to be invoked when any one of the buttons is tapped. It passes the index of the tapped button as an argument
-    /// - Returns: UIAlertController object (discardable).
-    @discardableResult
-    func showAlert(title: String?, message: String?, buttonTitles: [String]? = nil, highlightedButtonIndex: Int? = nil, completion: ((Int) -> Void)? = nil) -> UIAlertController {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        var allButtons = buttonTitles ?? [String]()
-        if allButtons.count == 0 {
-            allButtons.append("OK")
-        }
-        
-        for index in 0..<allButtons.count {
-            let buttonTitle = allButtons[index]
-            let action = UIAlertAction(title: buttonTitle, style: .default, handler: { (_) in
-                completion?(index)
-            })
-            alertController.addAction(action)
-            // Check which button to highlight
-            if let highlightedButtonIndex = highlightedButtonIndex, index == highlightedButtonIndex {
-                if #available(iOS 9.0, *) {
-                    alertController.preferredAction = action
-                }
-            }
-        }
-        present(alertController, animated: true, completion: nil)
-        return alertController
-    }
     
     /// 显示alert
     /// - Parameters:
     ///   - title: 标题
     ///   - message: 描述
     ///   - actions: UIAlertAction数组
-    func showAlert(title: String?, message: String?,actions:[UIAlertAction]){
+    ///   - completion: 完成
+    ///- Returns: UIAlertController
+    @discardableResult
+    func showAlert(title: String?, message: String?,actions:[UIAlertAction],completion: (() -> Void)? = nil) -> UIAlertController{
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addActions(actions)
-        present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: completion)
+        return alertController
     }
+    
+    
+    
+    /// 显示alert
+    /// - Parameters:
+    ///   - title: 标题
+    ///   - message: 描述
+    ///   - okTitle: 确认按钮标题
+    ///   - handler: 点击确认按钮的处理
+    ///   - completion: 完成
+    /// - Returns: UIAlertController
+    @discardableResult
+    func showAlert(title: String?, message: String?,okTitle:String?,handler: ((UIAlertAction) -> Void)? = nil,completion: (() -> Void)? = nil) -> UIAlertController{
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction.init(title: okTitle, style: .default, handler: handler)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: completion)
+        return alertController
+    }
+    
     
     /// 将子ViewController的view添加到containerView上
     /// - Parameters:

@@ -31,8 +31,15 @@ public extension NSString{
 
 
 public extension String {
-    var range:NSRange{
+    var nsRange:NSRange{
         return NSRange.init(location: 0, length: self.count)
+    }
+    
+    func nsRange(_ subStr:String) -> NSRange?{
+        guard let range = range(of: subStr) else {
+            return nil
+        }
+        return NSRange.init(range, in: self)
     }
     
     var data:Data?{
@@ -40,7 +47,7 @@ public extension String {
     }
     
     func replaceRegularExpression(pattern:String?,withStr:String?) -> String{
-        return replaceRegularExpression(pattern: pattern, withStr: withStr, range: self.range)
+        return replaceRegularExpression(pattern: pattern, withStr: withStr, range: self.nsRange)
     }
     
     func replaceRegularExpression(pattern:String?,withStr:String?,range:NSRange) -> String{
@@ -49,6 +56,13 @@ public extension String {
         }
         let re = try? NSRegularExpression.init(pattern: pn, options: .caseInsensitive)
         return  re?.stringByReplacingMatches(in: self, options: .reportCompletion, range: range, withTemplate: str) ?? self
+    }
+    
+    func distanceFromStart(subStr:String) -> Int?{
+        guard let range = range(of: subStr) else {
+            return nil
+        }
+        return distance(from: startIndex, to: range.lowerBound)
     }
     
     var json:[String:Any]?{
@@ -452,11 +466,9 @@ public extension String {
     
     
     /// 字符串反转
-    @discardableResult
-    mutating func reverse() -> String {
+    func reverse() -> String {
         let chars: [Character] = reversed()
-        self = String(chars)
-        return self
+        return String(chars)
     }
     
     
