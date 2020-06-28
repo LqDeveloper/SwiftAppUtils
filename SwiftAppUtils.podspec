@@ -22,19 +22,19 @@ Pod::Spec.new do |spec|
     sub.frameworks  = "Foundation","UIKit","WebKit","Security"
   end
 
-  spec.subspec  'Tool' do |sub|
+  spec.subspec  'Core' do |sub|
     sub.source_files  = "LQAppUtils/Core/**/*.swift"
     sub.dependency  "SwiftAppUtils/Extension"
   end
 
   spec.subspec 'MVVM' do |sub|
     sub.source_files = "LQAppUtils/MVVM/**/*.swift"
-    sub.dependency  "SwiftAppUtils/Tool"
+    sub.dependency  "SwiftAppUtils/Core"
   end
 
   spec.subspec 'UIUtils' do |sub|
     sub.source_files = "LQAppUtils/UIUtils/**/*.swift"
-    sub.dependency "SwiftAppUtils/Tool"
+    sub.dependency "SwiftAppUtils/Core"
   end
 end
 
