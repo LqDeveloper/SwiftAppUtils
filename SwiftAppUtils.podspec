@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'SwiftAppUtils'
-  spec.version      = '1.0.7.0'
+  spec.version      = '1.0.7.3'
   spec.license = { type: 'MIT', file: 'LICENSE' }
   spec.author       = { "Quan Li" => "1083099465@qq.com" }
   spec.summary      = 'Extensions, base classes, tools commonly used in iOS development'
@@ -17,20 +17,24 @@ Pod::Spec.new do |spec|
   spec.default_subspec = 'Core'
   spec.cocoapods_version = '>= 1.4.0' 
 
+  spec.subspec  'Extension' do |sub|
+    sub.source_files  = "LQAppUtils/Extension/*.swift"
+    sub.frameworks  = "Foundation","UIKit","WebKit","Security"
+  end
+
   spec.subspec  'Core' do |sub|
     sub.source_files  = "LQAppUtils/Core/**/*.swift"
-    sub.frameworks  = "Foundation","UIKit","WebKit","Security"
-    #"LocalAuthentication"
+    sub.dependency  "SwiftAppUtils/Extension"
   end
 
   spec.subspec 'MVVM' do |sub|
     sub.source_files = "LQAppUtils/MVVM/**/*.swift"
-    sub.dependency  "LQAppUtils/Core"
+    sub.dependency  "SwiftAppUtils/Core"
   end
 
   spec.subspec 'UIUtils' do |sub|
     sub.source_files = "LQAppUtils/UIUtils/**/*.swift"
-    sub.dependency "LQAppUtils/Core"
+    sub.dependency "SwiftAppUtils/Core"
   end
 end
 
