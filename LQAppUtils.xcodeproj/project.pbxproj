@@ -353,8 +353,6 @@
 				5103DB94235ECACB00E62F78 /* UIUtils */,
 				5103DB93235ECAC500E62F78 /* MVVM */,
 				512D3B472356BD83001677CF /* Core */,
-				513BCD4424A8799700ABA0DB /* Extension */,
-				512D3B172356BD4B001677CF /* AppDelegate.swift */,
 				512D3B192356BD4B001677CF /* SceneDelegate.swift */,
 				512D3B172356BD4B001677CF /* AppDelegate.swift */,
 				51F716342491E5BE005206F6 /* image.jpg */,
@@ -391,6 +389,7 @@
 		512D3B472356BD83001677CF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				513BCD4424A8799700ABA0DB /* Extension */,
 				51DEF0B623583F090024E550 /* Protocol */,
 				512D3B8B23571F5F001677CF /* UIExtensions */,
 				512D3B532356DF87001677CF /* Tool */,
@@ -919,6 +918,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-D APP_CORE";
 				PRODUCT_BUNDLE_IDENTIFIER = LQ.LQAppUtils;
 				PRODUCT_NAME = LQAppUtilsDemo;
 				SWIFT_VERSION = 5.0;
@@ -938,6 +938,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-D APP_CORE";
 				PRODUCT_BUNDLE_IDENTIFIER = LQ.LQAppUtils;
 				PRODUCT_NAME = LQAppUtilsDemo;
 				SWIFT_VERSION = 5.0;

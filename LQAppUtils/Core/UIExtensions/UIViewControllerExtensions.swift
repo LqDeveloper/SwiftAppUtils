@@ -204,26 +204,30 @@ public extension UIViewController{
         UIApplication.showAppReview()
     }
     
+    #if APP_EXTENSION
+    #else
     /// 跳转到APP设置页面
     func openSetting(){
         UIApplication.openSetting()
     }
-    
+   
     /// 跳转到App Store
     /// - Parameter appId: appId
     func pushToAppStore(_ appId:String){
         UIApplication.pushToAppStore(appId)
     }
     
-    ///应用内弹出App在App Store中的页面
-    /// - Parameter appId: appId
-    func showAppStoreInApp(_ appId:String){
-        UIApplication.showAppStoreInApp(appId, self)
-    }
     
     /// 判断是否推送是否打开
     /// - Parameter completion: 回调
     func checkNotificationEnable(_ completion:@escaping (Bool)->()){
         UIApplication.checkNotificationEnable(completion)
+    }
+    #endif
+    
+    ///应用内弹出App在App Store中的页面
+    /// - Parameter appId: appId
+    func showAppStoreInApp(_ appId:String){
+        UIApplication.showAppStoreInApp(appId, self)
     }
 }

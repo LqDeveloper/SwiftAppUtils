@@ -82,11 +82,16 @@ public extension AppDeviceInfo{
     
     /// 是否是iPhone X系列
     static var isPhoneXSeries:Bool{
+        #if APP_EXTENSION
+        return false
+        #else
         guard #available(iOS 11.0, *) else{
             return false
         }
         return UIApplication.shared.windows[0].safeAreaInsets.bottom > 0
+        #endif
     }
+    
     
     /// 是否是iPhone 5系列 屏宽 320
     static var isPhone5Series:Bool{
@@ -110,24 +115,36 @@ public extension AppDeviceInfo{
     
     //   只支持竖屏 导航高度
     static var navigationHeight:CGFloat{
+        #if APP_EXTENSION
+        return 0
+        #else
         if isPhoneXSeries{
             return 88.0
         }else{
             return 64.0
         }
+        #endif
     }
     
     /// tabBar高度
     static var tabBarHeight:CGFloat{
+        #if APP_EXTENSION
+        return 0
+        #else
         if isPhoneXSeries{
             return 83.0
         }else{
             return 49.0
         }
+        #endif
     }
+    
     
     /// 状态栏高度
     static var statusBarHeight:CGFloat{
+        #if APP_EXTENSION
+        return 0
+        #else
         if #available(iOS 13.0, *) {
             if UIApplication.shared.supportsMultipleScenes {
                 return 0
@@ -139,26 +156,36 @@ public extension AppDeviceInfo{
         }else{
             return UIApplication.shared.statusBarFrame.size.height
         }
+        #endif
     }
     
     
     /// 安全区域头部的高度
     static var topSpace:CGFloat{
+        #if APP_EXTENSION
+        return 0
+        #else
         if #available(iOS 11.0, *) {
             return UIApplication.shared.windows[0].safeAreaInsets.top
         } else {
             return 0
         }
+        #endif
     }
     
     /// 安全区域底部的高度
     static var bottomSpace:CGFloat{
+        #if APP_EXTENSION
+        return 0
+        #else
         if #available(iOS 11.0, *) {
             return UIApplication.shared.windows[0].safeAreaInsets.bottom
         } else {
             return 0
         }
+        #endif
     }
+    
 }
 
 public extension AppDeviceInfo{

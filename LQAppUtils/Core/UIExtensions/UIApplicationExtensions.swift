@@ -10,6 +10,8 @@
 import UIKit
 import StoreKit
 public extension UIApplication{
+    #if APP_EXTENSION
+    #else
     static func open(_ urlStr: String?, options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:], completionHandler completion: ((Bool) -> Void)? = nil){
         guard let webUrl = URL(string: (urlStr ?? "")) else { return }
         if UIApplication.shared.canOpenURL(webUrl) {
@@ -20,13 +22,6 @@ public extension UIApplication{
             }
         }
     }
-    
-    /// 弹出评价弹窗
-    @available(iOS 10.3, *)
-    static func showAppReview(){
-        SKStoreReviewController.requestReview()
-    }
-    
     /// 进入APP设置页面
     static func openSetting(){
         guard let url = URL.init(string: openSettingsURLString) else {
@@ -41,28 +36,13 @@ public extension UIApplication{
         }
     }
     
+    
     /// 跳转到App Store
     /// - Parameter appId: appId
     static func pushToAppStore(_ appId:String){
         UIApplication .open("itms-apps://itunes.apple.com/app/id\(appId)", options: [:], completionHandler: nil)
     }
     
-    /// 应用内弹出App在App Store中的页面
-    /// - Parameters:
-    ///   - appId: appId
-    ///   - fromVC: 从哪个VC弹出
-    static func showAppStoreInApp(_ appId:String,_ fromVC:UIViewController){
-        let vc = SKStoreProductViewController.init()
-        vc.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier:appId]) {[weak fromVC,weak vc] (isSuccess, error) in
-            guard error == nil else{
-                return
-            }
-            guard let weakVC = vc else{
-                return
-            }
-            fromVC?.present(weakVC, animated: true, completion: nil)
-        }
-    }
     
     /// 判断推送是否打开
     /// - Parameter completion: 回调
@@ -85,6 +65,31 @@ public extension UIApplication{
             }else{
                 completion(true)
             }
+        }
+    }
+    
+    #endif
+    
+    /// 弹出评价弹窗
+    @available(iOS 10.3, *)
+    static func showAppReview(){
+        SKStoreReviewController.requestReview()
+    }
+    
+    /// 应用内弹出App在App Store中的页面
+    /// - Parameters:
+    ///   - appId: appId
+    ///   - fromVC: 从哪个VC弹出
+    static func showAppStoreInApp(_ appId:String,_ fromVC:UIViewController){
+        let vc = SKStoreProductViewController.init()
+        vc.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier:appId]) {[weak fromVC,weak vc] (isSuccess, error) in
+            guard error == nil else{
+                return
+            }
+            guard let weakVC = vc else{
+                return
+            }
+            fromVC?.present(weakVC, animated: true, completion: nil)
         }
     }
 }
