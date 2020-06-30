@@ -3,7 +3,7 @@
 //  LQAppUtils
 //
 //  Created by Quan Li on 2020/6/12.
-//  Copyright © 2020 williamoneilchina. All rights reserved.
+//  Copyright © 2020 Quan Li. All rights reserved.
 //
 #if canImport(Foundation) && canImport(CommonCrypto)
 import Foundation

@@ -49,6 +49,26 @@ public extension UIBezierPath {
         close()
     }
     
+    /// 使用给定大小的椭圆形路径初始化UIBezierPath。
+    ///
+    /// - Parameters:
+    ///   - size: 椭圆的宽度和高度。
+    ///   - centered: 椭圆形是否应该在其坐标空间中居中。
+    convenience init(ovalOf size: CGSize, centered: Bool) {
+        let origin = centered ? CGPoint(x: -size.width / 2, y: -size.height / 2) : .zero
+        self.init(ovalIn: CGRect(origin: origin, size: size))
+    }
+
+    /// 使用给定大小的矩形路径初始化UIBezierPath。
+    ///
+    /// - Parameters:
+    ///   - size: 矩形的宽度和高度。
+    ///   - centered: 椭圆形是否应该在其坐标空间中居中。
+    convenience init(rectOf size: CGSize, centered: Bool) {
+        let origin = centered ? CGPoint(x: -size.width / 2, y: -size.height / 2) : .zero
+        self.init(rect: CGRect(origin: origin, size: size))
+    }
+    
 }
 
 #endif

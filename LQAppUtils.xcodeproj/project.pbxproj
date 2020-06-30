@@ -111,6 +111,13 @@
 		51D79C4323580EC100C13E22 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D79C4223580EC100C13E22 /* UITableViewExtensions.swift */; };
 		51D79C452358107D00C13E22 /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D79C442358107D00C13E22 /* UITextFieldExtensions.swift */; };
 		51D79C47235811C700C13E22 /* UITextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D79C46235811C700C13E22 /* UITextViewExtensions.swift */; };
+		51DB3DA424AAD6CD00190884 /* CAGradientLayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB3DA324AAD6CD00190884 /* CAGradientLayerExtensions.swift */; };
+		51DB3DAA24AADCCA00190884 /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB3DA924AADCCA00190884 /* CGRectExtensions.swift */; };
+		51DB3DAC24AADE0600190884 /* CGVectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB3DAB24AADE0600190884 /* CGVectorExtensions.swift */; };
+		51DB3DAE24AAE23200190884 /* NSPredicateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB3DAD24AAE23200190884 /* NSPredicateExtensions.swift */; };
+		51DB3DB024AAE4E700190884 /* UIRefreshControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB3DAF24AAE4E700190884 /* UIRefreshControlExtensions.swift */; };
+		51DB3DB224AAE5B800190884 /* UISliderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB3DB124AAE5B800190884 /* UISliderExtensions.swift */; };
+		51DB3DB624AB02B400190884 /* UIImagePickerControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB3DB524AB02B400190884 /* UIImagePickerControllerExtensions.swift */; };
 		51DEF0AE235834BA0024E550 /* UIWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0AD235834BA0024E550 /* UIWindowExtensions.swift */; };
 		51DEF0B823583F550024E550 /* AppViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DEF0B723583F550024E550 /* AppViewProtocol.swift */; };
 		51F6043B23710EAB0030C8D3 /* AppBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6043A23710EAB0030C8D3 /* AppBaseWebViewController.swift */; };
@@ -248,6 +255,13 @@
 		51D79C4223580EC100C13E22 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		51D79C442358107D00C13E22 /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		51D79C46235811C700C13E22 /* UITextViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtensions.swift; sourceTree = "<group>"; };
+		51DB3DA324AAD6CD00190884 /* CAGradientLayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerExtensions.swift; sourceTree = "<group>"; };
+		51DB3DA924AADCCA00190884 /* CGRectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
+		51DB3DAB24AADE0600190884 /* CGVectorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGVectorExtensions.swift; sourceTree = "<group>"; };
+		51DB3DAD24AAE23200190884 /* NSPredicateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPredicateExtensions.swift; sourceTree = "<group>"; };
+		51DB3DAF24AAE4E700190884 /* UIRefreshControlExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRefreshControlExtensions.swift; sourceTree = "<group>"; };
+		51DB3DB124AAE5B800190884 /* UISliderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISliderExtensions.swift; sourceTree = "<group>"; };
+		51DB3DB524AB02B400190884 /* UIImagePickerControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerControllerExtensions.swift; sourceTree = "<group>"; };
 		51DEF0AD235834BA0024E550 /* UIWindowExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtensions.swift; sourceTree = "<group>"; };
 		51DEF0B723583F550024E550 /* AppViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewProtocol.swift; sourceTree = "<group>"; };
 		51F6043A23710EAB0030C8D3 /* AppBaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseWebViewController.swift; sourceTree = "<group>"; };
@@ -389,6 +403,7 @@
 		512D3B472356BD83001677CF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				51DB3DA524AAD89B00190884 /* CoreAnimation */,
 				513BCD4424A8799700ABA0DB /* Extension */,
 				51DEF0B623583F090024E550 /* Protocol */,
 				512D3B8B23571F5F001677CF /* UIExtensions */,
@@ -452,7 +467,9 @@
 				51DEF0AD235834BA0024E550 /* UIWindowExtensions.swift */,
 				51C80C0D23702D6D00EA898E /* UIApplicationExtensions.swift */,
 				511F88D62421BF7A0009F2FB /* UIBezierPathExtensions.swift */,
-				519612DE2462AD42008BC60E /* CALayerExtensions.swift */,
+				51DB3DAF24AAE4E700190884 /* UIRefreshControlExtensions.swift */,
+				51DB3DB124AAE5B800190884 /* UISliderExtensions.swift */,
+				51DB3DB524AB02B400190884 /* UIImagePickerControllerExtensions.swift */,
 			);
 			path = UIExtensions;
 			sourceTree = "<group>";
@@ -461,15 +478,12 @@
 			isa = PBXGroup;
 			children = (
 				513BCD4524A8799700ABA0DB /* SignedIntegerExtensions.swift */,
-				513BCD4624A8799700ABA0DB /* CGFloatExtensions.swift */,
 				513BCD4724A8799700ABA0DB /* BidirectionalCollectionExtensions.swift */,
 				513BCD4824A8799700ABA0DB /* ComparableExtensions.swift */,
 				513BCD4924A8799700ABA0DB /* ArrayExtensions.swift */,
 				513BCD4A24A8799700ABA0DB /* BinaryFloatingPointExtensions.swift */,
-				513BCD4B24A8799700ABA0DB /* CGSizeExtensions.swift */,
 				513BCD4C24A8799700ABA0DB /* FloatExtensions.swift */,
 				513BCD4D24A8799700ABA0DB /* UserDefaultsExtensions.swift */,
-				513BCD4E24A8799700ABA0DB /* CGPointExtensions.swift */,
 				513BCD4F24A8799700ABA0DB /* DictionaryExtensions.swift */,
 				513BCD5024A8799700ABA0DB /* DataExtensions.swift */,
 				513BCD5124A8799700ABA0DB /* StringExtensions.swift */,
@@ -488,8 +502,23 @@
 				513BCD5E24A8799700ABA0DB /* NSAttributedStringExtensions.swift */,
 				513BCD5F24A8799700ABA0DB /* CalendarExtensions.swift */,
 				513BCD6024A8799700ABA0DB /* UIColorExtensions.swift */,
+				51DB3DAD24AAE23200190884 /* NSPredicateExtensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		51DB3DA524AAD89B00190884 /* CoreAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				519612DE2462AD42008BC60E /* CALayerExtensions.swift */,
+				51DB3DA324AAD6CD00190884 /* CAGradientLayerExtensions.swift */,
+				513BCD4E24A8799700ABA0DB /* CGPointExtensions.swift */,
+				513BCD4624A8799700ABA0DB /* CGFloatExtensions.swift */,
+				513BCD4B24A8799700ABA0DB /* CGSizeExtensions.swift */,
+				51DB3DA924AADCCA00190884 /* CGRectExtensions.swift */,
+				51DB3DAB24AADE0600190884 /* CGVectorExtensions.swift */,
+			);
+			path = CoreAnimation;
 			sourceTree = "<group>";
 		};
 		51DEF0B623583F090024E550 /* Protocol */ = {
@@ -647,11 +676,13 @@
 				51D79C2D2358025400C13E22 /* UIImageExtensions.swift in Sources */,
 				5103DBC2235ECB0700E62F78 /* LQUIUtils+UITabBar.swift in Sources */,
 				513BCD6D24A8799700ABA0DB /* StringExtensions.swift in Sources */,
+				51DB3DAC24AADE0600190884 /* CGVectorExtensions.swift in Sources */,
 				51F6043D2371120C0030C8D3 /* WebViewController.swift in Sources */,
 				513BCD6A24A8799700ABA0DB /* CGPointExtensions.swift in Sources */,
 				5103DBC7235ECB0700E62F78 /* LQUIUtils+UIRotationGestureRecognizer.swift in Sources */,
 				5103DBBD235ECB0700E62F78 /* LQUIUtils+UITabBarItem.swift in Sources */,
 				513BCD6424A8799700ABA0DB /* ComparableExtensions.swift in Sources */,
+				51DB3DB224AAE5B800190884 /* UISliderExtensions.swift in Sources */,
 				512D3B622356F11A001677CF /* UIViewControllerExtensions.swift in Sources */,
 				51D79C4323580EC100C13E22 /* UITableViewExtensions.swift in Sources */,
 				51F6043B23710EAB0030C8D3 /* AppBaseWebViewController.swift in Sources */,
@@ -675,6 +706,7 @@
 				513BCD6B24A8799700ABA0DB /* DictionaryExtensions.swift in Sources */,
 				5103DBC4235ECB0700E62F78 /* LQUIUtils+UIGestureRecognizer.swift in Sources */,
 				513BCD7424A8799700ABA0DB /* RandomAccessCollectionExtensions.swift in Sources */,
+				51DB3DB024AAE4E700190884 /* UIRefreshControlExtensions.swift in Sources */,
 				513BCD6724A8799700ABA0DB /* CGSizeExtensions.swift in Sources */,
 				513BCD7124A8799700ABA0DB /* DoubleExtensions.swift in Sources */,
 				5103DBBA235ECB0700E62F78 /* LQUIUtils+UIStackView.swift in Sources */,
@@ -682,6 +714,7 @@
 				513BCD7724A8799700ABA0DB /* IntExtensions.swift in Sources */,
 				515B3B252374F9E2005275D3 /* AppCustomTableViewController.swift in Sources */,
 				512D3B182356BD4B001677CF /* AppDelegate.swift in Sources */,
+				51DB3DAA24AADCCA00190884 /* CGRectExtensions.swift in Sources */,
 				513BCD7824A8799700ABA0DB /* DateExtensions.swift in Sources */,
 				513BCD7A24A8799700ABA0DB /* NSAttributedStringExtensions.swift in Sources */,
 				5175E2AF243C1615005AA028 /* AppCookieWebView.swift in Sources */,
@@ -704,8 +737,10 @@
 				5103DBCB235ECB0700E62F78 /* LQUIUtils+UISlider.swift in Sources */,
 				51D79C33235808D100C13E22 /* UINavigationBarExtensions.swift in Sources */,
 				51D79C2F235804E300C13E22 /* UIImageViewExtensions.swift in Sources */,
+				51DB3DA424AAD6CD00190884 /* CAGradientLayerExtensions.swift in Sources */,
 				513BCD7024A8799700ABA0DB /* DataEncryption.swift in Sources */,
 				513BCD6924A8799700ABA0DB /* UserDefaultsExtensions.swift in Sources */,
+				51DB3DAE24AAE23200190884 /* NSPredicateExtensions.swift in Sources */,
 				5103DBBF235ECB0700E62F78 /* LQUIUtils+UITextView.swift in Sources */,
 				5103DBD8235ED45300E62F78 /* AppRouter.swift in Sources */,
 				51D79C3F23580E0B00C13E22 /* UIStackViewExtensions.swift in Sources */,
@@ -728,6 +763,7 @@
 				5103DBBC235ECB0700E62F78 /* LQUIUtils+UISwitch.swift in Sources */,
 				5103DBDC235ED9C700E62F78 /* MVVMProtocol.swift in Sources */,
 				51C80C0E23702D6D00EA898E /* UIApplicationExtensions.swift in Sources */,
+				51DB3DB624AB02B400190884 /* UIImagePickerControllerExtensions.swift in Sources */,
 				513BCD6C24A8799700ABA0DB /* DataExtensions.swift in Sources */,
 				513BCD6E24A8799700ABA0DB /* URLRequestExtensions.swift in Sources */,
 				512D3B91235723CF001677CF /* UIButtonExtensions.swift in Sources */,

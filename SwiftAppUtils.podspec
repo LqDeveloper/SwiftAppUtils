@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'SwiftAppUtils'
-  spec.version      = '1.0.7.5'
+  spec.version      = '1.0.7.6'
   spec.license = { type: 'MIT', file: 'LICENSE' }
   spec.author       = { "Quan Li" => "1083099465@qq.com" }
   spec.summary      = 'Extensions, base classes, tools commonly used in iOS development'
@@ -10,12 +10,11 @@ Pod::Spec.new do |spec|
   spec.homepage     = 'https://github.com/LqDeveloper/SwiftAppUtils'
   spec.source       = { :git => 'https://github.com/LqDeveloper/SwiftAppUtils.git', :tag => "#{spec.version}" }
   
-  #spec.resource     = ""
   spec.requires_arc = true
   spec.platform     = :ios, "9.0"
   spec.swift_version = '5.0'
   spec.default_subspec = 'Core'
-  spec.cocoapods_version = '>= 1.4.0' 
+  # spec.cocoapods_version = '>= 1.4.0' 
 
   spec.subspec  'AppExtension' do |sub|
     sub.source_files  = "LQAppUtils/Core/**/*.swift"
@@ -24,7 +23,6 @@ Pod::Spec.new do |spec|
 
   spec.subspec  'Core' do |sub|
     sub.source_files  = "LQAppUtils/Core/**/*.swift"
-    sub.frameworks  = "Foundation","UIKit","WebKit","Security"
     sub.pod_target_xcconfig = { 'OTHER_SWIFT_FLAGS' => '-D APP_CORE' }
   end
 

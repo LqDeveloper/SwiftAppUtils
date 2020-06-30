@@ -51,5 +51,10 @@ public extension CGFloat {
     var double: Double {
         return Double(self)
     }
+    
+    /// 转换位弧度
+    var radiansToDegrees: CGFloat {
+        return self * 180 / CGFloat.pi
+    }
 }
 #endif

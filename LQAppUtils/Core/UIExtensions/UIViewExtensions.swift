@@ -234,22 +234,23 @@ public extension UIView {
 
 // MARK: - Methods
 public extension UIView {
-    func getParentVC(_ window:UIWindow) -> UIViewController? {
-        return getParentVCFromRootVC(window.rootViewController)
+    func currentVC(_ window:UIWindow) -> UIViewController? {
+        return getCurrentVC(window.rootViewController)
     }
     
-    func getParentVCFromRootVC(_ rootVc:UIViewController?) -> UIViewController? {
-        var currentVC:UIViewController? = nil
-        if rootVc?.presentedViewController != nil {
-            currentVC = rootVc?.presentedViewController
-        }else if let tabBar = rootVc as? UITabBarController{
-            currentVC = getParentVCFromRootVC(tabBar.selectedViewController)
-        }else if let nav = rootVc as? UINavigationController{
-            currentVC = getParentVCFromRootVC(nav.topViewController)
-        }else{
-            currentVC = rootVc
+    func getCurrentVC(_ rootVC:UIViewController?) -> UIViewController? {
+        guard let vc = rootVC else {
+            return nil
         }
-        return currentVC
+        if vc.presentedViewController != nil {
+            return vc.presentedViewController
+        }else if vc is UITabBarController{
+            return getCurrentVC((vc as? UITabBarController)?.selectedViewController)
+        }else if vc is UINavigationController{
+            return getCurrentVC((vc as? UINavigationController)?.topViewController)
+        }else{
+            return vc
+        }
     }
     
     

@@ -3,7 +3,7 @@
 //  LQAppUtils
 //
 //  Created by Quan Li on 2020/5/6.
-//  Copyright © 2020 williamoneilchina. All rights reserved.
+//  Copyright © 2020 Quan Li. All rights reserved.
 //
 
 import UIKit
