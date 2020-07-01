@@ -204,13 +204,12 @@ public extension UIViewController{
         UIApplication.showAppReview()
     }
     
-    #if APP_EXTENSION
-    #else
+    #if APP_CORE
     /// 跳转到APP设置页面
     func openSetting(){
         UIApplication.openSetting()
     }
-   
+    
     /// 跳转到App Store
     /// - Parameter appId: appId
     func pushToAppStore(_ appId:String){
@@ -223,6 +222,7 @@ public extension UIViewController{
     func checkNotificationEnable(_ completion:@escaping (Bool)->()){
         UIApplication.checkNotificationEnable(completion)
     }
+    #else
     #endif
     
     ///应用内弹出App在App Store中的页面

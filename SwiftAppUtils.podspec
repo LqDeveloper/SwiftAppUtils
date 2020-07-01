@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec  'AppExtension' do |sub|
     sub.source_files  = "LQAppUtils/Core/**/*.swift"
-    sub.pod_target_xcconfig = { 'OTHER_SWIFT_FLAGS' => '-D APP_EXTENSION' }
+    # sub.pod_target_xcconfig = { 'OTHER_SWIFT_FLAGS' => '-D APP_EXTENSION' }
   end
 
   spec.subspec  'Core' do |sub|

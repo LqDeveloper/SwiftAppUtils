@@ -11,7 +11,7 @@ import WebKit
 open class AppBaseWebViewController: AppBaseViewController,WKUIDelegate,WKNavigationDelegate {
     
     public lazy var webView = { () -> AppCookieWebView in
-        #if APP_EXTENSION
+        #if APP_CORE
         let web = AppCookieWebView.init(frame: CGRect.init(x: 0, y: AppDeviceInfo.topSpace, width: AppDeviceInfo.screenWidth, height: AppDeviceInfo.screenHeight - AppDeviceInfo.topSpace - AppDeviceInfo.bottomSpace))
         #else
         let web = AppCookieWebView.init(frame: CGRect.init(x: 0, y: 0, width: AppDeviceInfo.screenWidth, height: AppDeviceInfo.screenHeight))

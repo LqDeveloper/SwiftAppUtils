@@ -82,13 +82,13 @@ public extension AppDeviceInfo{
     
     /// 是否是iPhone X系列
     static var isPhoneXSeries:Bool{
-        #if APP_EXTENSION
-        return false
-        #else
+        #if APP_CORE
         guard #available(iOS 11.0, *) else{
             return false
         }
         return UIApplication.shared.windows[0].safeAreaInsets.bottom > 0
+        #else
+        return false
         #endif
     }
     
@@ -115,36 +115,34 @@ public extension AppDeviceInfo{
     
     //   只支持竖屏 导航高度
     static var navigationHeight:CGFloat{
-        #if APP_EXTENSION
-        return 0
-        #else
+        #if APP_CORE
         if isPhoneXSeries{
             return 88.0
         }else{
             return 64.0
         }
+        #else
+        return 0
         #endif
     }
     
     /// tabBar高度
     static var tabBarHeight:CGFloat{
-        #if APP_EXTENSION
-        return 0
-        #else
+        #if APP_CORE
         if isPhoneXSeries{
             return 83.0
         }else{
             return 49.0
         }
+        #else
+        return 0
         #endif
     }
     
     
     /// 状态栏高度
     static var statusBarHeight:CGFloat{
-        #if APP_EXTENSION
-        return 0
-        #else
+        #if APP_CORE
         if #available(iOS 13.0, *) {
             if UIApplication.shared.supportsMultipleScenes {
                 return 0
@@ -156,20 +154,23 @@ public extension AppDeviceInfo{
         }else{
             return UIApplication.shared.statusBarFrame.size.height
         }
+        
+        #else
+        return 0
         #endif
     }
     
     
     /// 安全区域头部的高度
     static var topSpace:CGFloat{
-        #if APP_EXTENSION
-        return 0
-        #else
+        #if APP_CORE
         if #available(iOS 11.0, *) {
             return UIApplication.shared.windows[0].safeAreaInsets.top
         } else {
             return 0
         }
+        #else
+        return 0
         #endif
     }
     

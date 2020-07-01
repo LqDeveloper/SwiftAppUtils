@@ -10,8 +10,7 @@
 import UIKit
 import StoreKit
 public extension UIApplication{
-    #if APP_EXTENSION
-    #else
+    #if APP_CORE
     static func open(_ urlStr: String?, options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:], completionHandler completion: ((Bool) -> Void)? = nil){
         guard let webUrl = URL(string: (urlStr ?? "")) else { return }
         if UIApplication.shared.canOpenURL(webUrl) {
@@ -67,7 +66,7 @@ public extension UIApplication{
             }
         }
     }
-    
+    #else
     #endif
     
     /// 弹出评价弹窗
