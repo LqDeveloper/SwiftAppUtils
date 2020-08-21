@@ -20,5 +20,16 @@ public extension Data {
         return try JSONSerialization.jsonObject(with: self, options: options)
     }
     
+    #if os(iOS)
+    /// 获取iOS的DeviceToken字符串
+    var deviceToken:String{
+        if #available(iOS 13.0, *){
+            return self.map { data -> String in
+                return String(format: "%02.2hhx", data)}.joined()
+        }else{
+            return self.description.trimmingCharacters(in: CharacterSet.init(charactersIn: "<> "))
+        }
+    }
+    #endif
 }
 #endif

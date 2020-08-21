@@ -221,10 +221,13 @@ public extension UIButton {
     ///   - location: 位置
     ///   - space: 标题与图片的间距
     func setImage(location:ImageLocation,space:CGFloat){
-        let imageWidth = imageView?.bounds.size.width ?? 0
-        let imageHeight = imageView?.bounds.size.height ?? 0
-        let titleWidth = titleLabel?.bounds.size.width ?? 0
-        let titleHeight = titleLabel?.bounds.size.height ?? 0
+        guard let label = titleLabel,let imageV = imageView else {
+            return
+        }
+        let imageWidth = imageV.bounds.size.width
+        let imageHeight = imageV.bounds.size.height
+        let titleWidth = label.bounds.size.width
+        let titleHeight = label.bounds.size.height
         
         switch location {
         case .left:
@@ -234,11 +237,11 @@ public extension UIButton {
             imageEdgeInsets = UIEdgeInsets.init(top: 0, left: (titleWidth + space/2), bottom: 0, right: -(titleWidth + space/2))
             titleEdgeInsets = UIEdgeInsets.init(top: 0, left:  -(imageWidth + space/2), bottom: 0, right: (imageWidth + space/2))
         case .top:
-            imageEdgeInsets = UIEdgeInsets.init(top:-(imageHeight/2 + space/2), left: titleWidth/2, bottom: (imageHeight/2 + space/2), right: -(titleWidth/2))
-            titleEdgeInsets = UIEdgeInsets.init(top: (titleHeight/2 + space/2), left:  -(imageWidth/2), bottom: -(titleHeight/2 + space/2), right: imageWidth/2)
+            imageEdgeInsets = UIEdgeInsets.init(top:-titleHeight - space/2, left:(width - imageWidth)/2, bottom: 0, right: (width - imageWidth)/2 - titleWidth)
+            titleEdgeInsets = UIEdgeInsets.init(top: 0, left: -imageWidth, bottom: -imageHeight - space/2, right:  0)
         case .bottom:
-            imageEdgeInsets = UIEdgeInsets.init(top:(imageHeight/2 + space/2), left: titleWidth/2, bottom: -(imageHeight/2 + space/2), right: -(titleWidth/2))
-            titleEdgeInsets = UIEdgeInsets.init(top: -(titleHeight/2 + space/2), left:  -(imageWidth/2), bottom: (titleHeight/2 + space/2), right: imageWidth/2)
+            imageEdgeInsets = UIEdgeInsets.init(top:0, left: (width - imageWidth)/2, bottom: -titleHeight - space/2, right: (width - imageWidth)/2 - titleWidth)
+            titleEdgeInsets = UIEdgeInsets.init(top: -imageHeight - space/2, left: -imageWidth, bottom: 0, right: 0)
         }
     }
     
