@@ -7,36 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5103DBB3235ECB0700E62F78 /* LQUIUtils+UILongPressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DB95235ECB0500E62F78 /* LQUIUtils+UILongPressGestureRecognizer.swift */; };
-		5103DBB4235ECB0700E62F78 /* LQUIUtils+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DB96235ECB0500E62F78 /* LQUIUtils+UITextField.swift */; };
-		5103DBB5235ECB0700E62F78 /* LQUIUtils+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DB97235ECB0500E62F78 /* LQUIUtils+UIButton.swift */; };
-		5103DBB6235ECB0700E62F78 /* LQUIUtils+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DB98235ECB0600E62F78 /* LQUIUtils+UIImageView.swift */; };
-		5103DBB7235ECB0700E62F78 /* LQUIUtils+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DB99235ECB0600E62F78 /* LQUIUtils+UITableView.swift */; };
-		5103DBB8235ECB0700E62F78 /* LQUIUtils+UICollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DB9A235ECB0600E62F78 /* LQUIUtils+UICollectionViewLayout.swift */; };
-		5103DBB9235ECB0700E62F78 /* LQUIUtils+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DB9B235ECB0600E62F78 /* LQUIUtils+UIView.swift */; };
-		5103DBBA235ECB0700E62F78 /* LQUIUtils+UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DB9C235ECB0600E62F78 /* LQUIUtils+UIStackView.swift */; };
-		5103DBBB235ECB0700E62F78 /* LQUIUtils+UIBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DB9D235ECB0600E62F78 /* LQUIUtils+UIBarItem.swift */; };
-		5103DBBC235ECB0700E62F78 /* LQUIUtils+UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DB9E235ECB0600E62F78 /* LQUIUtils+UISwitch.swift */; };
-		5103DBBD235ECB0700E62F78 /* LQUIUtils+UITabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DB9F235ECB0600E62F78 /* LQUIUtils+UITabBarItem.swift */; };
-		5103DBBE235ECB0700E62F78 /* LQUIUtils+UIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBA0235ECB0600E62F78 /* LQUIUtils+UIProgressView.swift */; };
-		5103DBBF235ECB0700E62F78 /* LQUIUtils+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBA1235ECB0600E62F78 /* LQUIUtils+UITextView.swift */; };
-		5103DBC0235ECB0700E62F78 /* LQUIUtils+UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBA2235ECB0600E62F78 /* LQUIUtils+UIWebView.swift */; };
-		5103DBC1235ECB0700E62F78 /* LQUIUtils+UIPinchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBA3235ECB0600E62F78 /* LQUIUtils+UIPinchGestureRecognizer.swift */; };
-		5103DBC2235ECB0700E62F78 /* LQUIUtils+UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBA4235ECB0600E62F78 /* LQUIUtils+UITabBar.swift */; };
-		5103DBC3235ECB0700E62F78 /* LQUIUtils+UISwipeGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBA5235ECB0600E62F78 /* LQUIUtils+UISwipeGestureRecognizer.swift */; };
-		5103DBC4235ECB0700E62F78 /* LQUIUtils+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBA6235ECB0600E62F78 /* LQUIUtils+UIGestureRecognizer.swift */; };
-		5103DBC5235ECB0700E62F78 /* LQUIUtils+WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBA7235ECB0600E62F78 /* LQUIUtils+WKWebView.swift */; };
-		5103DBC6235ECB0700E62F78 /* LQUIUtils+UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBA8235ECB0600E62F78 /* LQUIUtils+UIScrollView.swift */; };
-		5103DBC7235ECB0700E62F78 /* LQUIUtils+UIRotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBA9235ECB0600E62F78 /* LQUIUtils+UIRotationGestureRecognizer.swift */; };
-		5103DBC8235ECB0700E62F78 /* LQUIUtils+WKWebViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBAA235ECB0600E62F78 /* LQUIUtils+WKWebViewConfiguration.swift */; };
-		5103DBC9235ECB0700E62F78 /* LQUIUtils+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBAB235ECB0600E62F78 /* LQUIUtils+UICollectionView.swift */; };
-		5103DBCA235ECB0700E62F78 /* LQUIUtils+UIPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBAC235ECB0700E62F78 /* LQUIUtils+UIPanGestureRecognizer.swift */; };
-		5103DBCB235ECB0700E62F78 /* LQUIUtils+UISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBAD235ECB0700E62F78 /* LQUIUtils+UISlider.swift */; };
-		5103DBCC235ECB0700E62F78 /* LQUIUtils+UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBAE235ECB0700E62F78 /* LQUIUtils+UIControl.swift */; };
-		5103DBCD235ECB0700E62F78 /* LQUIUtilsNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBAF235ECB0700E62F78 /* LQUIUtilsNameSpace.swift */; };
-		5103DBCE235ECB0700E62F78 /* LQUIUtils+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBB0235ECB0700E62F78 /* LQUIUtils+UILabel.swift */; };
-		5103DBCF235ECB0700E62F78 /* LQUIUtils+UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBB1235ECB0700E62F78 /* LQUIUtils+UISearchBar.swift */; };
-		5103DBD0235ECB0700E62F78 /* LQUIUtils+UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBB2235ECB0700E62F78 /* LQUIUtils+UITapGestureRecognizer.swift */; };
 		5103DBD8235ED45300E62F78 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBD7235ED45300E62F78 /* AppRouter.swift */; };
 		5103DBDC235ED9C700E62F78 /* MVVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103DBDB235ED9C700E62F78 /* MVVMProtocol.swift */; };
 		511F88D72421BF7A0009F2FB /* UIBezierPathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F88D62421BF7A0009F2FB /* UIBezierPathExtensions.swift */; };
@@ -93,6 +63,8 @@
 		5157A8DF23667E40001CB260 /* AppKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5157A8DE23667E40001CB260 /* AppKeyboardObserver.swift */; };
 		515B3B252374F9E2005275D3 /* AppCustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515B3B242374F9E2005275D3 /* AppCustomTableViewController.swift */; };
 		515D73562362C65F00B83605 /* AppCountDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515D73552362C65F00B83605 /* AppCountDownButton.swift */; };
+		5171463624F8D08B00A8CB5B /* UIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171463424F8D08B00A8CB5B /* UIBuilder.swift */; };
+		5171463724F8D08B00A8CB5B /* UIBuilderExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171463524F8D08B00A8CB5B /* UIBuilderExtentions.swift */; };
 		5175E2AF243C1615005AA028 /* AppCookieWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5175E2AE243C1615005AA028 /* AppCookieWebView.swift */; };
 		519612DF2462AD42008BC60E /* CALayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519612DE2462AD42008BC60E /* CALayerExtensions.swift */; };
 		51C80C0E23702D6D00EA898E /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C80C0D23702D6D00EA898E /* UIApplicationExtensions.swift */; };
@@ -145,36 +117,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5103DB95235ECB0500E62F78 /* LQUIUtils+UILongPressGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UILongPressGestureRecognizer.swift"; sourceTree = "<group>"; };
-		5103DB96235ECB0500E62F78 /* LQUIUtils+UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UITextField.swift"; sourceTree = "<group>"; };
-		5103DB97235ECB0500E62F78 /* LQUIUtils+UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIButton.swift"; sourceTree = "<group>"; };
-		5103DB98235ECB0600E62F78 /* LQUIUtils+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIImageView.swift"; sourceTree = "<group>"; };
-		5103DB99235ECB0600E62F78 /* LQUIUtils+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UITableView.swift"; sourceTree = "<group>"; };
-		5103DB9A235ECB0600E62F78 /* LQUIUtils+UICollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UICollectionViewLayout.swift"; sourceTree = "<group>"; };
-		5103DB9B235ECB0600E62F78 /* LQUIUtils+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIView.swift"; sourceTree = "<group>"; };
-		5103DB9C235ECB0600E62F78 /* LQUIUtils+UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIStackView.swift"; sourceTree = "<group>"; };
-		5103DB9D235ECB0600E62F78 /* LQUIUtils+UIBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIBarItem.swift"; sourceTree = "<group>"; };
-		5103DB9E235ECB0600E62F78 /* LQUIUtils+UISwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UISwitch.swift"; sourceTree = "<group>"; };
-		5103DB9F235ECB0600E62F78 /* LQUIUtils+UITabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UITabBarItem.swift"; sourceTree = "<group>"; };
-		5103DBA0235ECB0600E62F78 /* LQUIUtils+UIProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIProgressView.swift"; sourceTree = "<group>"; };
-		5103DBA1235ECB0600E62F78 /* LQUIUtils+UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UITextView.swift"; sourceTree = "<group>"; };
-		5103DBA2235ECB0600E62F78 /* LQUIUtils+UIWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIWebView.swift"; sourceTree = "<group>"; };
-		5103DBA3235ECB0600E62F78 /* LQUIUtils+UIPinchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIPinchGestureRecognizer.swift"; sourceTree = "<group>"; };
-		5103DBA4235ECB0600E62F78 /* LQUIUtils+UITabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UITabBar.swift"; sourceTree = "<group>"; };
-		5103DBA5235ECB0600E62F78 /* LQUIUtils+UISwipeGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UISwipeGestureRecognizer.swift"; sourceTree = "<group>"; };
-		5103DBA6235ECB0600E62F78 /* LQUIUtils+UIGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIGestureRecognizer.swift"; sourceTree = "<group>"; };
-		5103DBA7235ECB0600E62F78 /* LQUIUtils+WKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+WKWebView.swift"; sourceTree = "<group>"; };
-		5103DBA8235ECB0600E62F78 /* LQUIUtils+UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIScrollView.swift"; sourceTree = "<group>"; };
-		5103DBA9235ECB0600E62F78 /* LQUIUtils+UIRotationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIRotationGestureRecognizer.swift"; sourceTree = "<group>"; };
-		5103DBAA235ECB0600E62F78 /* LQUIUtils+WKWebViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+WKWebViewConfiguration.swift"; sourceTree = "<group>"; };
-		5103DBAB235ECB0600E62F78 /* LQUIUtils+UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UICollectionView.swift"; sourceTree = "<group>"; };
-		5103DBAC235ECB0700E62F78 /* LQUIUtils+UIPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIPanGestureRecognizer.swift"; sourceTree = "<group>"; };
-		5103DBAD235ECB0700E62F78 /* LQUIUtils+UISlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UISlider.swift"; sourceTree = "<group>"; };
-		5103DBAE235ECB0700E62F78 /* LQUIUtils+UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UIControl.swift"; sourceTree = "<group>"; };
-		5103DBAF235ECB0700E62F78 /* LQUIUtilsNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQUIUtilsNameSpace.swift; sourceTree = "<group>"; };
-		5103DBB0235ECB0700E62F78 /* LQUIUtils+UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UILabel.swift"; sourceTree = "<group>"; };
-		5103DBB1235ECB0700E62F78 /* LQUIUtils+UISearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UISearchBar.swift"; sourceTree = "<group>"; };
-		5103DBB2235ECB0700E62F78 /* LQUIUtils+UITapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LQUIUtils+UITapGestureRecognizer.swift"; sourceTree = "<group>"; };
 		5103DBD7235ED45300E62F78 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		5103DBDB235ED9C700E62F78 /* MVVMProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMProtocol.swift; sourceTree = "<group>"; };
 		511F88D62421BF7A0009F2FB /* UIBezierPathExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtensions.swift; sourceTree = "<group>"; };
@@ -237,6 +179,8 @@
 		5157A8DE23667E40001CB260 /* AppKeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeyboardObserver.swift; sourceTree = "<group>"; };
 		515B3B242374F9E2005275D3 /* AppCustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCustomTableViewController.swift; sourceTree = "<group>"; };
 		515D73552362C65F00B83605 /* AppCountDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCountDownButton.swift; sourceTree = "<group>"; };
+		5171463424F8D08B00A8CB5B /* UIBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBuilder.swift; sourceTree = "<group>"; };
+		5171463524F8D08B00A8CB5B /* UIBuilderExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBuilderExtentions.swift; sourceTree = "<group>"; };
 		5175E2AE243C1615005AA028 /* AppCookieWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCookieWebView.swift; sourceTree = "<group>"; };
 		519612DE2462AD42008BC60E /* CALayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtensions.swift; sourceTree = "<group>"; };
 		51C80C0D23702D6D00EA898E /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
@@ -304,43 +248,6 @@
 			path = MVVM;
 			sourceTree = "<group>";
 		};
-		5103DB94235ECACB00E62F78 /* UIUtils */ = {
-			isa = PBXGroup;
-			children = (
-				5103DB9D235ECB0600E62F78 /* LQUIUtils+UIBarItem.swift */,
-				5103DB97235ECB0500E62F78 /* LQUIUtils+UIButton.swift */,
-				5103DBAB235ECB0600E62F78 /* LQUIUtils+UICollectionView.swift */,
-				5103DB9A235ECB0600E62F78 /* LQUIUtils+UICollectionViewLayout.swift */,
-				5103DBAE235ECB0700E62F78 /* LQUIUtils+UIControl.swift */,
-				5103DBA6235ECB0600E62F78 /* LQUIUtils+UIGestureRecognizer.swift */,
-				5103DBB0235ECB0700E62F78 /* LQUIUtils+UILabel.swift */,
-				5103DB95235ECB0500E62F78 /* LQUIUtils+UILongPressGestureRecognizer.swift */,
-				5103DBAC235ECB0700E62F78 /* LQUIUtils+UIPanGestureRecognizer.swift */,
-				5103DBA3235ECB0600E62F78 /* LQUIUtils+UIPinchGestureRecognizer.swift */,
-				5103DBA9235ECB0600E62F78 /* LQUIUtils+UIRotationGestureRecognizer.swift */,
-				5103DBA8235ECB0600E62F78 /* LQUIUtils+UIScrollView.swift */,
-				5103DBB1235ECB0700E62F78 /* LQUIUtils+UISearchBar.swift */,
-				5103DBAD235ECB0700E62F78 /* LQUIUtils+UISlider.swift */,
-				5103DB9C235ECB0600E62F78 /* LQUIUtils+UIStackView.swift */,
-				5103DBA5235ECB0600E62F78 /* LQUIUtils+UISwipeGestureRecognizer.swift */,
-				5103DB9E235ECB0600E62F78 /* LQUIUtils+UISwitch.swift */,
-				5103DBA4235ECB0600E62F78 /* LQUIUtils+UITabBar.swift */,
-				5103DB9F235ECB0600E62F78 /* LQUIUtils+UITabBarItem.swift */,
-				5103DB99235ECB0600E62F78 /* LQUIUtils+UITableView.swift */,
-				5103DBB2235ECB0700E62F78 /* LQUIUtils+UITapGestureRecognizer.swift */,
-				5103DB96235ECB0500E62F78 /* LQUIUtils+UITextField.swift */,
-				5103DBA1235ECB0600E62F78 /* LQUIUtils+UITextView.swift */,
-				5103DBA2235ECB0600E62F78 /* LQUIUtils+UIWebView.swift */,
-				5103DBA7235ECB0600E62F78 /* LQUIUtils+WKWebView.swift */,
-				5103DBAA235ECB0600E62F78 /* LQUIUtils+WKWebViewConfiguration.swift */,
-				5103DBAF235ECB0700E62F78 /* LQUIUtilsNameSpace.swift */,
-				5103DB98235ECB0600E62F78 /* LQUIUtils+UIImageView.swift */,
-				5103DBA0235ECB0600E62F78 /* LQUIUtils+UIProgressView.swift */,
-				5103DB9B235ECB0600E62F78 /* LQUIUtils+UIView.swift */,
-			);
-			path = UIUtils;
-			sourceTree = "<group>";
-		};
 		512D3B0B2356BD4B001677CF = {
 			isa = PBXGroup;
 			children = (
@@ -364,7 +271,6 @@
 		512D3B162356BD4B001677CF /* LQAppUtils */ = {
 			isa = PBXGroup;
 			children = (
-				5103DB94235ECACB00E62F78 /* UIUtils */,
 				5103DB93235ECAC500E62F78 /* MVVM */,
 				512D3B472356BD83001677CF /* Core */,
 				512D3B192356BD4B001677CF /* SceneDelegate.swift */,
@@ -403,6 +309,7 @@
 		512D3B472356BD83001677CF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5171463324F8D08B00A8CB5B /* UIBuilder */,
 				51DB3DA524AAD89B00190884 /* CoreAnimation */,
 				513BCD4424A8799700ABA0DB /* Extension */,
 				51DEF0B623583F090024E550 /* Protocol */,
@@ -505,6 +412,15 @@
 				51DB3DAD24AAE23200190884 /* NSPredicateExtensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5171463324F8D08B00A8CB5B /* UIBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				5171463424F8D08B00A8CB5B /* UIBuilder.swift */,
+				5171463524F8D08B00A8CB5B /* UIBuilderExtentions.swift */,
+			);
+			path = UIBuilder;
 			sourceTree = "<group>";
 		};
 		51DB3DA524AAD89B00190884 /* CoreAnimation */ = {
@@ -664,52 +580,42 @@
 			files = (
 				515D73562362C65F00B83605 /* AppCountDownButton.swift in Sources */,
 				513BCD6524A8799700ABA0DB /* ArrayExtensions.swift in Sources */,
-				5103DBB6235ECB0700E62F78 /* LQUIUtils+UIImageView.swift in Sources */,
-				5103DBC0235ECB0700E62F78 /* LQUIUtils+UIWebView.swift in Sources */,
 				51DEF0AE235834BA0024E550 /* UIWindowExtensions.swift in Sources */,
 				512D3B4E2356BDA2001677CF /* AppBaseNavigationController.swift in Sources */,
 				51D79C352358095700C13E22 /* UINavigationControllerExtensions.swift in Sources */,
 				513BCD7924A8799700ABA0DB /* OptionalExtensions.swift in Sources */,
-				5103DBC1235ECB0700E62F78 /* LQUIUtils+UIPinchGestureRecognizer.swift in Sources */,
 				513BCD6324A8799700ABA0DB /* BidirectionalCollectionExtensions.swift in Sources */,
 				51D79C4123580E3800C13E22 /* UIStoryboardExtensions.swift in Sources */,
 				51D79C2D2358025400C13E22 /* UIImageExtensions.swift in Sources */,
-				5103DBC2235ECB0700E62F78 /* LQUIUtils+UITabBar.swift in Sources */,
 				513BCD6D24A8799700ABA0DB /* StringExtensions.swift in Sources */,
 				51DB3DAC24AADE0600190884 /* CGVectorExtensions.swift in Sources */,
 				51F6043D2371120C0030C8D3 /* WebViewController.swift in Sources */,
 				513BCD6A24A8799700ABA0DB /* CGPointExtensions.swift in Sources */,
-				5103DBC7235ECB0700E62F78 /* LQUIUtils+UIRotationGestureRecognizer.swift in Sources */,
-				5103DBBD235ECB0700E62F78 /* LQUIUtils+UITabBarItem.swift in Sources */,
 				513BCD6424A8799700ABA0DB /* ComparableExtensions.swift in Sources */,
 				51DB3DB224AAE5B800190884 /* UISliderExtensions.swift in Sources */,
 				512D3B622356F11A001677CF /* UIViewControllerExtensions.swift in Sources */,
 				51D79C4323580EC100C13E22 /* UITableViewExtensions.swift in Sources */,
 				51F6043B23710EAB0030C8D3 /* AppBaseWebViewController.swift in Sources */,
-				5103DBC5235ECB0700E62F78 /* LQUIUtils+WKWebView.swift in Sources */,
 				519612DF2462AD42008BC60E /* CALayerExtensions.swift in Sources */,
 				51DEF0B823583F550024E550 /* AppViewProtocol.swift in Sources */,
 				51D79C3D23580DDE00C13E22 /* UISegmentedControlExtensions.swift in Sources */,
 				5157A8DF23667E40001CB260 /* AppKeyboardObserver.swift in Sources */,
-				5103DBB4235ECB0700E62F78 /* LQUIUtils+UITextField.swift in Sources */,
+				5171463724F8D08B00A8CB5B /* UIBuilderExtentions.swift in Sources */,
 				513BCD7524A8799700ABA0DB /* CharacterExtensions.swift in Sources */,
 				512D3B572356EEA4001677CF /* AppKeychainManager.swift in Sources */,
-				5103DBCC235ECB0700E62F78 /* LQUIUtils+UIControl.swift in Sources */,
 				513BCD6824A8799700ABA0DB /* FloatExtensions.swift in Sources */,
 				512D3B1C2356BD4B001677CF /* ViewController.swift in Sources */,
 				513BCD6F24A8799700ABA0DB /* BoolExtensions.swift in Sources */,
-				5103DBB7235ECB0700E62F78 /* LQUIUtils+UITableView.swift in Sources */,
+				5171463624F8D08B00A8CB5B /* UIBuilder.swift in Sources */,
 				512D3B5B2356EEC2001677CF /* AppDefaultsProtocol.swift in Sources */,
 				512D3B642356F12E001677CF /* UIViewExtensions.swift in Sources */,
 				513BCD6124A8799700ABA0DB /* SignedIntegerExtensions.swift in Sources */,
 				512D3B502356BDA2001677CF /* AppBaseTabBarController.swift in Sources */,
 				513BCD6B24A8799700ABA0DB /* DictionaryExtensions.swift in Sources */,
-				5103DBC4235ECB0700E62F78 /* LQUIUtils+UIGestureRecognizer.swift in Sources */,
 				513BCD7424A8799700ABA0DB /* RandomAccessCollectionExtensions.swift in Sources */,
 				51DB3DB024AAE4E700190884 /* UIRefreshControlExtensions.swift in Sources */,
 				513BCD6724A8799700ABA0DB /* CGSizeExtensions.swift in Sources */,
 				513BCD7124A8799700ABA0DB /* DoubleExtensions.swift in Sources */,
-				5103DBBA235ECB0700E62F78 /* LQUIUtils+UIStackView.swift in Sources */,
 				51D79C452358107D00C13E22 /* UITextFieldExtensions.swift in Sources */,
 				513BCD7724A8799700ABA0DB /* IntExtensions.swift in Sources */,
 				515B3B252374F9E2005275D3 /* AppCustomTableViewController.swift in Sources */,
@@ -718,62 +624,44 @@
 				513BCD7824A8799700ABA0DB /* DateExtensions.swift in Sources */,
 				513BCD7A24A8799700ABA0DB /* NSAttributedStringExtensions.swift in Sources */,
 				5175E2AF243C1615005AA028 /* AppCookieWebView.swift in Sources */,
-				5103DBB3235ECB0700E62F78 /* LQUIUtils+UILongPressGestureRecognizer.swift in Sources */,
 				51D79C37235809CC00C13E22 /* UINavigationItemExtensions.swift in Sources */,
 				51D79C31235805BE00C13E22 /* UILabelExtensions.swift in Sources */,
 				5AE618362371A8CF00A2D973 /* DemoViewController.swift in Sources */,
-				5103DBC9235ECB0700E62F78 /* LQUIUtils+UICollectionView.swift in Sources */,
 				512D3B522356BDA2001677CF /* AppBaseTableViewController.swift in Sources */,
-				5103DBBB235ECB0700E62F78 /* LQUIUtils+UIBarItem.swift in Sources */,
 				512D3B512356BDA2001677CF /* AppNetworkViewController.swift in Sources */,
-				5103DBCA235ECB0700E62F78 /* LQUIUtils+UIPanGestureRecognizer.swift in Sources */,
-				5103DBD0235ECB0700E62F78 /* LQUIUtils+UITapGestureRecognizer.swift in Sources */,
 				512D3B5D2356EEEC001677CF /* AppFileManager.swift in Sources */,
-				5103DBC6235ECB0700E62F78 /* LQUIUtils+UIScrollView.swift in Sources */,
 				51D79C3B23580D8300C13E22 /* UISearchBarExtensions.swift in Sources */,
-				5103DBB5235ECB0700E62F78 /* LQUIUtils+UIButton.swift in Sources */,
 				513BCD6224A8799700ABA0DB /* CGFloatExtensions.swift in Sources */,
-				5103DBCF235ECB0700E62F78 /* LQUIUtils+UISearchBar.swift in Sources */,
-				5103DBCB235ECB0700E62F78 /* LQUIUtils+UISlider.swift in Sources */,
 				51D79C33235808D100C13E22 /* UINavigationBarExtensions.swift in Sources */,
 				51D79C2F235804E300C13E22 /* UIImageViewExtensions.swift in Sources */,
 				51DB3DA424AAD6CD00190884 /* CAGradientLayerExtensions.swift in Sources */,
 				513BCD7024A8799700ABA0DB /* DataEncryption.swift in Sources */,
 				513BCD6924A8799700ABA0DB /* UserDefaultsExtensions.swift in Sources */,
 				51DB3DAE24AAE23200190884 /* NSPredicateExtensions.swift in Sources */,
-				5103DBBF235ECB0700E62F78 /* LQUIUtils+UITextView.swift in Sources */,
 				5103DBD8235ED45300E62F78 /* AppRouter.swift in Sources */,
 				51D79C3F23580E0B00C13E22 /* UIStackViewExtensions.swift in Sources */,
-				5103DBC3235ECB0700E62F78 /* LQUIUtils+UISwipeGestureRecognizer.swift in Sources */,
 				513BCD7624A8799700ABA0DB /* StringEncryption.swift in Sources */,
 				513BCD6624A8799700ABA0DB /* BinaryFloatingPointExtensions.swift in Sources */,
 				512D3B552356DF8F001677CF /* AppDeviceInfo.swift in Sources */,
-				5103DBCD235ECB0700E62F78 /* LQUIUtilsNameSpace.swift in Sources */,
 				511F88D72421BF7A0009F2FB /* UIBezierPathExtensions.swift in Sources */,
 				51D79C47235811C700C13E22 /* UITextViewExtensions.swift in Sources */,
 				512D3B4F2356BDA2001677CF /* AppBaseViewController.swift in Sources */,
 				512D3B1A2356BD4B001677CF /* SceneDelegate.swift in Sources */,
 				513BCD7B24A8799700ABA0DB /* CalendarExtensions.swift in Sources */,
 				512D3B8D23571F77001677CF /* UIAlertControllerExtensions.swift in Sources */,
-				5103DBC8235ECB0700E62F78 /* LQUIUtils+WKWebViewConfiguration.swift in Sources */,
 				51FD3971236145A7005BA224 /* LQViewController.swift in Sources */,
 				512D3B9323572710001677CF /* UIEdgeInsetsExtensions.swift in Sources */,
 				51D79C2B2358000F00C13E22 /* UICollectionViewExtensions.swift in Sources */,
-				5103DBB9235ECB0700E62F78 /* LQUIUtils+UIView.swift in Sources */,
-				5103DBBC235ECB0700E62F78 /* LQUIUtils+UISwitch.swift in Sources */,
 				5103DBDC235ED9C700E62F78 /* MVVMProtocol.swift in Sources */,
 				51C80C0E23702D6D00EA898E /* UIApplicationExtensions.swift in Sources */,
 				51DB3DB624AB02B400190884 /* UIImagePickerControllerExtensions.swift in Sources */,
 				513BCD6C24A8799700ABA0DB /* DataExtensions.swift in Sources */,
 				513BCD6E24A8799700ABA0DB /* URLRequestExtensions.swift in Sources */,
 				512D3B91235723CF001677CF /* UIButtonExtensions.swift in Sources */,
-				5103DBCE235ECB0700E62F78 /* LQUIUtils+UILabel.swift in Sources */,
 				513BCD7C24A8799700ABA0DB /* UIColorExtensions.swift in Sources */,
-				5103DBBE235ECB0700E62F78 /* LQUIUtils+UIProgressView.swift in Sources */,
 				513BCD7224A8799700ABA0DB /* URLExtensions.swift in Sources */,
 				513BCD7324A8799700ABA0DB /* DispatchQueueExtensions.swift in Sources */,
 				51D79C3923580D5100C13E22 /* UIScrollViewExtensions.swift in Sources */,
-				5103DBB8235ECB0700E62F78 /* LQUIUtils+UICollectionViewLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -61,6 +61,29 @@ public extension UIViewController{
     }
     
     
+    /// 显示alert
+       /// - Parameters:
+       ///   - title: 标题
+       ///   - message: 描述
+       ///   - okTitle: 确认按钮标题
+       ///   - cancelTitle: 取消按钮标题
+       ///   - okHandler: 点击确认按钮的处理
+       ///   - cancelHandler: 点击取消按钮的处理
+       ///   - completion: 完成
+       /// - Returns: UIAlertController
+       @discardableResult
+       func showAlert(title: String?, message: String?,okTitle:String?,cancelTitle:String?,okHandler: ((UIAlertAction) -> Void)? = nil,cancelHandler: ((UIAlertAction) -> Void)? = nil,completion: (() -> Void)? = nil) -> UIAlertController{
+           let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+           let okAction = UIAlertAction.init(title: okTitle, style: .default, handler: okHandler)
+           let cancelAction = UIAlertAction.init(title: okTitle, style: .cancel, handler: okHandler)
+           alertController.addAction(okAction)
+           alertController.addAction(cancelAction)
+           present(alertController, animated: true, completion: completion)
+           return alertController
+       }
+       
+    
+    
     /// 将子ViewController的view添加到containerView上
     /// - Parameters:
     ///   - child: 子VC
