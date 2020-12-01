@@ -8,14 +8,6 @@
 #if canImport(UIKit) && os(iOS)
 import UIKit
 
-public func debugLog<T>(_ message:T,file : String = #file, funcName : String = #function, lineNum : Int = #line){
-    if AppDeviceInfo.isDebug {
-        let fileName = (file as NSString).lastPathComponent
-        print("\(fileName):[\(funcName)](\(lineNum)) - \(message)")
-    }
-}
-
-
 public struct  AppDeviceInfo{}
 
 /// 应用运行环境
