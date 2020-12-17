@@ -124,10 +124,10 @@ public extension AppDeviceInfo{
     /// tabBar高度
     static func tabBarHeight(_ rootVC:UIViewController?) -> CGFloat{
         guard let vc = rootVC else {
-            return bottomSpace
+            return 0
         }
         #if APP_CORE
-        return bottomSpace + (vc.tabBarController?.tabBar.bounds.size.height ?? 0)
+        return (vc.tabBarController?.tabBar.bounds.size.height ?? 0)
         #else
         return 0
         #endif

@@ -13,6 +13,7 @@ class DemoViewController: AppBaseViewController {
         super.viewDidLoad()
        print(AppDeviceInfo.navigationHeight(self))
        print(AppDeviceInfo.tabBarHeight(self))
+       print(AppDeviceInfo.bottomSpace)
     }
     
 }
