@@ -60,6 +60,7 @@
 		513BCD7A24A8799700ABA0DB /* NSAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513BCD5E24A8799700ABA0DB /* NSAttributedStringExtensions.swift */; };
 		513BCD7B24A8799700ABA0DB /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513BCD5F24A8799700ABA0DB /* CalendarExtensions.swift */; };
 		513BCD7C24A8799700ABA0DB /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513BCD6024A8799700ABA0DB /* UIColorExtensions.swift */; };
+		5147BD1C258B22580016163A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147BD1B258B22580016163A /* TabBarVC.swift */; };
 		5157A8DF23667E40001CB260 /* AppKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5157A8DE23667E40001CB260 /* AppKeyboardObserver.swift */; };
 		515B3B252374F9E2005275D3 /* AppCustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515B3B242374F9E2005275D3 /* AppCustomTableViewController.swift */; };
 		515D73562362C65F00B83605 /* AppCountDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515D73552362C65F00B83605 /* AppCountDownButton.swift */; };
@@ -177,6 +178,7 @@
 		513BCD5E24A8799700ABA0DB /* NSAttributedStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtensions.swift; sourceTree = "<group>"; };
 		513BCD5F24A8799700ABA0DB /* CalendarExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
 		513BCD6024A8799700ABA0DB /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		5147BD1B258B22580016163A /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		5157A8DE23667E40001CB260 /* AppKeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeyboardObserver.swift; sourceTree = "<group>"; };
 		515B3B242374F9E2005275D3 /* AppCustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCustomTableViewController.swift; sourceTree = "<group>"; };
 		515D73552362C65F00B83605 /* AppCountDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCountDownButton.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				512D3B222356BD4D001677CF /* LaunchScreen.storyboard */,
 				512D3B252356BD4D001677CF /* Info.plist */,
 				5AE618352371A8CF00A2D973 /* DemoViewController.swift */,
+				5147BD1B258B22580016163A /* TabBarVC.swift */,
 			);
 			path = LQAppUtils;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				513BCD6E24A8799700ABA0DB /* URLRequestExtensions.swift in Sources */,
 				512D3B91235723CF001677CF /* UIButtonExtensions.swift in Sources */,
 				513BCD7C24A8799700ABA0DB /* UIColorExtensions.swift in Sources */,
+				5147BD1C258B22580016163A /* TabBarVC.swift in Sources */,
 				513BCD7224A8799700ABA0DB /* URLExtensions.swift in Sources */,
 				513BCD7324A8799700ABA0DB /* DispatchQueueExtensions.swift in Sources */,
 				51D79C3923580D5100C13E22 /* UIScrollViewExtensions.swift in Sources */,

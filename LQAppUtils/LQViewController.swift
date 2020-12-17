@@ -12,7 +12,7 @@ class LQViewController: UIViewController {
     lazy var router = AppRouter.init(viewController: self)
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     

@@ -608,4 +608,36 @@ public extension UIView {
     }
     
 }
+
+
+public extension UIView{
+    var navigationHeight:CGFloat{
+        return parentViewController?.navigationHeight ?? 0
+    }
+    
+    var tabBarHeight:CGFloat{
+        return parentViewController?.tabBarHeight ?? 0
+    }
+    
+    var screenWidth:CGFloat{
+        return AppDeviceInfo.screenWidth
+    }
+    
+    var screenHeight:CGFloat{
+        return AppDeviceInfo.screenHeight
+    }
+    
+    var statusBarHeight:CGFloat{
+        return AppDeviceInfo.statusBarHeight
+    }
+    
+    var topSpace:CGFloat{
+        return AppDeviceInfo.topSpace
+    }
+    
+    var bottomSpace:CGFloat{
+        return AppDeviceInfo.bottomSpace
+    }
+}
+
 #endif

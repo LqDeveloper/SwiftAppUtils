@@ -109,27 +109,25 @@ public extension AppDeviceInfo{
         return UIScreen.main.bounds.size.height
     }
     
-    //   只支持竖屏 导航高度
-    static var navigationHeight:CGFloat{
-        #if APP_CORE
-        if isPhoneXSeries{
-            return 88.0
-        }else{
-            return 64.0
+    // 导航高度
+    static func  navigationHeight(_ rootVC:UIViewController?) -> CGFloat{
+        guard let vc = rootVC else {
+            return topSpace
         }
+        #if APP_CORE
+        return topSpace + (vc.navigationController?.navigationBar.bounds.size.height ?? 0)
         #else
         return 0
         #endif
     }
     
     /// tabBar高度
-    static var tabBarHeight:CGFloat{
-        #if APP_CORE
-        if isPhoneXSeries{
-            return 83.0
-        }else{
-            return 49.0
+    static func tabBarHeight(_ rootVC:UIViewController?) -> CGFloat{
+        guard let vc = rootVC else {
+            return bottomSpace
         }
+        #if APP_CORE
+        return bottomSpace + (vc.tabBarController?.tabBar.bounds.size.height ?? 0)
         #else
         return 0
         #endif

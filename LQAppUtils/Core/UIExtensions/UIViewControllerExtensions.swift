@@ -216,18 +216,15 @@ public extension UIViewController{
         }
     }
 }
-#endif
-
-
+#if APP_CORE
 public extension UIViewController{
-    
     /// 弹出评价弹窗
     @available(iOS 10.3, *)
     func showAppReview(){
         UIApplication.showAppReview()
     }
     
-    #if APP_CORE
+    
     /// 跳转到APP设置页面
     func openSetting(){
         UIApplication.openSetting()
@@ -245,8 +242,6 @@ public extension UIViewController{
     func checkNotificationEnable(_ completion:@escaping (Bool)->()){
         UIApplication.checkNotificationEnable(completion)
     }
-    #else
-    #endif
     
     ///应用内弹出App在App Store中的页面
     /// - Parameter appId: appId
@@ -254,3 +249,39 @@ public extension UIViewController{
         UIApplication.showAppStoreInApp(appId, self)
     }
 }
+#else
+#endif
+
+public extension UIViewController{
+    var navigationHeight:CGFloat{
+        return AppDeviceInfo.navigationHeight(self)
+    }
+    
+    var tabBarHeight:CGFloat{
+        return AppDeviceInfo.tabBarHeight(self)
+    }
+    
+    var screenWidth:CGFloat{
+        return AppDeviceInfo.screenWidth
+    }
+    
+    var screenHeight:CGFloat{
+        return AppDeviceInfo.screenHeight
+    }
+    
+    var statusBarHeight:CGFloat{
+        return AppDeviceInfo.statusBarHeight
+    }
+    
+    var topSpace:CGFloat{
+        return AppDeviceInfo.topSpace
+    }
+    
+    var bottomSpace:CGFloat{
+        return AppDeviceInfo.bottomSpace
+    }
+}
+
+#endif
+
+
