@@ -7,36 +7,34 @@
 //
 
 public extension Optional {
-    
-    /// 获取默认值的self（如果self为nil）。
-    ///
-    ///		let foo: String? = nil
-    ///		print(foo.unwrapped(or: "bar")) -> "bar"
-    ///
-    ///		let bar: String? = "bar"
-    ///		print(bar.unwrapped(or: "foo")) -> "bar"
-    ///
-    /// - Parameter defaultValue: 如果self为nil，则返回默认值
-    /// - Returns: 如果不为nil，则返回self；如果不为零，则返回默认值
-    func unwrapped(or defaultValue: Wrapped) -> Wrapped {
-        // http://www.russbishop.net/improving-optionals
-        return self ?? defaultValue
+    /// 判断是否为空
+    var isNone: Bool {
+        switch self {
+        case .none:
+            return true
+        case .some:
+            return false
+        }
     }
     
-    /// 获取可选的包装值。 如果可选的是`nil`，则抛出一个自定义错误。
-    ///
-    ///        let foo: String? = nil
-    ///        try print(foo.unwrapped(or: MyError.notFound)) -> error: MyError.notFound
-    ///
-    ///        let bar: String? = "bar"
-    ///        try print(bar.unwrapped(or: MyError.notFound)) -> "bar"
-    ///
-    /// - Parameter error: 如果可选为`nil`时抛出的错误
-    /// - Returns: 由可选包装的值。
-    /// - Throws: error
-    func unwrapped(or error: Error) throws -> Wrapped {
-        guard let wrapped = self else { throw error }
-        return wrapped
+    /// 判断是否有值
+    var isSome: Bool {
+        return !isNone
+    }
+    
+    /// 返回解包后的值或者默认值
+    func or(_ default: Wrapped) -> Wrapped {
+        return self ?? `default`
+    }
+    
+    /// 当可选值不为空时，执行 `some` 闭包
+    func onSome(_ some:() -> Void)  {
+        if self != nil { some() }
+    }
+    
+    /// 当可选值为空时，执行 `none` 闭包
+    func onNone(_ none: ()  -> Void)  {
+        if self == nil { none() }
     }
 }
 

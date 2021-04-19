@@ -11,7 +11,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let a:Int? = nil
+        print(a.isNone)
+        a.onNone {
+            print("a 为nil")
+        }
+        print(a.or(10))
     }
 
 
