@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5181A99926D73E8100E56720 /* AppCenterPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181A99826D73E8100E56720 /* AppCenterPopVC.swift */; };
+		5181A9A426D7654F00E56720 /* GlobalPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181A9A326D7654F00E56720 /* GlobalPopVC.swift */; };
+		5181A9A626D76AC200E56720 /* CustomPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181A9A526D76AC200E56720 /* CustomPopVC.swift */; };
+		5181A9AB26D76DC700E56720 /* CustomSBPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181A9AA26D76DC700E56720 /* CustomSBPopVC.swift */; };
 		518D0CFA25FF24E300D0BACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D0CF925FF24E300D0BACC /* AppDelegate.swift */; };
 		518D0CFC25FF24E300D0BACC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D0CFB25FF24E300D0BACC /* SceneDelegate.swift */; };
 		518D0CFE25FF24E300D0BACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D0CFD25FF24E300D0BACC /* ViewController.swift */; };
@@ -98,6 +102,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5181A99826D73E8100E56720 /* AppCenterPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterPopVC.swift; sourceTree = "<group>"; };
+		5181A9A326D7654F00E56720 /* GlobalPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPopVC.swift; sourceTree = "<group>"; };
+		5181A9A526D76AC200E56720 /* CustomPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopVC.swift; sourceTree = "<group>"; };
+		5181A9AA26D76DC700E56720 /* CustomSBPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSBPopVC.swift; sourceTree = "<group>"; };
 		518D0CF625FF24E300D0BACC /* SwiftAppUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAppUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		518D0CF925FF24E300D0BACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		518D0CFB25FF24E300D0BACC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -230,6 +238,9 @@
 				518D0D0225FF24E300D0BACC /* Assets.xcassets */,
 				518D0D0425FF24E300D0BACC /* LaunchScreen.storyboard */,
 				518D0D0725FF24E300D0BACC /* Info.plist */,
+				5181A9A326D7654F00E56720 /* GlobalPopVC.swift */,
+				5181A9A526D76AC200E56720 /* CustomPopVC.swift */,
+				5181A9AA26D76DC700E56720 /* CustomSBPopVC.swift */,
 			);
 			path = SwiftAppUtils;
 			sourceTree = "<group>";
@@ -386,6 +397,7 @@
 				518D0D5C25FF24EE00D0BACC /* AppCustomTableViewController.swift */,
 				518D0D5D25FF24EE00D0BACC /* AppBaseNavigationController.swift */,
 				518D0D5E25FF24EE00D0BACC /* AppBaseTableViewController.swift */,
+				5181A99826D73E8100E56720 /* AppCenterPopVC.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -494,6 +506,7 @@
 				518D0D6F25FF24EE00D0BACC /* SignedIntegerExtensions.swift in Sources */,
 				518D0D7425FF24EE00D0BACC /* FloatExtensions.swift in Sources */,
 				518D0DBA25FF24EE00D0BACC /* AppFPSLabel.swift in Sources */,
+				5181A9AB26D76DC700E56720 /* CustomSBPopVC.swift in Sources */,
 				518D0D7C25FF24EE00D0BACC /* DataEncryption.swift in Sources */,
 				518D0D9F25FF24EE00D0BACC /* UIViewControllerExtensions.swift in Sources */,
 				518D0DA625FF24EE00D0BACC /* UIApplicationExtensions.swift in Sources */,
@@ -528,9 +541,11 @@
 				518D0DA825FF24EE00D0BACC /* UIRefreshControlExtensions.swift in Sources */,
 				518D0D8F25FF24EE00D0BACC /* AppDefaultsProtocol.swift in Sources */,
 				518D0D7025FF24EE00D0BACC /* BidirectionalCollectionExtensions.swift in Sources */,
+				5181A99926D73E8100E56720 /* AppCenterPopVC.swift in Sources */,
 				518D0D7825FF24EE00D0BACC /* StringExtensions.swift in Sources */,
 				518D0D8525FF24EE00D0BACC /* OptionalExtensions.swift in Sources */,
 				518D0D9025FF24EE00D0BACC /* UIBezierPathExtensions.swift in Sources */,
+				5181A9A426D7654F00E56720 /* GlobalPopVC.swift in Sources */,
 				518D0D7725FF24EE00D0BACC /* DataExtensions.swift in Sources */,
 				518D0D7E25FF24EE00D0BACC /* URLExtensions.swift in Sources */,
 				518D0D8225FF24EE00D0BACC /* StringEncryption.swift in Sources */,
@@ -564,6 +579,7 @@
 				518D0DAD25FF24EE00D0BACC /* AppBaseWebViewController.swift in Sources */,
 				518D0DB525FF24EE00D0BACC /* CALayerExtensions.swift in Sources */,
 				518D0D8825FF24EE00D0BACC /* AppDeviceInfo.swift in Sources */,
+				5181A9A626D76AC200E56720 /* CustomPopVC.swift in Sources */,
 				518D0DB925FF24EE00D0BACC /* CGPointExtensions.swift in Sources */,
 				518D0DA925FF24EE00D0BACC /* UIAlertControllerExtensions.swift in Sources */,
 				518D0D7625FF24EE00D0BACC /* DictionaryExtensions.swift in Sources */,
