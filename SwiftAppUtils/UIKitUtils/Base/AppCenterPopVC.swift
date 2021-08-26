@@ -7,6 +7,7 @@
 
 import UIKit
 open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,AppKeyboardDelegate,UIPopoverPresentationControllerDelegate{
+    
     ///监听键盘弹起和收起
     private var keyboardObserver:AppKeyboardObserver?
     ///用于确定弹窗的位置
@@ -27,6 +28,7 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,AppKeyboardDel
             }
         }
     }
+    public var bgView:UIView!
     ///弹窗边框宽度
     public var popBorderWidth: CGFloat{
         return view.superview?.layer.borderWidth ?? 0
@@ -80,8 +82,22 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,AppKeyboardDel
         popoverPresentationController?.sourceRect = sourceRect
         //从A控制器通过present的方式跳转到了B控制器，那么 A.presentedViewController 就是B控制器；B.presentingViewController 就是A控制器
         //不能在init中，因为presentingViewController在init中为nil
-        popoverPresentationController?.sourceView = presentingViewController?.view
+        bgView = UIView.init(frame: UIScreen.main.bounds)
+        bgView.backgroundColor = UIColor.init(white: 0, alpha: 0.25)
+        weak var presentingView = presentingViewController?.view
+        popoverPresentationController?.sourceView = presentingView
     }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presentingViewController?.view.addSubview(bgView)
+    }
+    
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        bgView.removeFromSuperview()
+    }
+    
     
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -95,10 +111,14 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,AppKeyboardDel
     
     //MARK:AppKeyboardDelegate
     //键盘弹起
-    open func keyboardWillShow(keyboardHeight: CGFloat, animationTime: TimeInterval) {
+    open func keyboardWillShow(keyboardRect: CGRect, animationTime: TimeInterval) {
         if sourceRect.equalTo(CGRect.zero) {return}
-        let screenHeight = UIScreen.main.bounds.height
-        let sourceY = (screenHeight - keyboardHeight - size.height) > sourceRect.origin.y ? sourceRect.origin.y : (screenHeight - keyboardHeight - size.height)
+        let keybboardY = keyboardRect.origin.y
+        let maxY = sourceRect.origin.y + size.height
+        guard keybboardY < maxY else{
+            return
+        }
+        let sourceY = sourceRect.origin.y - (maxY - keybboardY) - 40
         popoverPresentationController?.sourceRect = CGRect.init(x: sourceRect.origin.x, y: sourceY, width: sourceRect.width, height: sourceRect.height)
         
     }

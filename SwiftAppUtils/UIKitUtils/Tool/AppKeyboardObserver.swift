@@ -9,7 +9,7 @@
 #if canImport(UIKit)
 import UIKit
 public protocol AppKeyboardDelegate:NSObjectProtocol{
-    func keyboardWillShow(keyboardHeight:CGFloat,animationTime:TimeInterval)
+    func keyboardWillShow(keyboardRect:CGRect,animationTime:TimeInterval)
     func keyboardWillHide(animationTime:TimeInterval)
 }
 
@@ -30,12 +30,12 @@ open class AppKeyboardObserver{
         let userInfo = noti.userInfo as? [String:Any]
         
         let heightValue = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
-        let height = heightValue?.cgRectValue.size.height ?? 0
+        let rect = heightValue?.cgRectValue ?? .zero
         
         let timeValue = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSValue
         var time:TimeInterval = 0
         timeValue?.getValue(&time)
-        delegate?.keyboardWillShow(keyboardHeight: height, animationTime: time)
+        delegate?.keyboardWillShow(keyboardRect: rect, animationTime: time)
     }
     
     @objc func keyboardWillHide(noti:Notification){

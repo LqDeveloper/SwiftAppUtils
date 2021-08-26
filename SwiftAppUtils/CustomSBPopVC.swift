@@ -10,9 +10,16 @@ import UIKit
 class CustomSBPopVC: DefaultPopoVC {
     
     override func viewDidLoad() {
-        size = CGSize.init(width: 200, height: 200)
+        size = CGSize.init(width: 200, height: 300)
+        observerKeyboard = true
         super.viewDidLoad()
-        
     }
     
+}
+
+extension CustomSBPopVC : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
