@@ -102,11 +102,22 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,UIPopoverPrese
         return enableDismiss
     }
     
+    @available(iOS 13.0, *)
+    public func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+        return enableDismiss
+    }
+    
     public func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return .none
     }
     
     public func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+        didDismiss?()
+        didDismiss = nil
+    }
+    
+    @available(iOS 13.0, *)
+    public func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         didDismiss?()
         didDismiss = nil
     }
