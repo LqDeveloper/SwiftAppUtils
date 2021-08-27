@@ -10,8 +10,7 @@ import UIKit
 class CustomSBPopVC: DefaultPopoVC {
     
     override func viewDidLoad() {
-        size = CGSize.init(width: 200, height: 300)
-        observerKeyboard = true
+        size = CGSize.init(width: UIScreen.main.bounds.size.width, height: 300)
         super.viewDidLoad()
     }
     

@@ -19,12 +19,12 @@ class CustomPopVC: BaseCenterPopVC<CustomBgView> {
     }
     ///弹窗的圆角
     override var popCornerRadius: CGFloat{
-        return 10
+        return 20
     }
     
     ///弹窗要设置圆角的角
     override var popMaskedCorners: CACornerMask{
-        return [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
+        return [.layerMinXMinYCorner,.layerMaxXMaxYCorner]
     }
     
     override func viewDidLoad() {

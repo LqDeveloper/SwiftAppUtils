@@ -6,10 +6,7 @@
 //
 
 import UIKit
-open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,AppKeyboardDelegate,UIPopoverPresentationControllerDelegate{
-    
-    ///监听键盘弹起和收起
-    private var keyboardObserver:AppKeyboardObserver?
+open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,UIPopoverPresentationControllerDelegate{
     ///用于确定弹窗的位置
     private var sourceRect:CGRect = .zero
     ///弹窗的大小
@@ -18,16 +15,6 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,AppKeyboardDel
     public var enableDismiss = true
     ///点击背景消失后的回调
     public var didDismiss:(() -> Void)? = nil
-    ///是否监听键盘事件
-    public var observerKeyboard = false{
-        didSet{
-            if observerKeyboard {
-                keyboardObserver = AppKeyboardObserver.init(delegate: self)
-            }else{
-                keyboardObserver = nil
-            }
-        }
-    }
     public var bgView:UIView!
     ///弹窗边框宽度
     public var popBorderWidth: CGFloat{
@@ -66,6 +53,7 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,AppKeyboardDel
         modalPresentationStyle = .popover
         popoverPresentationController?.permittedArrowDirections = .up
         popoverPresentationController?.delegate = self
+        popoverPresentationController?.canOverlapSourceViewRect = true
         popoverPresentationController?.popoverBackgroundViewClass = T.self
     }
     
@@ -77,15 +65,15 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,AppKeyboardDel
             fatalError("must set vc's size")
         }
         let screenSize = UIScreen.main.bounds.size
-        sourceRect = CGRect.init(x:screenSize.width/2, y: (screenSize.height - size.height)/2, width: 1, height:1)
+        sourceRect = CGRect.init(x:screenSize.width/2, y: 0, width: 1, height:(screenSize.height - size.height)/2)
         preferredContentSize = size
         popoverPresentationController?.sourceRect = sourceRect
         //从A控制器通过present的方式跳转到了B控制器，那么 A.presentedViewController 就是B控制器；B.presentingViewController 就是A控制器
         //不能在init中，因为presentingViewController在init中为nil
-        bgView = UIView.init(frame: UIScreen.main.bounds)
-        bgView.backgroundColor = UIColor.init(white: 0, alpha: 0.25)
         weak var presentingView = presentingViewController?.view
         popoverPresentationController?.sourceView = presentingView
+        bgView = UIView.init(frame: UIScreen.main.bounds)
+        bgView.backgroundColor = UIColor.init(white: 0, alpha: 0.25)
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -107,25 +95,6 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,AppKeyboardDel
         if #available(iOS 11.0, *) {
             view.superview?.layer.maskedCorners = popMaskedCorners
         }
-    }
-    
-    //MARK:AppKeyboardDelegate
-    //键盘弹起
-    open func keyboardWillShow(keyboardRect: CGRect, animationTime: TimeInterval) {
-        if sourceRect.equalTo(CGRect.zero) {return}
-        let keybboardY = keyboardRect.origin.y
-        let maxY = sourceRect.origin.y + size.height
-        guard keybboardY < maxY else{
-            return
-        }
-        let sourceY = sourceRect.origin.y - (maxY - keybboardY) - 40
-        popoverPresentationController?.sourceRect = CGRect.init(x: sourceRect.origin.x, y: sourceY, width: sourceRect.width, height: sourceRect.height)
-        
-    }
-    //键盘收起
-    open func keyboardWillHide(animationTime: TimeInterval) {
-        if sourceRect.equalTo(CGRect.zero) {return}
-        popoverPresentationController?.sourceRect = sourceRect
     }
     
     //MARK:UIPopoverPresentationControllerDelegate
