@@ -78,7 +78,9 @@ public extension UIView {
             return layer.cornerRadius
         }
         set {
-            layer.masksToBounds = true
+            if self is UILabel{
+                layer.masksToBounds = true
+            }
             layer.cornerRadius = abs(CGFloat(Int(newValue * 100)) / 100)
         }
     }
@@ -281,7 +283,7 @@ public extension UIView {
         return nil
     }
     
-    ///设置部分或全部拐角半径。
+    ///设置部分或全部拐角半径。这个方法会造成离屏渲染
     ///
     /// - Parameters:
     ///   - corners: array of corners to change (example: [.bottomLeft, .topRight]).
@@ -295,6 +297,13 @@ public extension UIView {
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath
         layer.mask = shape
+    }
+    
+    ///设置部分或全部拐角半径。这个方法不会造成离屏渲染
+    @available(iOS 11, *)
+    func layerCorners(_ corners: CACornerMask, radius: CGFloat) {
+        layer.cornerRadius = radius
+        layer.maskedCorners = corners
     }
     
     /// 添加阴影
@@ -525,39 +534,39 @@ public extension UIView {
         rightConstant: CGFloat = 0,
         widthConstant: CGFloat = 0,
         heightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
-        // https://videos.letsbuildthatapp.com/
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        var anchors = [NSLayoutConstraint]()
-        
-        if let top = top {
-            anchors.append(topAnchor.constraint(equalTo: top, constant: topConstant))
+            // https://videos.letsbuildthatapp.com/
+            translatesAutoresizingMaskIntoConstraints = false
+            
+            var anchors = [NSLayoutConstraint]()
+            
+            if let top = top {
+                anchors.append(topAnchor.constraint(equalTo: top, constant: topConstant))
+            }
+            
+            if let left = left {
+                anchors.append(leftAnchor.constraint(equalTo: left, constant: leftConstant))
+            }
+            
+            if let bottom = bottom {
+                anchors.append(bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant))
+            }
+            
+            if let right = right {
+                anchors.append(rightAnchor.constraint(equalTo: right, constant: -rightConstant))
+            }
+            
+            if widthConstant > 0 {
+                anchors.append(widthAnchor.constraint(equalToConstant: widthConstant))
+            }
+            
+            if heightConstant > 0 {
+                anchors.append(heightAnchor.constraint(equalToConstant: heightConstant))
+            }
+            
+            anchors.forEach({$0.isActive = true})
+            
+            return anchors
         }
-        
-        if let left = left {
-            anchors.append(leftAnchor.constraint(equalTo: left, constant: leftConstant))
-        }
-        
-        if let bottom = bottom {
-            anchors.append(bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant))
-        }
-        
-        if let right = right {
-            anchors.append(rightAnchor.constraint(equalTo: right, constant: -rightConstant))
-        }
-        
-        if widthConstant > 0 {
-            anchors.append(widthAnchor.constraint(equalToConstant: widthConstant))
-        }
-        
-        if heightConstant > 0 {
-            anchors.append(heightAnchor.constraint(equalToConstant: heightConstant))
-        }
-        
-        anchors.forEach({$0.isActive = true})
-        
-        return anchors
-    }
     
     /// 水平方向垂直居中
     ///

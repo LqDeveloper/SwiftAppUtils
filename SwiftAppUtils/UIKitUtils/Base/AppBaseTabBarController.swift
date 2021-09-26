@@ -26,6 +26,9 @@ open class AppBaseTabBarController: UITabBarController {
                 appearance.stackedLayoutAppearance.selected.titleTextAttributes = selected
             }
             tabBar.standardAppearance = appearance
+            if #available(iOS 15.0, *){
+                tabBar.scrollEdgeAppearance = appearance
+            }
         }else{
             let tabBarAppearance = UITabBarItem.appearance()
             var attribute =  tabBarAppearance.titleTextAttributes(for: state) ?? [:]

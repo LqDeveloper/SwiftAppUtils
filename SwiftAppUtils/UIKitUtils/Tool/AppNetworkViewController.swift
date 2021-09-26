@@ -31,7 +31,7 @@ open class AppNetworkViewController:AppBaseTableViewController{
         selectItemBlock = select
         super.init(style: .grouped)
         self.title = title
-        navigationController?.navigationBar.setTitleFont(UIFont.boldSystemFont(ofSize: 16), color: .black)
+        navigationController?.navigationBar.setTitleFont(UIFont.boldSystemFont(ofSize: 16),.black)
         tableView.rowHeight = 60
         tableView.estimatedRowHeight = 0
         tableView.estimatedSectionHeaderHeight = 0

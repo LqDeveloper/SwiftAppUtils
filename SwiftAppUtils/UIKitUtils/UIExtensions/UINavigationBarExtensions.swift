@@ -17,11 +17,34 @@ public extension UINavigationBar {
     /// - Parameters:
     ///   - font: title font
     ///   - color: title text color (default is .black).
-    func setTitleFont(_ font: UIFont, color: UIColor = .black) {
-        var attrs = [NSAttributedString.Key: Any]()
-        attrs[.font] = font
-        attrs[.foregroundColor] = color
-        titleTextAttributes = attrs
+    func setTitleFont(_ font: UIFont, _ textColor: UIColor = .black) {
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance.init(barAppearance: standardAppearance)
+            appearance.titleTextAttributes = [.font:font,.foregroundColor:textColor]
+            standardAppearance = appearance;
+            scrollEdgeAppearance = standardAppearance
+        }else{
+            var attrs = [NSAttributedString.Key: Any]()
+            attrs[.font] = font
+            attrs[.foregroundColor] = textColor
+            titleTextAttributes = attrs
+        }
+    }
+    
+    
+    /// 设置导航栏背景颜色
+    /// - Parameter bgColor: 背景颜色
+    func setNavBgColor(_ bgColor:UIColor = .white){
+        //需要设置这个属性，否则tableview会发生上移
+        isTranslucent = false
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance.init(barAppearance: standardAppearance)
+            appearance.backgroundColor = bgColor
+            standardAppearance = appearance;
+            scrollEdgeAppearance = standardAppearance
+        }else{
+            barTintColor = bgColor
+        }
     }
     
     /// 设置导航透明颜色
