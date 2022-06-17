@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GlobalPopVC: DefaultPopoVC {
+class GlobalPopVC: DefaultPopVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.orange

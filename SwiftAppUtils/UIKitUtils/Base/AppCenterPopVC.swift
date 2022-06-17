@@ -15,24 +15,39 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,UIPopoverPrese
     public var enableDismiss = true
     ///点击背景消失后的回调
     public var didDismiss:(() -> Void)? = nil
-    public var bgView:UIView!
+    //背景视图
+    public var bgView:UIView?{
+        return _bgView
+    }
+    private var _bgView:UIView?
+    
     ///弹窗边框宽度
-    public var popBorderWidth: CGFloat{
+    open var popBorderWidth: CGFloat{
         return view.superview?.layer.borderWidth ?? 0
     }
     
     ///弹窗边框颜色
-    public var popBorderColor: CGColor?{
+    open var popBorderColor: CGColor?{
         return view.superview?.layer.borderColor
     }
     ///弹窗的圆角
-    public var popCornerRadius: CGFloat{
+    open var popCornerRadius: CGFloat{
         return view.superview?.layer.cornerRadius ?? 0
+    }
+    
+    ///是否有背景
+    open var hasBgView: Bool{
+        return true
+    }
+    
+    ///弹窗的背景色
+    open var popBgColor: UIColor?{
+        return UIColor.init(white: 0, alpha: 0.25)
     }
     
     ///弹窗要设置圆角的角
     @available(iOS 11.0, *)
-    public var popMaskedCorners: CACornerMask{
+    open var popMaskedCorners: CACornerMask{
         return view.superview?.layer.maskedCorners ?? []
     }
     
@@ -48,7 +63,7 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,UIPopoverPrese
         initPopVC()
     }
     
-    func initPopVC(){
+    private func initPopVC(){
         //必须在弹窗弹出前设置modalPresentationStyle
         modalPresentationStyle = .popover
         popoverPresentationController?.permittedArrowDirections = .up
@@ -68,22 +83,28 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,UIPopoverPrese
         sourceRect = CGRect.init(x:screenSize.width/2, y: 0, width: 1, height:(screenSize.height - size.height)/2)
         preferredContentSize = size
         popoverPresentationController?.sourceRect = sourceRect
+        guard hasBgView else{
+            return
+        }
         //从A控制器通过present的方式跳转到了B控制器，那么 A.presentedViewController 就是B控制器；B.presentingViewController 就是A控制器
         //不能在init中，因为presentingViewController在init中为nil
         weak var presentingView = presentingViewController?.view
         popoverPresentationController?.sourceView = presentingView
-        bgView = UIView.init(frame: UIScreen.main.bounds)
-        bgView.backgroundColor = UIColor.init(white: 0, alpha: 0.25)
+        _bgView = UIView.init(frame: UIScreen.main.bounds)
+        _bgView?.backgroundColor = popBgColor
     }
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presentingViewController?.view.addSubview(bgView)
+        guard let bg = _bgView else{
+            return
+        }
+        presentingViewController?.view.addSubview(bg)
     }
     
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        bgView.removeFromSuperview()
+        _bgView?.removeFromSuperview()
     }
     
     
@@ -98,26 +119,26 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,UIPopoverPrese
     }
     
     //MARK:UIPopoverPresentationControllerDelegate
-    public func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
+    open func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
         return enableDismiss
     }
     
     @available(iOS 13.0, *)
-    public func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+    open func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
         return enableDismiss
     }
     
-    public func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+    open func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return .none
     }
     
-    public func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+    open func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
         didDismiss?()
         didDismiss = nil
     }
     
     @available(iOS 13.0, *)
-    public func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+    open func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         didDismiss?()
         didDismiss = nil
     }
@@ -127,19 +148,19 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,UIPopoverPrese
 //移除了箭头的弹窗背景
 open class BasePopoverBgView : UIPopoverBackgroundView{
     ///弹窗背景的阴影偏移
-    public var popShadowOffset: CGSize{
+    open var popShadowOffset: CGSize{
         return layer.shadowOffset
     }
     ///弹窗背景的阴影圆角
-    public var popShadowRadius: CGFloat{
+    open var popShadowRadius: CGFloat{
         return layer.shadowRadius
     }
     ///弹窗背景的阴影不透明度
-    public var popShadowOpacity: Float{
+    open var popShadowOpacity: Float{
         return layer.shadowOpacity
     }
     ///弹窗背景的阴影颜色
-    public var popShadowColor: CGColor?{
+    open var popShadowColor: CGColor?{
         return layer.shadowColor
     }
     
@@ -181,9 +202,13 @@ open class PopDefaultConfig {
     ///弹窗背景的阴影颜色
     public var shadowColor:UIColor = .gray
     ///弹窗边框宽度
-    public  var borderWidth: CGFloat = 0
+    public var borderWidth: CGFloat = 0
     ///弹窗边框颜色
     public var borderColor: UIColor = .white
+    ///是否有弹窗背景
+    public var hasBgView: Bool = true
+    ///弹窗背景色
+    public var bgColor: UIColor = UIColor.init(white: 0, alpha: 0.25)
     ///弹窗的圆角
     public var cornerRadius: CGFloat = 0
     ///弹窗要设置圆角的角
@@ -194,40 +219,53 @@ open class PopDefaultConfig {
 
 open class DefaultPopoverBgView: BasePopoverBgView {
     ///弹窗背景的阴影偏移
-    public override var popShadowOffset: CGSize{
+    open override var popShadowOffset: CGSize{
         return PopDefaultConfig.shared.shadowOffset
     }
     ///弹窗背景的阴影圆角
-    public override var popShadowRadius: CGFloat{
+    open override var popShadowRadius: CGFloat{
         return PopDefaultConfig.shared.shadowRadius
     }
     ///弹窗背景的阴影不透明度
-    public override var popShadowOpacity: Float{
+    open override var popShadowOpacity: Float{
         return PopDefaultConfig.shared.shadowOpacity
     }
     ///弹窗背景的阴影颜色
-    public override var popShadowColor: CGColor?{
+    open override var popShadowColor: CGColor?{
         return PopDefaultConfig.shared.shadowColor.cgColor
     }
 }
 
 
-open class DefaultPopoVC: BaseCenterPopVC<DefaultPopoverBgView> {
+open class DefaultPopVC: BaseCenterPopVC<DefaultPopoverBgView> {
     ///弹窗边框宽度
-    public override var popBorderWidth: CGFloat{
+    open override var popBorderWidth: CGFloat{
         return PopDefaultConfig.shared.borderWidth
     }
+    
     ///弹窗边框颜色
-    public override var popBorderColor: CGColor?{
+    open override var popBorderColor: CGColor?{
         return PopDefaultConfig.shared.borderColor.cgColor
     }
+    
     ///弹窗的圆角
-    public override var popCornerRadius: CGFloat{
+    open override var popCornerRadius: CGFloat{
         return PopDefaultConfig.shared.cornerRadius
     }
+    
+    ///是否有背景
+    open override var hasBgView: Bool{
+        return PopDefaultConfig.shared.hasBgView
+    }
+    
+    ///弹窗的背景色
+    open override var popBgColor: UIColor?{
+        return PopDefaultConfig.shared.bgColor
+    }
+    
     ///弹窗要设置圆角的角
     @available(iOS 11.0, *)
-    public override var popMaskedCorners: CACornerMask{
+    open override var popMaskedCorners: CACornerMask{
         return PopDefaultConfig.shared.maskedCorners
     }
 }

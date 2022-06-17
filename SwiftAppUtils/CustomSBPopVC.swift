@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomSBPopVC: DefaultPopoVC {
+class CustomSBPopVC: DefaultPopVC {
     
     override func viewDidLoad() {
         size = CGSize.init(width: UIScreen.main.bounds.size.width, height: 300)
