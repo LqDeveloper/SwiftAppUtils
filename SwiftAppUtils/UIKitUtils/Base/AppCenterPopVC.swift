@@ -74,6 +74,7 @@ open class BaseCenterPopVC<T:BasePopoverBgView>: UIViewController,UIPopoverPrese
     
     open override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         //防止使用storyboard后没有设置contentSize
         //子类要再super.viewDidLoad()之前设置size
         if size.equalTo(.zero) {
