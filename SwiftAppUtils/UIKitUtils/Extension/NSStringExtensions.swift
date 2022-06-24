@@ -32,4 +32,34 @@ public extension String{
     func copyToPasteboard() {
         UIPasteboard.general.string = self
     }
+    
+    func size(font:UIFont) -> CGSize {
+        let fontAttribute = [NSAttributedString.Key.font:font]
+        let sizeValue = size(withAttributes: fontAttribute)
+        return sizeValue
+    }
+    
+    func height(width:CGFloat,font:UIFont) -> CGFloat {
+        let constraintSize = CGSize.init(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = (self as NSString).boundingRect(with: constraintSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font:font], context: nil)
+        return ceil(boundingBox.height)
+    }
+    
+    func width(height:CGFloat,font:UIFont) -> CGFloat {
+        let constraintSize = CGSize.init(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = (self as NSString).boundingRect(with: constraintSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font:font], context: nil)
+        return ceil(boundingBox.width)
+    }
+    
+    func htmlAttrString() -> NSMutableAttributedString?{
+        guard let data = data(using: .utf8) else{
+            return nil
+        }
+        let attrStr = try? NSMutableAttributedString(
+            data: data,
+            options:[.documentType: NSAttributedString.DocumentType.html,
+                    .characterEncoding: String.Encoding.utf8.rawValue],
+                    documentAttributes: nil)
+        return attrStr
+    }
 }

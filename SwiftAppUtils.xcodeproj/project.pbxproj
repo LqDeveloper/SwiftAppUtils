@@ -99,6 +99,8 @@
 		518D0DBE25FF24EE00D0BACC /* AppKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D0D6C25FF24EE00D0BACC /* AppKeyboardObserver.swift */; };
 		518D0DBF25FF24EE00D0BACC /* AppCountDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D0D6D25FF24EE00D0BACC /* AppCountDownButton.swift */; };
 		518D0E1C25FF366800D0BACC /* ResultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D0E1B25FF366800D0BACC /* ResultExtension.swift */; };
+		519C8458286459A4004685E9 /* AppPaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C8457286459A4004685E9 /* AppPaddingTextField.swift */; };
+		519C845A28646056004685E9 /* AppWeakTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C845928646056004685E9 /* AppWeakTarget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -196,6 +198,8 @@
 		518D0D6C25FF24EE00D0BACC /* AppKeyboardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeyboardObserver.swift; sourceTree = "<group>"; };
 		518D0D6D25FF24EE00D0BACC /* AppCountDownButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCountDownButton.swift; sourceTree = "<group>"; };
 		518D0E1B25FF366800D0BACC /* ResultExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultExtension.swift; sourceTree = "<group>"; };
+		519C8457286459A4004685E9 /* AppPaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPaddingTextField.swift; sourceTree = "<group>"; };
+		519C845928646056004685E9 /* AppWeakTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWeakTarget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,12 +423,14 @@
 		518D0D6725FF24EE00D0BACC /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				519C845928646056004685E9 /* AppWeakTarget.swift */,
 				518D0D6825FF24EE00D0BACC /* AppFPSLabel.swift */,
 				518D0D6925FF24EE00D0BACC /* AppRouter.swift */,
 				518D0D6A25FF24EE00D0BACC /* AppFileManager.swift */,
 				518D0D6B25FF24EE00D0BACC /* AppNetworkViewController.swift */,
 				518D0D6C25FF24EE00D0BACC /* AppKeyboardObserver.swift */,
 				518D0D6D25FF24EE00D0BACC /* AppCountDownButton.swift */,
+				519C8457286459A4004685E9 /* AppPaddingTextField.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -504,6 +510,8 @@
 				518D0D7925FF24EE00D0BACC /* URLRequestExtensions.swift in Sources */,
 				518D0DB125FF24EE00D0BACC /* AppBaseNavigationController.swift in Sources */,
 				518D0D6F25FF24EE00D0BACC /* SignedIntegerExtensions.swift in Sources */,
+				519C845A28646056004685E9 /* AppWeakTarget.swift in Sources */,
+				519C8458286459A4004685E9 /* AppPaddingTextField.swift in Sources */,
 				518D0D7425FF24EE00D0BACC /* FloatExtensions.swift in Sources */,
 				518D0DBA25FF24EE00D0BACC /* AppFPSLabel.swift in Sources */,
 				5181A9AB26D76DC700E56720 /* CustomSBPopVC.swift in Sources */,

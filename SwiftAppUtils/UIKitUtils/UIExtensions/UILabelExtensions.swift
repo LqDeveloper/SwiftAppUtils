@@ -60,6 +60,16 @@ public extension UILabel {
         self.font = font
         self.textAlignment = textAlignment
     }
+    
+    func setupHtmlString(_ text:String?,font:UIFont,textColor:UIColor){
+        guard  let attrStr = text?.htmlAttrString() else{
+            return
+        }
+        let range = NSMakeRange(0, attrStr.length)
+        attrStr.addAttributes([.font:font,.foregroundColor:textColor],range: range)
+        attributedText = attrStr
+        lineBreakMode = .byTruncatingTail
+    }
 }
 
 #endif

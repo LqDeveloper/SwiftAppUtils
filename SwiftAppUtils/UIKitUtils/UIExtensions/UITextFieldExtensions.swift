@@ -140,16 +140,22 @@ public extension UITextField {
 }
 
 public extension UITextField {
+    func setupClearIcon(_ image:UIImage?){
+        guard let btn = value(forKey: "_clearButton") as? UIButton else{
+            return
+        }
+        btn.setImage(image, for: .normal)
+    }
+    
     func clear() {
         text = ""
         attributedText = NSAttributedString(string: "")
     }
     
-    func setPlaceHolderTextColor(_ color: UIColor) {
+    func setupPlaceHolderTextColor(_ color: UIColor) {
         guard let holder = placeholder, !holder.isEmpty else { return }
         attributedPlaceholder = NSAttributedString(string: holder, attributes: [.foregroundColor: color])
     }
-    
     
     func addPaddingLeft(_ padding: CGFloat,viewModel:UITextField.ViewMode = .always) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: frame.height))
@@ -196,6 +202,7 @@ public extension UITextField {
         rightView?.frame.size = CGSize(width: view.size.width + padding, height: view.size.height)
         rightViewMode = viewModel
     }
+
 }
 
 #endif

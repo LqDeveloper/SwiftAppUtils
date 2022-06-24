@@ -15,6 +15,14 @@ public extension UITextView {
         attributedText = NSAttributedString(string: "")
     }
     
+    func setupHtmlString(_ text:String?,font:UIFont,textColor:UIColor){
+        guard  let attrStr = text?.htmlAttrString() else{
+            return
+        }
+        let range = NSMakeRange(0, attrStr.length)
+        attrStr.addAttributes([.font:font,.foregroundColor:textColor],range: range)
+        attributedText = attrStr
+    }
     
     func scrollToBottom() {
         let range = NSMakeRange((text as NSString).length - 1, 1)
@@ -33,6 +41,45 @@ public extension UITextView {
         textContainerInset = UIEdgeInsets.zero
         textContainer.lineFragmentPadding = 0
         sizeToFit()
+    }
+    
+    
+    @IBInspectable var leftPadding:CGFloat{
+        set{
+            textContainer.lineFragmentPadding = 0
+            textContainerInset.left = newValue
+        }
+        get{
+            return textContainerInset.left
+        }
+    }
+    
+    @IBInspectable var rightPadding:CGFloat{
+        set{
+            textContainer.lineFragmentPadding = 0
+            textContainerInset.right = newValue
+        }
+        get{
+            return textContainerInset.right
+        }
+    }
+    
+    @IBInspectable var topPadding:CGFloat{
+        set{
+            textContainerInset.top = newValue
+        }
+        get{
+            return textContainerInset.top
+        }
+    }
+    
+    @IBInspectable var bottomPadding:CGFloat{
+        set{
+            textContainerInset.bottom = newValue
+        }
+        get{
+            return textContainerInset.bottom
+        }
     }
     
 }

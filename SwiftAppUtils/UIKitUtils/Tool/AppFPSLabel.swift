@@ -7,28 +7,6 @@
 //
 
 import UIKit
-class AppWeakTarget: NSObject {
-    weak var target:AnyObject?
-    init(_ target:AnyObject) {
-        super.init()
-        self.target = target
-    }
-    
-    override func responds(to aSelector: Selector!) -> Bool {
-        return target?.responds(to: aSelector) ?? false
-    }
-    
-    override func forwardingTarget(for aSelector: Selector!) -> Any? {
-        return target
-    }
-    
-    deinit {
-        AppLogger.logDebug("AppWeakTarget 销毁了")
-    }
-}
-
-
-
 
 public class AppFPSLabel: UILabel {
     private var lastTime:TimeInterval = 0
@@ -68,7 +46,6 @@ public class AppFPSLabel: UILabel {
         let fps = count / delta
         count = 0
         text = "\(lround(fps)) FPS"
-        AppLogger.logDebug("当前 \(lround(fps)) FPS")
     }
     
     deinit {
